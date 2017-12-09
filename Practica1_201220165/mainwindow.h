@@ -18,12 +18,17 @@ public:
 private slots:
     void on_pushButton_clicked();
 
+    void on_pushButton_2_clicked();
+
+    void on_pushButton_3_clicked();
+
 private:
     Ui::MainWindow *ui;
     int numerodeturno;
     int numerodeaviones;
     int numerodeesc;
     int nummant;
+    int auxnumerodeturno = 1;
 };
 
 #endif // MAINWINDOW_H

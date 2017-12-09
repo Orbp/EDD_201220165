@@ -43,7 +43,9 @@ public:
     QLineEdit *lineEdit_4;
     QGroupBox *groupBox_2;
     QTextEdit *textEdit;
+    QLabel *label_5;
     QPushButton *pushButton_2;
+    QPushButton *pushButton_3;
     QMenuBar *menuBar;
     QToolBar *mainToolBar;
     QStatusBar *statusBar;
@@ -52,7 +54,8 @@ public:
     {
         if (MainWindow->objectName().isEmpty())
             MainWindow->setObjectName(QStringLiteral("MainWindow"));
-        MainWindow->resize(784, 533);
+        MainWindow->setEnabled(true);
+        MainWindow->resize(784, 564);
         centralWidget = new QWidget(MainWindow);
         centralWidget->setObjectName(QStringLiteral("centralWidget"));
         groupBox = new QGroupBox(centralWidget);
@@ -87,14 +90,22 @@ public:
         lineEdit_4->setGeometry(QRect(590, 41, 113, 31));
         groupBox_2 = new QGroupBox(centralWidget);
         groupBox_2->setObjectName(QStringLiteral("groupBox_2"));
-        groupBox_2->setGeometry(QRect(10, 160, 761, 251));
+        groupBox_2->setGeometry(QRect(10, 140, 761, 281));
         textEdit = new QTextEdit(groupBox_2);
         textEdit->setObjectName(QStringLiteral("textEdit"));
         textEdit->setEnabled(false);
         textEdit->setGeometry(QRect(10, 30, 741, 211));
+        label_5 = new QLabel(groupBox_2);
+        label_5->setObjectName(QStringLiteral("label_5"));
+        label_5->setGeometry(QRect(350, 250, 55, 16));
         pushButton_2 = new QPushButton(centralWidget);
         pushButton_2->setObjectName(QStringLiteral("pushButton_2"));
-        pushButton_2->setGeometry(QRect(330, 420, 121, 28));
+        pushButton_2->setEnabled(false);
+        pushButton_2->setGeometry(QRect(330, 430, 121, 28));
+        pushButton_3 = new QPushButton(centralWidget);
+        pushButton_3->setObjectName(QStringLiteral("pushButton_3"));
+        pushButton_3->setEnabled(false);
+        pushButton_3->setGeometry(QRect(332, 470, 121, 28));
         MainWindow->setCentralWidget(centralWidget);
         menuBar = new QMenuBar(MainWindow);
         menuBar->setObjectName(QStringLiteral("menuBar"));
@@ -122,7 +133,9 @@ public:
         pushButton->setText(QApplication::translate("MainWindow", "Iniciar Simulacion", Q_NULLPTR));
         label_4->setText(QApplication::translate("MainWindow", "Numero de turnos", Q_NULLPTR));
         groupBox_2->setTitle(QApplication::translate("MainWindow", "Consola", Q_NULLPTR));
+        label_5->setText(QString());
         pushButton_2->setText(QApplication::translate("MainWindow", "Siguiente Paso", Q_NULLPTR));
+        pushButton_3->setText(QApplication::translate("MainWindow", "Nueva Simulacion", Q_NULLPTR));
     } // retranslateUi
 
 };
