@@ -28,13 +28,15 @@ SOURCES += \
         mainwindow.cpp \
     colaaviones.cpp \
     graficar.cpp \
-    listamantenimiento.cpp
+    listamantenimiento.cpp \
+    colaesperamantenimiento.cpp
 
 HEADERS += \
         mainwindow.h \
     colaaviones.h \
     graficar.h \
-    listamantenimiento.h
+    listamantenimiento.h \
+    colaesperamantenimiento.h
 
 FORMS += \
         mainwindow.ui

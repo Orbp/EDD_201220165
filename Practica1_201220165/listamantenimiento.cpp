@@ -15,3 +15,19 @@ void InsertarListaMantenimiento(listamantenimiento *lista, int valor){
         lista->ultimo = nuevo;
     }
 }
+
+bool InsertarAvion(listamantenimiento *lista, int idavion, int turnos){
+    if(lista->primero != NULL){
+        nodomantenimiento *aux = lista->primero;
+        while(aux != NULL && aux->estado != false){
+            aux = aux->siguiente;
+        }
+        if(aux != NULL){
+            aux->idavion = idavion;
+            aux->turnosrestantes = turnos;
+            aux->estado = true;
+            return true;
+        }
+    }
+    return false;
+}

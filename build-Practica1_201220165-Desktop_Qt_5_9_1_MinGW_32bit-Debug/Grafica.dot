@@ -3,10 +3,10 @@ digraph{
  node[shape = record];subgraph clusterAeropuerto{
 label = "Aeropuerto";
 subgraph clusterAviones{
-label = " Aviones "nca0[label = "Avion 2\nTipo Mediano\nPasajeros 18"];
-nca1[label = "Avion 3\nTipo Grande\nPasajeros 39"];
-nca0->nca1
-nca1->nca0
+label = " Aviones "nca0[label = "Avion 4\nTipo Mediano\nPasajeros 16"];
 }
-}
+subgraph clusterPuestosmantenimiento{
+lpm0[label = "Estacion 1\nEstado libre\nAvion que esta siendo revisado 1\nTurnos restantes 3"];
+lpm1[label = "Estacion 2\nEstado libre\nAvion que esta siendo revisado 2\nTurnos restantes 1"];
+lpm0->lpm1}}
 }

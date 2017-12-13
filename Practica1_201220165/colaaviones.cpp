@@ -19,12 +19,15 @@ void InsertarColaLlegada(coladoblellegada *cola, int pid, int ptama, int ppasa, 
     }
 }
 
-void EliminarColaLlegada(coladoblellegada *cola){
+void EliminarColaLlegada(coladoblellegada *cola, listamantenimiento *lista){
     if(cola->primero != NULL && cola->primero->siguiente != NULL){
         NodoColaAvion *aux = cola->primero;
         cola->primero = cola->primero->siguiente;
         aux->anterior = NULL;
         aux->siguiente = NULL;
+        if(!InsertarAvion(lista, aux->id, aux->turnosdemantenimiento)){
+
+        }
         free(aux);
     }else if(cola->primero != NULL && cola->primero->siguiente == NULL){
         NodoColaAvion *aux = cola->primero;

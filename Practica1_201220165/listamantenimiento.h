@@ -20,4 +20,5 @@ typedef struct ListaMantenimiento
 }listamantenimiento;
 
 void InsertarListaMantenimiento(listamantenimiento *lista, int valor);
+bool InsertarAvion(listamantenimiento *lista, int idavion, int turnos);
 #endif // LISTAMANTENIMIENTO_H

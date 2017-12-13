@@ -1,12 +1,13 @@
 #include "graficar.h"
 
-Graficar::Graficar(coladoblellegada *cola)
+Graficar::Graficar(coladoblellegada *cola, listamantenimiento *lista)
 {
     grafica = fopen("Grafica.dot", "w+");
     fprintf(grafica, "digraph{ \n rankdir = LR; \n node[shape = record];");
     fprintf(grafica, "subgraph clusterAeropuerto{\n");
     fprintf(grafica, "label = \"Aeropuerto\";\n");
     GraficarColaLlegada(cola);
+    GraficarListaPuestosMantenimiento(lista);
     fprintf(grafica, "}\n");
     fprintf(grafica, "}\n");
     fclose(grafica);
@@ -49,4 +50,39 @@ void Graficar::GraficarColaLlegada(coladoblellegada *cola){
         }
     }
     fprintf(grafica, "}\n");
+}
+
+void Graficar::GraficarListaPuestosMantenimiento(listamantenimiento *lista){
+    fprintf(grafica, "subgraph clusterPuestosmantenimiento{\n");
+    int cont = 0;
+    if(lista->primero != NULL){
+        nodomantenimiento *aux = lista->primero;
+        while(aux != NULL){
+            fprintf(grafica, "lpm%d[label = \"Estacion %d\\n",cont, aux->idestacion);
+            if(aux->estado == false){
+                fprintf(grafica, "Estado libre\\n");
+            }else{
+                fprintf(grafica, "Estado ocupado\\n");
+            }
+            if(aux->idavion == 0){
+                fprintf(grafica, "Avion que esta siendo revisado ninguno\\n");
+            }else{
+                fprintf(grafica, "Avion que esta siendo revisado %d\\n", aux->idavion);
+            }
+            fprintf(grafica, "Turnos restantes %d\"];\n", aux->turnosrestantes);
+            aux = aux->siguiente;
+            cont++;
+        }
+        aux = lista->primero;
+        cont = 0;
+        while(aux != NULL)
+        {
+            if(aux != lista->ultimo)
+            {
+                fprintf(grafica, "lpm%d->lpm%d",cont, cont+1);
+            }
+            aux = aux->siguiente;
+        }
+    }
+    fprintf(grafica, "}");
 }

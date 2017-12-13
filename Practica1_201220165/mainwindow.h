@@ -5,6 +5,7 @@
 #include "colaaviones.h"
 #include <time.h>
 #include "graficar.h"
+#include "listamantenimiento.h"
 
 namespace Ui {
 class MainWindow;
@@ -37,6 +38,7 @@ private:
     int maxturnosme = 2;
     int maxturnosgra = 3;
     coladoblellegada *colallegada = (coladoblellegada *)malloc(sizeof(coladoblellegada));
+    listamantenimiento *listadepuestosmantenimiento = (listamantenimiento *)malloc(sizeof(listamantenimiento));
     void Consola(int turno);
 };
 
