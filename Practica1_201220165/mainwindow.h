@@ -2,6 +2,9 @@
 #define MAINWINDOW_H
 
 #include <QMainWindow>
+#include "colaaviones.h"
+#include <time.h>
+#include "graficar.h"
 
 namespace Ui {
 class MainWindow;
@@ -29,6 +32,12 @@ private:
     int numerodeesc;
     int nummant;
     int auxnumerodeturno = 1;
+    int idaviones = 1;
+    int maxturnospe = 1;
+    int maxturnosme = 2;
+    int maxturnosgra = 3;
+    coladoblellegada *colallegada = (coladoblellegada *)malloc(sizeof(coladoblellegada));
+    void Consola(int turno);
 };
 
 #endif // MAINWINDOW_H

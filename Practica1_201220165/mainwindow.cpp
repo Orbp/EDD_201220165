@@ -8,6 +8,9 @@ MainWindow::MainWindow(QWidget *parent) :
     ui(new Ui::MainWindow)
 {
     ui->setupUi(this);
+    colallegada->primero = NULL;
+    colallegada->ultimo = NULL;
+    ui->textEdit->setText("********************INICIO********************");
 }
 
 MainWindow::~MainWindow()
@@ -31,7 +34,45 @@ void MainWindow::on_pushButton_clicked()
         ui->lineEdit_4->setEnabled(false);
         ui->pushButton->setEnabled(false);
         ui->pushButton_2->setEnabled(true);
+        ui->textEdit->append("Numero de Escritorios que se crearan en el sistema " + QString::number(numerodeesc));
+        ui->textEdit->append("Numero de Puestos de Mantenimiento que se crearan en el sistema " + QString::number(nummant));
+        ui->textEdit->append("Numero de Aviones que ingresaran al sistemas " + QString::number(numerodeaviones));
+        ui->textEdit->append("Numero de Turnos " + QString::number(numerodeturno));
         ui->label_5->setText("Turno " + QString::number(auxnumerodeturno) + "/" + QString::number(numerodeturno));
+        if(idaviones <= numerodeaviones){
+            srand(time(NULL));
+            int taman = rand() % 3;
+            int pasajeros;
+            int des;
+            int man;
+            if(taman == 0){
+                pasajeros = rand() % 6 + 5;
+                des = 0;
+                man = 1 + rand() %3;
+            }else if(taman == 1){
+                pasajeros = rand() % 11 + 15;
+                des = 0;
+                man = 2 + rand() %3;
+            }else if(taman == 2){
+                pasajeros = 30 + rand() % 11;
+                des = 0;
+                man = 3 + rand() %3;
+            }
+            InsertarColaLlegada(colallegada, idaviones, taman, pasajeros, des, man);
+            ui->textEdit->append("********** TURNO " + QString::number(auxnumerodeturno) + "**********");
+            ui->textEdit->append("Arribo avion: " + QString::number(idaviones));
+            if(taman == 0){
+                ui->textEdit->append("Tamaño: pequeño");
+            }else if(taman == 1){
+                ui->textEdit->append("Tamaño: mediano");
+            }else{
+                ui->textEdit->append("Tamaño: grande");
+            }
+            ui->textEdit->append("Avion desabordando: ninguno");
+            idaviones++;
+            //MostrarColaLlegada(colallegada);
+        }
+        Graficar *g = new Graficar(colallegada);
     }
 }
 
@@ -39,7 +80,73 @@ void MainWindow::on_pushButton_2_clicked()
 {
     if(auxnumerodeturno < numerodeturno){
         auxnumerodeturno++;
-        ui->label_5->setText("Turno " + QString::number(auxnumerodeturno) + "/" + QString::number(numerodeturno));
+        ui->textEdit->append("********** TURNO " + QString::number(auxnumerodeturno) + " **********");
+        if(idaviones <= numerodeaviones){
+            srand(time(NULL));
+            int taman = rand() % 3;
+            int pasajeros;
+            int des;
+            int man;
+            if(taman == 0){
+                pasajeros = rand() % 6 + 5;
+                des = 0;
+                man = 1 + rand() %3;
+            }else if(taman == 1){
+                pasajeros = rand() % 11 + 15;
+                des = 0;
+                man = 2 + rand() %3;
+            }else if(taman == 2){
+                pasajeros = 30 + rand() % 11;
+                des = 0;
+                man = 3 + rand() %3;
+            }
+            InsertarColaLlegada(colallegada, idaviones, taman, pasajeros, des, man);
+            ui->textEdit->append("Arribo avion: " + QString::number(idaviones));
+            if(taman == 0){
+                ui->textEdit->append("Tamaño: pequeño");
+            }else if(taman == 1){
+                ui->textEdit->append("Tamaño: mediano");
+            }else{
+                ui->textEdit->append("Tamaño: grande");
+            }
+            idaviones++;
+        }
+        if(colallegada->primero != NULL){
+            if(colallegada->primero->tama == 0){
+                if(colallegada->primero->turnosdesabordaje < maxturnospe){
+                    colallegada->primero->turnosdesabordaje++;
+                    ui->textEdit->append("Avion desabordando: Avion " + QString::number(colallegada->primero->id));
+                }else{
+                    EliminarColaLlegada(colallegada);
+                    if(colallegada->primero != NULL)
+                        ui->textEdit->append("Avion que pasa a desabordar: Avion " + QString::number(colallegada->primero->id));
+                }
+            }
+
+            if(colallegada->primero->tama == 1){
+                if(colallegada->primero->turnosdesabordaje < maxturnosme){
+                    colallegada->primero->turnosdesabordaje++;
+                    ui->textEdit->append("Avion desabordando: Avion " + QString::number(colallegada->primero->id));
+                }else{
+                    EliminarColaLlegada(colallegada);
+                    if(colallegada->primero != NULL)
+                        ui->textEdit->append("Avion que pasa a desabordar: Avion " + QString::number(colallegada->primero->id));
+                }
+            }
+
+            if(colallegada->primero->tama == 2){
+                if(colallegada->primero->turnosdesabordaje < maxturnosgra){
+                    colallegada->primero->turnosdesabordaje++;
+                    ui->textEdit->append("Avion desabordando: Avion " + QString::number(colallegada->primero->id));
+                }else{
+                    EliminarColaLlegada(colallegada);
+                    if(colallegada->primero != NULL)
+                        ui->textEdit->append("Avion que pasa a desabordar: Avion " + QString::number(colallegada->primero->id));
+                }
+            }
+            //MostrarColaLlegada(colallegada);
+            Graficar *g = new Graficar(colallegada);
+        }
     }else{
         QMessageBox::warning(this, "Simulacion finalizada", "Se ha completado el numero de turnos");
         ui->pushButton_2->setEnabled(false);

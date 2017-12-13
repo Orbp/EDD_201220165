@@ -93,8 +93,10 @@ public:
         groupBox_2->setGeometry(QRect(10, 140, 761, 281));
         textEdit = new QTextEdit(groupBox_2);
         textEdit->setObjectName(QStringLiteral("textEdit"));
-        textEdit->setEnabled(false);
+        textEdit->setEnabled(true);
         textEdit->setGeometry(QRect(10, 30, 741, 211));
+        textEdit->setVerticalScrollBarPolicy(Qt::ScrollBarAlwaysOn);
+        textEdit->setReadOnly(true);
         label_5 = new QLabel(groupBox_2);
         label_5->setObjectName(QStringLiteral("label_5"));
         label_5->setGeometry(QRect(350, 250, 55, 16));
