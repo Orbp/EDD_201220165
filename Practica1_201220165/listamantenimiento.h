@@ -3,6 +3,7 @@
 
 #include <stdio.h>
 #include <stdlib.h>
+#include "colaesperamantenimiento.h"
 
 typedef struct NodoMantenimiento
 {
@@ -21,4 +22,5 @@ typedef struct ListaMantenimiento
 
 void InsertarListaMantenimiento(listamantenimiento *lista, int valor);
 bool InsertarAvion(listamantenimiento *lista, int idavion, int turnos);
+void EliminarAvion(listamantenimiento *lista, Colaesperamantenimiento *cola);
 #endif // LISTAMANTENIMIENTO_H

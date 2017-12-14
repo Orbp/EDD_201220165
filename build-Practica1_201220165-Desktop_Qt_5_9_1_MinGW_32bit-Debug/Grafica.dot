@@ -3,10 +3,18 @@ digraph{
  node[shape = record];subgraph clusterAeropuerto{
 label = "Aeropuerto";
 subgraph clusterAviones{
-label = " Aviones "nca0[label = "Avion 4\nTipo Mediano\nPasajeros 16"];
+label = " Aviones "nca0[label = "Avion 8\nTipo Mediano\nPasajeros 20\nTurnos de mantenimiento 3"];
+nca1[label = "Avion 9\nTipo Mediano\nPasajeros 19\nTurnos de mantenimiento 2"];
+nca2[label = "Avion 10\nTipo Pequeño\nPasajeros 10\nTurnos de mantenimiento 1"];
+nca0->nca1
+nca1->nca2
+nca1->nca0
+nca2->nca1
 }
 subgraph clusterPuestosmantenimiento{
-lpm0[label = "Estacion 1\nEstado libre\nAvion que esta siendo revisado 1\nTurnos restantes 3"];
-lpm1[label = "Estacion 2\nEstado libre\nAvion que esta siendo revisado 2\nTurnos restantes 1"];
-lpm0->lpm1}}
+label = " Puestos de Mantenimiento "lpm0[label = "Estacion 1\nEstado ocupado\nAvion que esta siendo revisado 6\nTurnos restantes 2"];
+lpm1[label = "Estacion 2\nEstado ocupado\nAvion que esta siendo revisado 7\nTurnos restantes 3"];
+lpm0->lpm1
+}subgraph clusterColaesperamantenimiento{
+label = " Cola de espera para Mantenimiento "}}
 }

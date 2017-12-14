@@ -18,5 +18,6 @@ typedef struct colaesperamantenimiento
 }Colaesperamantenimiento;
 
 void Insertarcolamantenimiento(Colaesperamantenimiento *cola, int idavion, int numturnos);
+Nodocolaesperamantenimiento *Eliminarcolamantenimiento(Colaesperamantenimiento *cola);
 
 #endif // COLAESPERAMANTENIMIENTO_H

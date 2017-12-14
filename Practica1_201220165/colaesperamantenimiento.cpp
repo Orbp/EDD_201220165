@@ -13,3 +13,13 @@ void Insertarcolamantenimiento(Colaesperamantenimiento *cola, int idavion, int n
         cola->ultimo = nuevo;
     }
 }
+
+Nodocolaesperamantenimiento *Eliminarcolamantenimiento(Colaesperamantenimiento *cola){
+    if(cola->primero != NULL){
+        Nodocolaesperamantenimiento *aux = cola->primero;
+        cola->primero = cola->primero->siguiente;
+        aux->siguiente = NULL;
+        return aux;
+    }
+    return NULL;
+}

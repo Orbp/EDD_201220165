@@ -6,6 +6,7 @@
 #include <time.h>
 #include "graficar.h"
 #include "listamantenimiento.h"
+#include "colaesperamantenimiento.h"
 
 namespace Ui {
 class MainWindow;
@@ -39,6 +40,7 @@ private:
     int maxturnosgra = 3;
     coladoblellegada *colallegada = (coladoblellegada *)malloc(sizeof(coladoblellegada));
     listamantenimiento *listadepuestosmantenimiento = (listamantenimiento *)malloc(sizeof(listamantenimiento));
+    colaesperamantenimiento *colamantenimiento = (colaesperamantenimiento *)malloc(sizeof(colaesperamantenimiento));
     void Consola(int turno);
 };
 
