@@ -1,14 +1,16 @@
 #include "graficar.h"
 
-Graficar::Graficar(coladoblellegada *cola, listamantenimiento *lista, Colaesperamantenimiento *colamentenimiento)
+Graficar::Graficar(coladoblellegada *cola, listamantenimiento *lista, Colaesperamantenimiento *colamentenimiento, ColaPasajeros *colapasa, ListaCircularMaleta *listacircular)
 {
     grafica = fopen("Grafica.dot", "w+");
-    fprintf(grafica, "digraph{ \n rankdir = LR; \n node[shape = record];");
+    fprintf(grafica, "digraph{ \n node[shape = record];");
     fprintf(grafica, "subgraph clusterAeropuerto{\n");
     fprintf(grafica, "label = \"Aeropuerto\";\n");
     GraficarColaLlegada(cola);
     GraficarListaPuestosMantenimiento(lista);
     GraficarColaMantenimiento(colamentenimiento);
+    GraficarColaPasajeros(colapasa);
+    GraficarListaCircularMaletas(listacircular);
     fprintf(grafica, "}\n");
     fprintf(grafica, "}\n");
     fclose(grafica);
@@ -16,7 +18,7 @@ Graficar::Graficar(coladoblellegada *cola, listamantenimiento *lista, Colaespera
 }
 
 void Graficar::GraficarColaLlegada(coladoblellegada *cola){
-    fprintf(grafica, "subgraph clusterAviones{\n");
+    fprintf(grafica, "subgraph clusterAviones{\nrankdir = BT;\n");
     fprintf(grafica, "label = \" Aviones \"");
     if(cola->primero != NULL){
         NodoColaAvion *aux = cola->primero;
@@ -115,4 +117,71 @@ void Graficar::GraficarColaMantenimiento(Colaesperamantenimiento *colamantenimie
     }
     fprintf(grafica, "}");
 
+}
+
+void Graficar::GraficarColaPasajeros(ColaPasajeros *colapasa){
+    fprintf(grafica, "subgraph clusterColaPasajeros{\n");
+    fprintf(grafica, "label = \"Cola de espera para pasajeros \"");
+    if(colapasa->primero != NULL){
+        nodocolapasajeros *aux = colapasa->primero;
+        int cont = 0;
+        while(aux != NULL){
+            fprintf(grafica, "cp%d[label = \"Pasajero %d\\nMaletas %d\\nDocumentos %d\\nTurnos que pasara en escritorio %d\"];\n", cont, aux->id, aux->nummaletas, aux->numdoc, aux->numturnos);
+            aux = aux->siguiente;
+            cont++;
+        }
+        cont = 0;
+        aux = colapasa->primero;
+        while(aux->siguiente != NULL){
+            fprintf(grafica, "cp%d->cp%d\n", cont, cont+1);
+            cont++;
+            aux = aux->siguiente;
+        }
+    }
+    fprintf(grafica, "}");
+}
+
+void Graficar::GraficarListaCircularMaletas(ListaCircularMaleta *lista){
+    fprintf(grafica, "subgraph clusterListaMaletas{\n");
+    fprintf(grafica, "label = \"Maletas de pasajeros\"");
+    if(lista->primero != NULL){
+        int cont = 0;
+        NodoCircularMaleta *aux = lista->primero;
+        fprintf(grafica, "lcm%d[label = \"Maleta %d\\nPasajero %d\"];\n", cont,aux->id, aux->idpas);
+        aux = aux->siguiente;
+        cont++;
+        while(aux != lista->primero){
+            fprintf(grafica, "lcm%d[label = \"Maleta %d\\nPasajero %d\"];\n", cont, aux->id, aux->idpas);
+            aux = aux->siguiente;
+            cont++;
+        }
+        QString alin = "{rank = same";
+        for(int i = 0; i < cont/2; i++){
+
+            alin += "\"lcm" + QString::number(i) + "\";";
+        }
+        alin += "}\n{rank = same";
+        for(int i = cont -1; i >= cont/2; i--){
+            alin += "\"lcm" + QString::number(i) + "\";";
+        }
+        fprintf(grafica, alin.toStdString().c_str());
+        fprintf(grafica, "}\n");
+        cont = 0;
+        aux = lista->primero;;
+        fprintf(grafica, "lcm%d->lcm%d\n", cont, cont+1);
+        aux = aux->siguiente;
+        cont++;
+
+        while(aux != lista->primero){
+            if(aux->siguiente != lista->primero){
+                fprintf(grafica, "lcm%d->lcm%d\n", cont, cont+1);
+            }else{
+                fprintf(grafica, "lcm%d->lcm0\n", cont);
+            }
+            cont++;
+            aux = aux->siguiente;
+        }
+
+    }
+    fprintf(grafica, "}");
 }

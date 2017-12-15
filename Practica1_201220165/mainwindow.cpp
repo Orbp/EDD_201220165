@@ -14,6 +14,9 @@ MainWindow::MainWindow(QWidget *parent) :
     listadepuestosmantenimiento->ultimo = NULL;
     colamantenimiento->primero = NULL;
     colamantenimiento->ultimo = NULL;
+    colapasajeros->primero = NULL;
+    colapasajeros->ultimo = NULL;
+    listamaletas->primero = NULL;
     ui->textEdit->setText("********************INICIO********************");
 }
 
@@ -78,8 +81,9 @@ void MainWindow::on_pushButton_clicked()
                 InsertarListaMantenimiento(listadepuestosmantenimiento, i+1);
             }
             //MostrarColaLlegada(colallegada);
+            Imprimir(ui->textEdit, listadepuestosmantenimiento);
+            Graficar *g = new Graficar(colallegada, listadepuestosmantenimiento, colamantenimiento, colapasajeros, listamaletas);
         }
-        Graficar *g = new Graficar(colallegada, listadepuestosmantenimiento, colamantenimiento);
     }
 }
 
@@ -125,7 +129,12 @@ void MainWindow::on_pushButton_2_clicked()
                     colallegada->primero->turnosdesabordaje++;
                     ui->textEdit->append("Avion desabordando: Avion " + QString::number(colallegada->primero->id));
                 }else{
-                    EliminarColaLlegada(colallegada, listadepuestosmantenimiento, colamantenimiento);
+                    int aux;
+                    if(colallegada->primero != NULL){
+                        aux = colallegada->primero->pasajeros;
+                    }
+                    EliminarColaLlegada(colallegada, listadepuestosmantenimiento, colamantenimiento, colapasajeros, idpasajeros, listamaletas);
+                    idpasajeros += aux + 1;
                     if(colallegada->primero != NULL){
                         colallegada->primero->turnosdesabordaje++;
                         ui->textEdit->append("Avion desabordando: Avion " + QString::number(colallegada->primero->id));
@@ -136,7 +145,13 @@ void MainWindow::on_pushButton_2_clicked()
                     colallegada->primero->turnosdesabordaje++;
                     ui->textEdit->append("Avion desabordando: Avion " + QString::number(colallegada->primero->id));
                 }else{
-                    EliminarColaLlegada(colallegada, listadepuestosmantenimiento, colamantenimiento);
+                    int aux;
+                    if(colallegada->primero != NULL){
+                        aux = colallegada->primero->pasajeros;
+                    }
+
+                    EliminarColaLlegada(colallegada, listadepuestosmantenimiento, colamantenimiento, colapasajeros, idpasajeros, listamaletas);
+                    idpasajeros += aux + 1;
                     if(colallegada->primero != NULL){
                         colallegada->primero->turnosdesabordaje++;
                         ui->textEdit->append("Avion desabordando: Avion " + QString::number(colallegada->primero->id));
@@ -147,7 +162,12 @@ void MainWindow::on_pushButton_2_clicked()
                     colallegada->primero->turnosdesabordaje++;
                     ui->textEdit->append("Avion desabordando: Avion " + QString::number(colallegada->primero->id));
                 }else{
-                    EliminarColaLlegada(colallegada, listadepuestosmantenimiento, colamantenimiento);
+                    int aux;
+                    if(colallegada->primero != NULL){
+                        aux = colallegada->primero->pasajeros;
+                    }
+                    EliminarColaLlegada(colallegada, listadepuestosmantenimiento, colamantenimiento, colapasajeros, idpasajeros, listamaletas);
+                    idpasajeros += aux+1;
                     if(colallegada->primero != NULL){
                         colallegada->primero->turnosdesabordaje++;
                         ui->textEdit->append("Avion desabordando: Avion " + QString::number(colallegada->primero->id));
@@ -155,7 +175,9 @@ void MainWindow::on_pushButton_2_clicked()
                 }
             }
             //MostrarColaLlegada(colallegada);
-            Graficar *g = new Graficar(colallegada, listadepuestosmantenimiento, colamantenimiento);
+            Imprimir(ui->textEdit, listadepuestosmantenimiento);
+            std::cout<<"numero de pasajeros" <<idpasajeros<< std::endl;
+            Graficar *g = new Graficar(colallegada, listadepuestosmantenimiento, colamantenimiento, colapasajeros, listamaletas);
         }
     }else{
         QMessageBox::warning(this, "Simulacion finalizada", "Se ha completado el numero de turnos");
@@ -182,4 +204,5 @@ void MainWindow::on_pushButton_3_clicked()
     listadepuestosmantenimiento->ultimo = NULL;
     colamantenimiento->primero = NULL;
     colamantenimiento->ultimo = NULL;
+    listamaletas->primero = NULL;
 }

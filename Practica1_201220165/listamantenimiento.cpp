@@ -55,3 +55,26 @@ void EliminarAvion(listamantenimiento *lista, Colaesperamantenimiento *cola){
         }
     }
 }
+
+void Imprimir(QTextEdit *editor, listamantenimiento *lista){
+    if(lista->primero != NULL){
+        nodomantenimiento *aux = lista->primero;
+        editor->append("----------ESTACIONES----------");
+        while(aux != NULL){
+            editor->append("Estacion " + QString::number(aux->idestacion));
+            if(aux->estado){
+                editor->append("Estado: ocupado");
+            }else{
+                editor->append("Estado: libre");
+            }
+            if(aux->idavion == 0){
+                editor->append("Avion en mantenimiento: ninguno");
+            }else{
+                editor->append("Avion en mantenimiento: " + QString::number(aux->idavion));
+            }
+            editor->append("Turnos restantes: " + QString::number(aux->turnosrestantes));
+            aux = aux->siguiente;
+        }
+    }
+
+}

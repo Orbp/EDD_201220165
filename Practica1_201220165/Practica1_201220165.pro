@@ -29,14 +29,18 @@ SOURCES += \
     colaaviones.cpp \
     graficar.cpp \
     listamantenimiento.cpp \
-    colaesperamantenimiento.cpp
+    colaesperamantenimiento.cpp \
+    pasajeros.cpp \
+    listacircularmaletas.cpp
 
 HEADERS += \
         mainwindow.h \
     colaaviones.h \
     graficar.h \
     listamantenimiento.h \
-    colaesperamantenimiento.h
+    colaesperamantenimiento.h \
+    pasajeros.h \
+    listacircularmaletas.h
 
 FORMS += \
         mainwindow.ui

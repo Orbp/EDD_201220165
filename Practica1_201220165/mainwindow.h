@@ -38,9 +38,13 @@ private:
     int maxturnospe = 1;
     int maxturnosme = 2;
     int maxturnosgra = 3;
+    int idpasajeros = 1;
+    int idmaleta = 1;
     coladoblellegada *colallegada = (coladoblellegada *)malloc(sizeof(coladoblellegada));
     listamantenimiento *listadepuestosmantenimiento = (listamantenimiento *)malloc(sizeof(listamantenimiento));
     colaesperamantenimiento *colamantenimiento = (colaesperamantenimiento *)malloc(sizeof(colaesperamantenimiento));
+    ColaPasajeros *colapasajeros = (ColaPasajeros *)malloc(sizeof(ColaPasajeros));
+    ListaCircularMaleta *listamaletas = (ListaCircularMaleta *)malloc(sizeof(ListaCircularMaleta));
     void Consola(int turno);
 };
 

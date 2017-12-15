@@ -4,6 +4,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include "colaesperamantenimiento.h"
+#include <QTextEdit>
 
 typedef struct NodoMantenimiento
 {
@@ -23,4 +24,5 @@ typedef struct ListaMantenimiento
 void InsertarListaMantenimiento(listamantenimiento *lista, int valor);
 bool InsertarAvion(listamantenimiento *lista, int idavion, int turnos);
 void EliminarAvion(listamantenimiento *lista, Colaesperamantenimiento *cola);
+void Imprimir(QTextEdit *editor, listamantenimiento *lista);
 #endif // LISTAMANTENIMIENTO_H

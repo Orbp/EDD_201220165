@@ -19,13 +19,16 @@ void InsertarColaLlegada(coladoblellegada *cola, int pid, int ptama, int ppasa, 
     }
 }
 
-void EliminarColaLlegada(coladoblellegada *cola, listamantenimiento *lista, Colaesperamantenimiento *colamantenimiento){
+void EliminarColaLlegada(coladoblellegada *cola, listamantenimiento *lista, Colaesperamantenimiento *colamantenimiento, ColaPasajeros *colapas, int id, ListaCircularMaleta *listamal){
     if(cola->primero != NULL && cola->primero->siguiente != NULL){
         NodoColaAvion *aux = cola->primero;
         cola->primero = cola->primero->siguiente;
         aux->anterior = NULL;
         aux->siguiente = NULL;
         cola->primero->anterior = NULL;
+        for(int i = id; i <= id + aux->pasajeros; i++){
+            InsertarColaPasajeros(colapas, i, listamal);
+        }
         if(!InsertarAvion(lista, aux->id, aux->turnosdemantenimiento)){
             Insertarcolamantenimiento(colamantenimiento, aux->id, aux->turnosdemantenimiento);
         }
@@ -34,6 +37,9 @@ void EliminarColaLlegada(coladoblellegada *cola, listamantenimiento *lista, Cola
         NodoColaAvion *aux = cola->primero;
         cola->primero = NULL;
         cola->ultimo = NULL;
+        for(int i = id; i <= id + aux->pasajeros; i++){
+            InsertarColaPasajeros(colapas, i, listamal);
+        }
         if(!InsertarAvion(lista, aux->id, aux->turnosdemantenimiento)){
             Insertarcolamantenimiento(colamantenimiento, aux->id, aux->turnosdemantenimiento);
         }

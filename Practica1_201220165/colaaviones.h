@@ -6,6 +6,7 @@
 #include "iostream"
 #include "listamantenimiento.h"
 #include "colaesperamantenimiento.h"
+#include "pasajeros.h"
 
 typedef struct nodocolaavion{
     int tama;
@@ -25,6 +26,6 @@ typedef struct ColaDobleLlegada
 
 
 void InsertarColaLlegada(coladoblellegada *cola, int pid, int ptama, int ppasa, int pturnosdes, int pturnosman);
-void EliminarColaLlegada(coladoblellegada *cola, listamantenimiento *lista, Colaesperamantenimiento *colamantenimiento);
+void EliminarColaLlegada(coladoblellegada *cola, listamantenimiento *lista, Colaesperamantenimiento *colamantenimiento, ColaPasajeros *colapas, int id, ListaCircularMaleta *listamal);
 void MostrarColaLlegada(coladoblellegada *cola);
 #endif // COLAAVIONES_H
