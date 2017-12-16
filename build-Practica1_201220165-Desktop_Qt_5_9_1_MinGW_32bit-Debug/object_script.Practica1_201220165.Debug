@@ -1,0 +1,15 @@
+INPUT(
+./debug\main.o
+./debug\mainwindow.o
+./debug\colaaviones.o
+./debug\graficar.o
+./debug\listamantenimiento.o
+./debug\colaesperamantenimiento.o
+./debug\pasajeros.o
+./debug\listacircularmaletas.o
+./debug\listaescritorios.o
+./debug\reportes.o
+./debug\colaescritorios.o
+./debug\moc_mainwindow.o
+./debug\moc_reportes.o
+);

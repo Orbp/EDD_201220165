@@ -31,7 +31,10 @@ SOURCES += \
     listamantenimiento.cpp \
     colaesperamantenimiento.cpp \
     pasajeros.cpp \
-    listacircularmaletas.cpp
+    listacircularmaletas.cpp \
+    listaescritorios.cpp \
+    reportes.cpp \
+    colaescritorios.cpp
 
 HEADERS += \
         mainwindow.h \
@@ -40,7 +43,11 @@ HEADERS += \
     listamantenimiento.h \
     colaesperamantenimiento.h \
     pasajeros.h \
-    listacircularmaletas.h
+    listacircularmaletas.h \
+    listaescritorios.h \
+    reportes.h \
+    colaescritorios.h
 
 FORMS += \
-        mainwindow.ui
+        mainwindow.ui \
+    reportes.ui

@@ -34,3 +34,8 @@ void InsertarColaPasajeros(ColaPasajeros *cola, int id, ListaCircularMaleta *lis
         InsertarMaleta(lista, i, id);
     }
 }
+
+void EliminarColaPasajeros(ColaPasajeros *cola, ListaDobleEscritorios *lista)
+{
+
+}

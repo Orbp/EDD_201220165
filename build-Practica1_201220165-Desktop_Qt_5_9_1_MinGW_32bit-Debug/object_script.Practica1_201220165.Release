@@ -1,0 +1,15 @@
+INPUT(
+./release\main.o
+./release\mainwindow.o
+./release\colaaviones.o
+./release\graficar.o
+./release\listamantenimiento.o
+./release\colaesperamantenimiento.o
+./release\pasajeros.o
+./release\listacircularmaletas.o
+./release\listaescritorios.o
+./release\reportes.o
+./release\colaescritorios.o
+./release\moc_mainwindow.o
+./release\moc_reportes.o
+);

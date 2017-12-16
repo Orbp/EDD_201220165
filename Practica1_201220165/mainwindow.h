@@ -7,6 +7,8 @@
 #include "graficar.h"
 #include "listamantenimiento.h"
 #include "colaesperamantenimiento.h"
+#include "listaescritorios.h"
+#include "reportes.h"
 
 namespace Ui {
 class MainWindow;
@@ -45,6 +47,7 @@ private:
     colaesperamantenimiento *colamantenimiento = (colaesperamantenimiento *)malloc(sizeof(colaesperamantenimiento));
     ColaPasajeros *colapasajeros = (ColaPasajeros *)malloc(sizeof(ColaPasajeros));
     ListaCircularMaleta *listamaletas = (ListaCircularMaleta *)malloc(sizeof(ListaCircularMaleta));
+    ListaDobleEscritorios *listaescritorios = (ListaDobleEscritorios *)malloc(sizeof(ListaDobleEscritorios));
     void Consola(int turno);
 };
 

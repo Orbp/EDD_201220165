@@ -5,6 +5,7 @@
 #include <stdlib.h>
 #include "listacircularmaletas.h"
 #include <time.h>
+#include "listaescritorios.h"
 
 typedef struct NodoColaPasajeros
 {
@@ -22,5 +23,6 @@ typedef struct colapasajeros
 }ColaPasajeros;
 
 void InsertarColaPasajeros(ColaPasajeros *cola, int id, ListaCircularMaleta *lista);
+void EliminarColaPasajeros(ColaPasajeros *cola, ListaDobleEscritorios *lista);
 
 #endif // PASAJEROS_H

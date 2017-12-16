@@ -9,11 +9,12 @@
 #include "colaesperamantenimiento.h"
 #include "listacircularmaletas.h"
 #include <QString>
+#include "listaescritorios.h"
 
 class Graficar
 {
 public:
-    Graficar(coladoblellegada *cola, listamantenimiento *lista, Colaesperamantenimiento *colamantenimiento, ColaPasajeros *colapasa, ListaCircularMaleta *listacircular);
+    Graficar(coladoblellegada *cola, listamantenimiento *lista, Colaesperamantenimiento *colamantenimiento, ColaPasajeros *colapasa, ListaCircularMaleta *listacircular, ListaDobleEscritorios *listaesc);
 
 private:
     FILE *grafica;
@@ -22,6 +23,7 @@ private:
     void GraficarColaMantenimiento(Colaesperamantenimiento *colamantenimiento);
     void GraficarColaPasajeros(ColaPasajeros *colapasa);
     void GraficarListaCircularMaletas(ListaCircularMaleta *lista);
+    void GraficarListaEscritorios(ListaDobleEscritorios *lista);
 };
 
 #endif // GRAFICAR_H

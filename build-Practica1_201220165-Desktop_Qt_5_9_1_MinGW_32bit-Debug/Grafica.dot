@@ -3,84 +3,21 @@ digraph{
 label = "Aeropuerto";
 subgraph clusterAviones{
 rankdir = BT;
-label = " Aviones "nca0[label = "Avion 2\nTipo Mediano\nPasajeros 24\nTurnos de mantenimiento 2"];
-nca1[label = "Avion 3\nTipo Mediano\nPasajeros 17\nTurnos de mantenimiento 4"];
-nca0->nca1
-nca1->nca0
+label = " Aviones "nca0[label = "Avion 1\nTipo Pequeño\nPasajeros 6\nTurnos de mantenimiento 3"];
 }
 subgraph clusterPuestosmantenimiento{
-label = " Puestos de Mantenimiento "lpm0[label = "Estacion 1\nEstado ocupado\nAvion que esta siendo revisado 1\nTurnos restantes 2"];
+label = " Puestos de Mantenimiento "lpm0[label = "Estacion 1\nEstado libre\nAvion que esta siendo revisado ninguno\nTurnos restantes 0"];
 lpm1[label = "Estacion 2\nEstado libre\nAvion que esta siendo revisado ninguno\nTurnos restantes 0"];
 lpm2[label = "Estacion 3\nEstado libre\nAvion que esta siendo revisado ninguno\nTurnos restantes 0"];
 lpm0->lpm1
 lpm1->lpm2
 }subgraph clusterColaesperamantenimiento{
 label = " Cola de espera para Mantenimiento "}subgraph clusterColaPasajeros{
-label = "Cola de espera para pasajeros "cp0[label = "Pasajero 1\nMaletas 1\nDocumentos 4\nTurnos que pasara en escritorio 3"];
-cp1[label = "Pasajero 2\nMaletas 3\nDocumentos 5\nTurnos que pasara en escritorio 1"];
-cp2[label = "Pasajero 3\nMaletas 2\nDocumentos 4\nTurnos que pasara en escritorio 1"];
-cp3[label = "Pasajero 4\nMaletas 2\nDocumentos 2\nTurnos que pasara en escritorio 1"];
-cp4[label = "Pasajero 5\nMaletas 1\nDocumentos 6\nTurnos que pasara en escritorio 2"];
-cp5[label = "Pasajero 6\nMaletas 4\nDocumentos 6\nTurnos que pasara en escritorio 1"];
-cp6[label = "Pasajero 7\nMaletas 1\nDocumentos 4\nTurnos que pasara en escritorio 1"];
-cp7[label = "Pasajero 8\nMaletas 2\nDocumentos 1\nTurnos que pasara en escritorio 1"];
-cp8[label = "Pasajero 9\nMaletas 3\nDocumentos 6\nTurnos que pasara en escritorio 3"];
-cp9[label = "Pasajero 10\nMaletas 1\nDocumentos 7\nTurnos que pasara en escritorio 4"];
-cp10[label = "Pasajero 11\nMaletas 1\nDocumentos 8\nTurnos que pasara en escritorio 2"];
-cp0->cp1
-cp1->cp2
-cp2->cp3
-cp3->cp4
-cp4->cp5
-cp5->cp6
-cp6->cp7
-cp7->cp8
-cp8->cp9
-cp9->cp10
-}subgraph clusterListaMaletas{
-label = "Maletas de pasajeros"lcm0[label = "Maleta 1\nPasajero 1"];
-lcm1[label = "Maleta 2\nPasajero 2"];
-lcm2[label = "Maleta 3\nPasajero 2"];
-lcm3[label = "Maleta 4\nPasajero 2"];
-lcm4[label = "Maleta 5\nPasajero 3"];
-lcm5[label = "Maleta 6\nPasajero 3"];
-lcm6[label = "Maleta 7\nPasajero 4"];
-lcm7[label = "Maleta 8\nPasajero 4"];
-lcm8[label = "Maleta 9\nPasajero 5"];
-lcm9[label = "Maleta 10\nPasajero 6"];
-lcm10[label = "Maleta 11\nPasajero 6"];
-lcm11[label = "Maleta 12\nPasajero 6"];
-lcm12[label = "Maleta 13\nPasajero 6"];
-lcm13[label = "Maleta 14\nPasajero 7"];
-lcm14[label = "Maleta 15\nPasajero 8"];
-lcm15[label = "Maleta 16\nPasajero 8"];
-lcm16[label = "Maleta 17\nPasajero 9"];
-lcm17[label = "Maleta 18\nPasajero 9"];
-lcm18[label = "Maleta 19\nPasajero 9"];
-lcm19[label = "Maleta 20\nPasajero 10"];
-lcm20[label = "Maleta 21\nPasajero 11"];
-{rank = same"lcm0";"lcm1";"lcm2";"lcm3";"lcm4";"lcm5";"lcm6";"lcm7";"lcm8";"lcm9";}
-{rank = same"lcm20";"lcm19";"lcm18";"lcm17";"lcm16";"lcm15";"lcm14";"lcm13";"lcm12";"lcm11";"lcm10";}
-lcm0->lcm1
-lcm1->lcm2
-lcm2->lcm3
-lcm3->lcm4
-lcm4->lcm5
-lcm5->lcm6
-lcm6->lcm7
-lcm7->lcm8
-lcm8->lcm9
-lcm9->lcm10
-lcm10->lcm11
-lcm11->lcm12
-lcm12->lcm13
-lcm13->lcm14
-lcm14->lcm15
-lcm15->lcm16
-lcm16->lcm17
-lcm17->lcm18
-lcm18->lcm19
-lcm19->lcm20
-lcm20->lcm0
-}}
+label = "Cola de espera para pasajeros "}subgraph clusterListaMaletas{
+label = "Maletas de pasajeros"
+}subgraph clusterEscritorios{
+label = "Escritorios"
+{rank = "same"
+le0[label ="Escritorio A\nPasajero atendido: ningunoTurnos restantes: 0"];
+}}}
 }

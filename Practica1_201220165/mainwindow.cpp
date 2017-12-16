@@ -17,6 +17,7 @@ MainWindow::MainWindow(QWidget *parent) :
     colapasajeros->primero = NULL;
     colapasajeros->ultimo = NULL;
     listamaletas->primero = NULL;
+    listaescritorios->primero = NULL;
     ui->textEdit->setText("********************INICIO********************");
 }
 
@@ -80,9 +81,17 @@ void MainWindow::on_pushButton_clicked()
             for(int i = 0; i < nummant; i++){
                 InsertarListaMantenimiento(listadepuestosmantenimiento, i+1);
             }
+            for(int i = 65; i < 65+numerodeesc; i++)
+            {
+                InsertarListaEscritorios(listaescritorios, (char)i);
+            }
             //MostrarColaLlegada(colallegada);
             Imprimir(ui->textEdit, listadepuestosmantenimiento);
-            Graficar *g = new Graficar(colallegada, listadepuestosmantenimiento, colamantenimiento, colapasajeros, listamaletas);
+            ImprimirListaConsola(ui->textEdit, listaescritorios);
+            Mostrar(listaescritorios);
+            Graficar *g = new Graficar(colallegada, listadepuestosmantenimiento, colamantenimiento, colapasajeros, listamaletas, listaescritorios);
+            Reportes *r = new Reportes();
+            r->show();
         }
     }
 }
@@ -176,8 +185,10 @@ void MainWindow::on_pushButton_2_clicked()
             }
             //MostrarColaLlegada(colallegada);
             Imprimir(ui->textEdit, listadepuestosmantenimiento);
-            std::cout<<"numero de pasajeros" <<idpasajeros<< std::endl;
-            Graficar *g = new Graficar(colallegada, listadepuestosmantenimiento, colamantenimiento, colapasajeros, listamaletas);
+            ImprimirListaConsola(ui->textEdit, listaescritorios);
+            Graficar *g = new Graficar(colallegada, listadepuestosmantenimiento, colamantenimiento, colapasajeros, listamaletas, listaescritorios);
+            Reportes *r = new Reportes();
+            r->show();
         }
     }else{
         QMessageBox::warning(this, "Simulacion finalizada", "Se ha completado el numero de turnos");
@@ -198,6 +209,7 @@ void MainWindow::on_pushButton_3_clicked()
     ui->lineEdit_4->setText("");
     ui->pushButton_3->setEnabled(false);
     ui->pushButton->setEnabled(true);
+    ui->textEdit->setText("");
     colallegada->primero = NULL;
     colallegada->ultimo = NULL;
     listadepuestosmantenimiento->primero = NULL;

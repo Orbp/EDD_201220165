@@ -1,6 +1,6 @@
 #include "graficar.h"
 
-Graficar::Graficar(coladoblellegada *cola, listamantenimiento *lista, Colaesperamantenimiento *colamentenimiento, ColaPasajeros *colapasa, ListaCircularMaleta *listacircular)
+Graficar::Graficar(coladoblellegada *cola, listamantenimiento *lista, Colaesperamantenimiento *colamentenimiento, ColaPasajeros *colapasa, ListaCircularMaleta *listacircular, ListaDobleEscritorios *listaesc)
 {
     grafica = fopen("Grafica.dot", "w+");
     fprintf(grafica, "digraph{ \n node[shape = record];");
@@ -11,6 +11,7 @@ Graficar::Graficar(coladoblellegada *cola, listamantenimiento *lista, Colaespera
     GraficarColaMantenimiento(colamentenimiento);
     GraficarColaPasajeros(colapasa);
     GraficarListaCircularMaletas(listacircular);
+    GraficarListaEscritorios(listaesc);
     fprintf(grafica, "}\n");
     fprintf(grafica, "}\n");
     fclose(grafica);
@@ -143,45 +144,83 @@ void Graficar::GraficarColaPasajeros(ColaPasajeros *colapasa){
 
 void Graficar::GraficarListaCircularMaletas(ListaCircularMaleta *lista){
     fprintf(grafica, "subgraph clusterListaMaletas{\n");
-    fprintf(grafica, "label = \"Maletas de pasajeros\"");
+    fprintf(grafica, "label = \"Maletas de pasajeros\"\n");
     if(lista->primero != NULL){
         int cont = 0;
         NodoCircularMaleta *aux = lista->primero;
-        fprintf(grafica, "lcm%d[label = \"Maleta %d\\nPasajero %d\"];\n", cont,aux->id, aux->idpas);
+        //fprintf(grafica, "{rank = same ");
+        fprintf(grafica, "lcm%d[label = \"Maleta %d\\nPasajero %d\"]; ", cont,aux->id, aux->idpas);
         aux = aux->siguiente;
         cont++;
+        int tama = TamaMaleta(lista);
         while(aux != lista->primero){
-            fprintf(grafica, "lcm%d[label = \"Maleta %d\\nPasajero %d\"];\n", cont, aux->id, aux->idpas);
+            fprintf(grafica, "lcm%d[label = \"Maleta %d\\nPasajero %d\"]; ", cont, aux->id, aux->idpas);
             aux = aux->siguiente;
+
             cont++;
         }
-        QString alin = "{rank = same";
-        for(int i = 0; i < cont/2; i++){
 
-            alin += "\"lcm" + QString::number(i) + "\";";
-        }
-        alin += "}\n{rank = same";
-        for(int i = cont -1; i >= cont/2; i--){
-            alin += "\"lcm" + QString::number(i) + "\";";
+        QString alin;
+        for(int i = 0; i <= cont/2; i++){
+            alin += "{rank = same lcm" + QString::number(i) + "; lcm" + QString::number((cont-1)-i) + ";}\n";
         }
         fprintf(grafica, alin.toStdString().c_str());
-        fprintf(grafica, "}\n");
+
         cont = 0;
         aux = lista->primero;;
         fprintf(grafica, "lcm%d->lcm%d\n", cont, cont+1);
         aux = aux->siguiente;
         cont++;
-
         while(aux != lista->primero){
             if(aux->siguiente != lista->primero){
                 fprintf(grafica, "lcm%d->lcm%d\n", cont, cont+1);
             }else{
                 fprintf(grafica, "lcm%d->lcm0\n", cont);
+                fprintf(grafica, "lcm0->lcm%d\n", cont);
             }
+            fprintf(grafica, "lcm%d->lcm%d\n", cont, cont-1);
             cont++;
             aux = aux->siguiente;
         }
 
+    }
+    fprintf(grafica, "}");
+}
+
+void Graficar::GraficarListaEscritorios(ListaDobleEscritorios *lista){
+    fprintf(grafica, "subgraph clusterEscritorios{\n");
+    fprintf(grafica, "label = \"Escritorios\"\n");
+    if(lista->primero != NULL)
+    {
+        NodoEscritorios *aux = lista->primero;
+        int cont = 0;
+        fprintf(grafica, "{rank = \"same\"\n");
+        while(aux != NULL){
+            fprintf(grafica, "le%d[label =\"Escritorio %c\\n", cont, aux->id);
+            if(aux->idpas == 0){
+                fprintf(grafica, "Pasajero atendido: ninguno\\n");
+            }else{
+                fprintf(grafica, "Pasajero atendido: %d\\n", aux->idpas);
+            }
+            fprintf(grafica, "Turnos restantes: %d\"];\n", aux->numturnos);
+            aux = aux->siguiente;
+            cont++;
+        }
+        fprintf(grafica, "}");
+        aux = lista->primero;
+        cont = 0;
+        while(aux != NULL){
+            if(cont == 0 && aux->siguiente != NULL){
+                fprintf(grafica, "le%d->le%d\n", cont, cont+1);
+            }else if(aux->siguiente == NULL && cont > 0){
+                fprintf(grafica, "le%d->le%d\n", cont, cont-1);
+            }else if(cont > 0){
+                fprintf(grafica, "le%d->le%d\n", cont, cont+1);
+                fprintf(grafica, "le%d->le%d\n", cont, cont-1);
+            }
+            aux = aux->siguiente;
+            cont++;
+        }
     }
     fprintf(grafica, "}");
 }
