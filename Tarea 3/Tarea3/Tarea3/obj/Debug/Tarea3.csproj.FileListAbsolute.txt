@@ -1,0 +1,6 @@
+C:\Users\oscar\Documents\GitHub\EDD_201220165\Tarea 3\Tarea3\Tarea3\bin\Debug\Tarea3.exe.config
+C:\Users\oscar\Documents\GitHub\EDD_201220165\Tarea 3\Tarea3\Tarea3\bin\Debug\Tarea3.exe
+C:\Users\oscar\Documents\GitHub\EDD_201220165\Tarea 3\Tarea3\Tarea3\bin\Debug\Tarea3.pdb
+C:\Users\oscar\Documents\GitHub\EDD_201220165\Tarea 3\Tarea3\Tarea3\obj\Debug\Tarea3.csprojResolveAssemblyReference.cache
+C:\Users\oscar\Documents\GitHub\EDD_201220165\Tarea 3\Tarea3\Tarea3\obj\Debug\Tarea3.exe
+C:\Users\oscar\Documents\GitHub\EDD_201220165\Tarea 3\Tarea3\Tarea3\obj\Debug\Tarea3.pdb
