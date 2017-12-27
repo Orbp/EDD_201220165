@@ -1,0 +1,505 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://tempuri.org/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:element name="IniciarArbol">
+        <s:complexType />
+      </s:element>
+      <s:element name="IniciarArbolResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="HelloWorld">
+        <s:complexType />
+      </s:element>
+      <s:element name="HelloWorldResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="HelloWorldResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CargarJuegoActual">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ruta" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CargarJuegoActualResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="CargarJuegos">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ruta" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CargarJuegosResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="CargarTablero">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ruta" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CargarTableroResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="CargarUsuarios">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ruta" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CargarUsuariosResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="CargarUsuariosResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="BuscarUsuario">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="pnickname" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="BuscarUsuarioResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="BuscarUsuarioResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Llamadaagraficar">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="tipo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ruta" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="LlamadaagraficarResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="LlamadaagraficarResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Devolverusuario">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="pnickname" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DevolverusuarioResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="DevolverusuarioResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ModificarUsuarios">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="pnickname" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="password" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="correo" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ModificarUsuariosResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="ModificarNicknameUsuarios">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="pnicknameantiguo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="pnicknamenuevo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="password" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="correo" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ModificarNicknameUsuariosResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="ModificarNicknameUsuariosResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="EliminarUsuarios">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="pnickname" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="EliminarUsuariosResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="EliminarUsuariosResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="IniciarArbolSoapIn">
+    <wsdl:part name="parameters" element="tns:IniciarArbol" />
+  </wsdl:message>
+  <wsdl:message name="IniciarArbolSoapOut">
+    <wsdl:part name="parameters" element="tns:IniciarArbolResponse" />
+  </wsdl:message>
+  <wsdl:message name="HelloWorldSoapIn">
+    <wsdl:part name="parameters" element="tns:HelloWorld" />
+  </wsdl:message>
+  <wsdl:message name="HelloWorldSoapOut">
+    <wsdl:part name="parameters" element="tns:HelloWorldResponse" />
+  </wsdl:message>
+  <wsdl:message name="CargarJuegoActualSoapIn">
+    <wsdl:part name="parameters" element="tns:CargarJuegoActual" />
+  </wsdl:message>
+  <wsdl:message name="CargarJuegoActualSoapOut">
+    <wsdl:part name="parameters" element="tns:CargarJuegoActualResponse" />
+  </wsdl:message>
+  <wsdl:message name="CargarJuegosSoapIn">
+    <wsdl:part name="parameters" element="tns:CargarJuegos" />
+  </wsdl:message>
+  <wsdl:message name="CargarJuegosSoapOut">
+    <wsdl:part name="parameters" element="tns:CargarJuegosResponse" />
+  </wsdl:message>
+  <wsdl:message name="CargarTableroSoapIn">
+    <wsdl:part name="parameters" element="tns:CargarTablero" />
+  </wsdl:message>
+  <wsdl:message name="CargarTableroSoapOut">
+    <wsdl:part name="parameters" element="tns:CargarTableroResponse" />
+  </wsdl:message>
+  <wsdl:message name="CargarUsuariosSoapIn">
+    <wsdl:part name="parameters" element="tns:CargarUsuarios" />
+  </wsdl:message>
+  <wsdl:message name="CargarUsuariosSoapOut">
+    <wsdl:part name="parameters" element="tns:CargarUsuariosResponse" />
+  </wsdl:message>
+  <wsdl:message name="BuscarUsuarioSoapIn">
+    <wsdl:part name="parameters" element="tns:BuscarUsuario" />
+  </wsdl:message>
+  <wsdl:message name="BuscarUsuarioSoapOut">
+    <wsdl:part name="parameters" element="tns:BuscarUsuarioResponse" />
+  </wsdl:message>
+  <wsdl:message name="LlamadaagraficarSoapIn">
+    <wsdl:part name="parameters" element="tns:Llamadaagraficar" />
+  </wsdl:message>
+  <wsdl:message name="LlamadaagraficarSoapOut">
+    <wsdl:part name="parameters" element="tns:LlamadaagraficarResponse" />
+  </wsdl:message>
+  <wsdl:message name="DevolverusuarioSoapIn">
+    <wsdl:part name="parameters" element="tns:Devolverusuario" />
+  </wsdl:message>
+  <wsdl:message name="DevolverusuarioSoapOut">
+    <wsdl:part name="parameters" element="tns:DevolverusuarioResponse" />
+  </wsdl:message>
+  <wsdl:message name="ModificarUsuariosSoapIn">
+    <wsdl:part name="parameters" element="tns:ModificarUsuarios" />
+  </wsdl:message>
+  <wsdl:message name="ModificarUsuariosSoapOut">
+    <wsdl:part name="parameters" element="tns:ModificarUsuariosResponse" />
+  </wsdl:message>
+  <wsdl:message name="ModificarNicknameUsuariosSoapIn">
+    <wsdl:part name="parameters" element="tns:ModificarNicknameUsuarios" />
+  </wsdl:message>
+  <wsdl:message name="ModificarNicknameUsuariosSoapOut">
+    <wsdl:part name="parameters" element="tns:ModificarNicknameUsuariosResponse" />
+  </wsdl:message>
+  <wsdl:message name="EliminarUsuariosSoapIn">
+    <wsdl:part name="parameters" element="tns:EliminarUsuarios" />
+  </wsdl:message>
+  <wsdl:message name="EliminarUsuariosSoapOut">
+    <wsdl:part name="parameters" element="tns:EliminarUsuariosResponse" />
+  </wsdl:message>
+  <wsdl:portType name="WebServiceProyectoSoap">
+    <wsdl:operation name="IniciarArbol">
+      <wsdl:input message="tns:IniciarArbolSoapIn" />
+      <wsdl:output message="tns:IniciarArbolSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="HelloWorld">
+      <wsdl:input message="tns:HelloWorldSoapIn" />
+      <wsdl:output message="tns:HelloWorldSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CargarJuegoActual">
+      <wsdl:input message="tns:CargarJuegoActualSoapIn" />
+      <wsdl:output message="tns:CargarJuegoActualSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CargarJuegos">
+      <wsdl:input message="tns:CargarJuegosSoapIn" />
+      <wsdl:output message="tns:CargarJuegosSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CargarTablero">
+      <wsdl:input message="tns:CargarTableroSoapIn" />
+      <wsdl:output message="tns:CargarTableroSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CargarUsuarios">
+      <wsdl:input message="tns:CargarUsuariosSoapIn" />
+      <wsdl:output message="tns:CargarUsuariosSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="BuscarUsuario">
+      <wsdl:input message="tns:BuscarUsuarioSoapIn" />
+      <wsdl:output message="tns:BuscarUsuarioSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Llamadaagraficar">
+      <wsdl:input message="tns:LlamadaagraficarSoapIn" />
+      <wsdl:output message="tns:LlamadaagraficarSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Devolverusuario">
+      <wsdl:input message="tns:DevolverusuarioSoapIn" />
+      <wsdl:output message="tns:DevolverusuarioSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ModificarUsuarios">
+      <wsdl:input message="tns:ModificarUsuariosSoapIn" />
+      <wsdl:output message="tns:ModificarUsuariosSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ModificarNicknameUsuarios">
+      <wsdl:input message="tns:ModificarNicknameUsuariosSoapIn" />
+      <wsdl:output message="tns:ModificarNicknameUsuariosSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="EliminarUsuarios">
+      <wsdl:input message="tns:EliminarUsuariosSoapIn" />
+      <wsdl:output message="tns:EliminarUsuariosSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="WebServiceProyectoSoap" type="tns:WebServiceProyectoSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="IniciarArbol">
+      <soap:operation soapAction="http://tempuri.org/IniciarArbol" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="HelloWorld">
+      <soap:operation soapAction="http://tempuri.org/HelloWorld" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CargarJuegoActual">
+      <soap:operation soapAction="http://tempuri.org/CargarJuegoActual" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CargarJuegos">
+      <soap:operation soapAction="http://tempuri.org/CargarJuegos" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CargarTablero">
+      <soap:operation soapAction="http://tempuri.org/CargarTablero" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CargarUsuarios">
+      <soap:operation soapAction="http://tempuri.org/CargarUsuarios" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="BuscarUsuario">
+      <soap:operation soapAction="http://tempuri.org/BuscarUsuario" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Llamadaagraficar">
+      <soap:operation soapAction="http://tempuri.org/Llamadaagraficar" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Devolverusuario">
+      <soap:operation soapAction="http://tempuri.org/Devolverusuario" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ModificarUsuarios">
+      <soap:operation soapAction="http://tempuri.org/ModificarUsuarios" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ModificarNicknameUsuarios">
+      <soap:operation soapAction="http://tempuri.org/ModificarNicknameUsuarios" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EliminarUsuarios">
+      <soap:operation soapAction="http://tempuri.org/EliminarUsuarios" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="WebServiceProyectoSoap12" type="tns:WebServiceProyectoSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="IniciarArbol">
+      <soap12:operation soapAction="http://tempuri.org/IniciarArbol" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="HelloWorld">
+      <soap12:operation soapAction="http://tempuri.org/HelloWorld" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CargarJuegoActual">
+      <soap12:operation soapAction="http://tempuri.org/CargarJuegoActual" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CargarJuegos">
+      <soap12:operation soapAction="http://tempuri.org/CargarJuegos" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CargarTablero">
+      <soap12:operation soapAction="http://tempuri.org/CargarTablero" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CargarUsuarios">
+      <soap12:operation soapAction="http://tempuri.org/CargarUsuarios" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="BuscarUsuario">
+      <soap12:operation soapAction="http://tempuri.org/BuscarUsuario" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Llamadaagraficar">
+      <soap12:operation soapAction="http://tempuri.org/Llamadaagraficar" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Devolverusuario">
+      <soap12:operation soapAction="http://tempuri.org/Devolverusuario" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ModificarUsuarios">
+      <soap12:operation soapAction="http://tempuri.org/ModificarUsuarios" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ModificarNicknameUsuarios">
+      <soap12:operation soapAction="http://tempuri.org/ModificarNicknameUsuarios" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EliminarUsuarios">
+      <soap12:operation soapAction="http://tempuri.org/EliminarUsuarios" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="WebServiceProyecto">
+    <wsdl:port name="WebServiceProyectoSoap" binding="tns:WebServiceProyectoSoap">
+      <soap:address location="http://localhost:5249/WebServiceProyecto.asmx" />
+    </wsdl:port>
+    <wsdl:port name="WebServiceProyectoSoap12" binding="tns:WebServiceProyectoSoap12">
+      <soap12:address location="http://localhost:5249/WebServiceProyecto.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

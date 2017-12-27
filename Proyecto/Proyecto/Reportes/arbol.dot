@@ -1,0 +1,33 @@
+digraph{
+node[shape = record];
+label = "Arbol de usuarios "
+aur[label = "<f0> | <f1> Nickname: Mord86\nCorreo: scelerisque.sed@lectusa.com\nConectado|<f2> "];
+auri[label = "<f0> | <f1> Nickname: Asro25\nCorreo: turpis.Aliquam.adipiscing@tincidunt.net\nNo Conectado|<f2> "];
+aurii[label = "<f0> | <f1> Nickname: Amer64\nCorreo: sit@eu.org\nNo Conectado|<f2> "];
+auriii[label = "<f0> | <f1> Nickname: Abwn30\nCorreo: imperdiet.non.vestibulum@tellusidnunc.ca\nNo Conectado|<f2> "];
+aurid[label = "<f0> | <f1> Nickname: Imre78\nCorreo: eget.dictum.placerat@atsem.net\nNo Conectado|<f2> "];
+auridi[label = "<f0> | <f1> Nickname: Avey48\nCorreo: Class@orci.net\nNo Conectado|<f2> "];
+auridid[label = "<f0> | <f1> Nickname: Idin94\nCorreo: tempus.non@nullaDonec.com\nNo Conectado|<f2> "];
+aurididi[label = "<f0> | <f1> Nickname: Axon36\nCorreo: Pellentesque.ultricies.dignissim@idmagnaet.ca\nNo Conectado|<f2> "];
+aurididid[label = "<f0> | <f1> Nickname: Frly47\nCorreo: elit.a@aliquamiaculis.ca\nConectado|<f2> "];
+auridd[label = "<f0> | <f1> Nickname: Kaez42\nCorreo: consectetuer.cursus.et@semmolestiesodales.co.uk\nNo Conectado|<f2> "];
+auriddi[label = "<f0> | <f1> Nickname: Jado86\nCorreo: eu@eleifendvitaeerat.org\nConectado|<f2> "];
+aurd[label = "<f0> | <f1> Nickname: Stin94\nCorreo: in.tempus@a.com\nConectado|<f2> "];
+aurdi[label = "<f0> | <f1> Nickname: Roan78\nCorreo: odio@Etiambibendumfermentum.edu\nConectado|<f2> "];
+aurdd[label = "<f0> | <f1> Nickname: Taon95\nCorreo: parturient@Nulla.co.uk\nNo Conectado|<f2> "];
+
+aur:f0->auri:f1;
+aur:f2->aurd:f1;
+auri:f0->aurii:f1;
+auri:f2->aurid:f1;
+aurii:f0->auriii:f1;
+aurid:f0->auridi:f1;
+aurid:f2->auridd:f1;
+auridi:f2->auridid:f1;
+auridid:f0->aurididi:f1;
+aurididi:f2->aurididid:f1;
+auridd:f0->auriddi:f1;
+aurd:f0->aurdi:f1;
+aurd:f2->aurdd:f1;
+
+}
