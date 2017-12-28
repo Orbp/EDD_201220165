@@ -1,0 +1,120 @@
+digraph{
+node[shape = record];
+label = "Arbol de usuarios "
+aur[label = "<f0> | <f1> Nickname: Mord86\nCorreo: scelerisque.sed@lectusa.com\nConectado|<f2> "];
+ljr0[label = "Jugador Base: Mord86\nOponente: Stin94\nUnidades Desplegadas: 10\nUnidades Sobrevivientes: 8\nUnidades Destruidas: 2\nGano la partida"];
+ljr1[label = "Jugador Base: Mord86\nOponente: Asro25\nUnidades Desplegadas: 15\nUnidades Sobrevivientes: 10\nUnidades Destruidas: 5\nGano la partida"];
+ljr2[label = "Jugador Base: Mord86\nOponente: Imre78\nUnidades Desplegadas: 20\nUnidades Sobrevivientes: 3\nUnidades Destruidas: 17\nPerdio la partida"];
+ljr3[label = "Jugador Base: Mord86\nOponente: Taon95\nUnidades Desplegadas: 16\nUnidades Sobrevivientes: 10\nUnidades Destruidas: 6\nPerdio la partida"];
+ljr4[label = "Jugador Base: Mord86\nOponente: Avey48\nUnidades Desplegadas: 18\nUnidades Sobrevivientes: 8\nUnidades Destruidas: 10\nPerdio la partida"];
+ljr5[label = "Jugador Base: Mord86\nOponente: Kaez42\nUnidades Desplegadas: 20\nUnidades Sobrevivientes: 10\nUnidades Destruidas: 10\nPerdio la partida"];
+ljr6[label = "Jugador Base: Mord86\nOponente: Idin94\nUnidades Desplegadas: 30\nUnidades Sobrevivientes: 29\nUnidades Destruidas: 1\nGano la partida"];
+ljr7[label = "Jugador Base: Mord86\nOponente: Jado86\nUnidades Desplegadas: 25\nUnidades Sobrevivientes: 1\nUnidades Destruidas: 24\nPerdio la partida"];
+ljr8[label = "Jugador Base: Mord86\nOponente: Stin94\nUnidades Desplegadas: 21\nUnidades Sobrevivientes: 15\nUnidades Destruidas: 6\nGano la partida"];
+ljr0->ljr1
+ljr1->ljr2
+ljr1->ljr0
+ljr2->ljr3
+ljr2->ljr1
+ljr3->ljr4
+ljr3->ljr2
+ljr4->ljr5
+ljr4->ljr3
+ljr5->ljr6
+ljr5->ljr4
+ljr6->ljr7
+ljr6->ljr5
+ljr7->ljr8
+ljr7->ljr6
+ljr8->ljr7
+auri[label = "<f0> | <f1> Nickname: Asro25\nCorreo: turpis.Aliquam.adipiscing@tincidunt.net\nNo Conectado|<f2> "];
+ljri0[label = "Jugador Base: Asro25\nOponente: Mord86\nUnidades Desplegadas: 15\nUnidades Sobrevivientes: 10\nUnidades Destruidas: 5\nPerdio la partida"];
+ljri1[label = "Jugador Base: Asro25\nOponente: Stin94\nUnidades Desplegadas: 19\nUnidades Sobrevivientes: 14\nUnidades Destruidas: 5\nGano la partida"];
+ljri0->ljri1
+ljri1->ljri0
+aurii[label = "<f0> | <f1> Nickname: Amer64\nCorreo: sit@eu.org\nNo Conectado|<f2> "];
+auriii[label = "<f0> | <f1> Nickname: Abwn30\nCorreo: imperdiet.non.vestibulum@tellusidnunc.ca\nNo Conectado|<f2> "];
+aurid[label = "<f0> | <f1> Nickname: Imre78\nCorreo: eget.dictum.placerat@atsem.net\nNo Conectado|<f2> "];
+ljrid0[label = "Jugador Base: Imre78\nOponente: Mord86\nUnidades Desplegadas: 20\nUnidades Sobrevivientes: 3\nUnidades Destruidas: 17\nGano la partida"];
+ljrid1[label = "Jugador Base: Imre78\nOponente: Stin94\nUnidades Desplegadas: 18\nUnidades Sobrevivientes: 16\nUnidades Destruidas: 2\nPerdio la partida"];
+ljrid0->ljrid1
+ljrid1->ljrid0
+auridi[label = "<f0> | <f1> Nickname: Avey48\nCorreo: Class@orci.net\nNo Conectado|<f2> "];
+ljridi0[label = "Jugador Base: Avey48\nOponente: Mord86\nUnidades Desplegadas: 18\nUnidades Sobrevivientes: 8\nUnidades Destruidas: 10\nGano la partida"];
+ljridi1[label = "Jugador Base: Avey48\nOponente: Stin94\nUnidades Desplegadas: 19\nUnidades Sobrevivientes: 10\nUnidades Destruidas: 9\nPerdio la partida"];
+ljridi0->ljridi1
+ljridi1->ljridi0
+auridid[label = "<f0> | <f1> Nickname: Idin94\nCorreo: tempus.non@nullaDonec.com\nNo Conectado|<f2> "];
+ljridid0[label = "Jugador Base: Idin94\nOponente: Mord86\nUnidades Desplegadas: 30\nUnidades Sobrevivientes: 29\nUnidades Destruidas: 1\nPerdio la partida"];
+ljridid1[label = "Jugador Base: Idin94\nOponente: Stin94\nUnidades Desplegadas: 23\nUnidades Sobrevivientes: 3\nUnidades Destruidas: 20\nPerdio la partida"];
+ljridid0->ljridid1
+ljridid1->ljridid0
+aurididi[label = "<f0> | <f1> Nickname: Axon36\nCorreo: Pellentesque.ultricies.dignissim@idmagnaet.ca\nNo Conectado|<f2> "];
+aurididid[label = "<f0> | <f1> Nickname: Frly47\nCorreo: elit.a@aliquamiaculis.ca\nConectado|<f2> "];
+auridd[label = "<f0> | <f1> Nickname: Kaez42\nCorreo: consectetuer.cursus.et@semmolestiesodales.co.uk\nNo Conectado|<f2> "];
+ljridd0[label = "Jugador Base: Kaez42\nOponente: Mord86\nUnidades Desplegadas: 20\nUnidades Sobrevivientes: 10\nUnidades Destruidas: 10\nGano la partida"];
+ljridd1[label = "Jugador Base: Kaez42\nOponente: Stin94\nUnidades Desplegadas: 17\nUnidades Sobrevivientes: 8\nUnidades Destruidas: 9\nGano la partida"];
+ljridd0->ljridd1
+ljridd1->ljridd0
+auriddi[label = "<f0> | <f1> Nickname: Jado86\nCorreo: eu@eleifendvitaeerat.org\nConectado|<f2> "];
+ljriddi0[label = "Jugador Base: Jado86\nOponente: Mord86\nUnidades Desplegadas: 25\nUnidades Sobrevivientes: 1\nUnidades Destruidas: 24\nGano la partida"];
+ljriddi1[label = "Jugador Base: Jado86\nOponente: Stin94\nUnidades Desplegadas: 28\nUnidades Sobrevivientes: 5\nUnidades Destruidas: 23\nPerdio la partida"];
+ljriddi0->ljriddi1
+ljriddi1->ljriddi0
+aurd[label = "<f0> | <f1> Nickname: Stin94\nCorreo: in.tempus@a.com\nConectado|<f2> "];
+ljrd0[label = "Jugador Base: Stin94\nOponente: Mord86\nUnidades Desplegadas: 10\nUnidades Sobrevivientes: 8\nUnidades Destruidas: 2\nPerdio la partida"];
+ljrd1[label = "Jugador Base: Stin94\nOponente: Mord86\nUnidades Desplegadas: 21\nUnidades Sobrevivientes: 15\nUnidades Destruidas: 6\nPerdio la partida"];
+ljrd2[label = "Jugador Base: Stin94\nOponente: Asro25\nUnidades Desplegadas: 19\nUnidades Sobrevivientes: 14\nUnidades Destruidas: 5\nPerdio la partida"];
+ljrd3[label = "Jugador Base: Stin94\nOponente: Imre78\nUnidades Desplegadas: 18\nUnidades Sobrevivientes: 16\nUnidades Destruidas: 2\nGano la partida"];
+ljrd4[label = "Jugador Base: Stin94\nOponente: Taon95\nUnidades Desplegadas: 10\nUnidades Sobrevivientes: 9\nUnidades Destruidas: 1\nPerdio la partida"];
+ljrd5[label = "Jugador Base: Stin94\nOponente: Avey48\nUnidades Desplegadas: 19\nUnidades Sobrevivientes: 10\nUnidades Destruidas: 9\nGano la partida"];
+ljrd6[label = "Jugador Base: Stin94\nOponente: Kaez42\nUnidades Desplegadas: 17\nUnidades Sobrevivientes: 8\nUnidades Destruidas: 9\nPerdio la partida"];
+ljrd7[label = "Jugador Base: Stin94\nOponente: Idin94\nUnidades Desplegadas: 23\nUnidades Sobrevivientes: 3\nUnidades Destruidas: 20\nGano la partida"];
+ljrd8[label = "Jugador Base: Stin94\nOponente: Jado86\nUnidades Desplegadas: 28\nUnidades Sobrevivientes: 5\nUnidades Destruidas: 23\nGano la partida"];
+ljrd0->ljrd1
+ljrd1->ljrd2
+ljrd1->ljrd0
+ljrd2->ljrd3
+ljrd2->ljrd1
+ljrd3->ljrd4
+ljrd3->ljrd2
+ljrd4->ljrd5
+ljrd4->ljrd3
+ljrd5->ljrd6
+ljrd5->ljrd4
+ljrd6->ljrd7
+ljrd6->ljrd5
+ljrd7->ljrd8
+ljrd7->ljrd6
+ljrd8->ljrd7
+aurdi[label = "<f0> | <f1> Nickname: Roan78\nCorreo: odio@Etiambibendumfermentum.edu\nConectado|<f2> "];
+aurdd[label = "<f0> | <f1> Nickname: Taon95\nCorreo: parturient@Nulla.co.uk\nNo Conectado|<f2> "];
+ljrdd0[label = "Jugador Base: Taon95\nOponente: Mord86\nUnidades Desplegadas: 16\nUnidades Sobrevivientes: 10\nUnidades Destruidas: 6\nGano la partida"];
+ljrdd1[label = "Jugador Base: Taon95\nOponente: Stin94\nUnidades Desplegadas: 10\nUnidades Sobrevivientes: 9\nUnidades Destruidas: 1\nGano la partida"];
+ljrdd0->ljrdd1
+ljrdd1->ljrdd0
+
+aur:f0->auri:f1;
+aur:f2->aurd:f1;
+aur:f1->ljr0;
+auri:f0->aurii:f1;
+auri:f2->aurid:f1;
+auri:f1->ljri0;
+aurii:f0->auriii:f1;
+aurid:f0->auridi:f1;
+aurid:f2->auridd:f1;
+aurid:f1->ljrid0;
+auridi:f2->auridid:f1;
+auridi:f1->ljridi0;
+auridid:f0->aurididi:f1;
+auridid:f1->ljridid0;
+aurididi:f2->aurididid:f1;
+auridd:f0->auriddi:f1;
+auridd:f1->ljridd0;
+auriddi:f1->ljriddi0;
+aurd:f0->aurdi:f1;
+aurd:f2->aurdd:f1;
+aurd:f1->ljrd0;
+aurdd:f1->ljrdd0;
+
+}
