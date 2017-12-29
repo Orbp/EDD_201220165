@@ -2,3 +2,8 @@ C:\Users\oscar\Documents\GitHub\EDD_201220165\Proyecto\Proyecto\bin\Proyecto.dll
 C:\Users\oscar\Documents\GitHub\EDD_201220165\Proyecto\Proyecto\bin\Proyecto.pdb
 C:\Users\oscar\Documents\GitHub\EDD_201220165\Proyecto\Proyecto\obj\Debug\Proyecto.dll
 C:\Users\oscar\Documents\GitHub\EDD_201220165\Proyecto\Proyecto\obj\Debug\Proyecto.pdb
+C:\Users\oscar\Documents\GitHub\EDD_201220165\proyecto_fase1\Proyecto\Proyecto\bin\Proyecto.dll
+C:\Users\oscar\Documents\GitHub\EDD_201220165\proyecto_fase1\Proyecto\Proyecto\bin\Proyecto.pdb
+C:\Users\oscar\Documents\GitHub\EDD_201220165\proyecto_fase1\Proyecto\Proyecto\obj\Debug\Proyecto.dll
+C:\Users\oscar\Documents\GitHub\EDD_201220165\proyecto_fase1\Proyecto\Proyecto\obj\Debug\Proyecto.pdb
+C:\Users\oscar\Documents\GitHub\EDD_201220165\proyecto_fase1\Proyecto\Proyecto\obj\Debug\Proyecto.csprojResolveAssemblyReference.cache

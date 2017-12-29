@@ -9,7 +9,53 @@
 //------------------------------------------------------------------------------
 
 namespace Proyecto.ServiceReference1 {
+    using System.Runtime.Serialization;
+    using System;
     
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="ArbolUsuarios", Namespace="http://tempuri.org/")]
+    [System.SerializableAttribute()]
+    public partial class ArbolUsuarios : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        private bool espejoField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true)]
+        public bool espejo {
+            get {
+                return this.espejoField;
+            }
+            set {
+                if ((this.espejoField.Equals(value) != true)) {
+                    this.espejoField = value;
+                    this.RaisePropertyChanged("espejo");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ServiceModel.ServiceContractAttribute(ConfigurationName="ServiceReference1.WebServiceProyectoSoap")]
@@ -21,6 +67,10 @@ namespace Proyecto.ServiceReference1 {
         // CODEGEN: Se está generando un contrato de mensaje, ya que el nombre de elemento HelloWorldResult del espacio de nombres http://tempuri.org/ no está marcado para aceptar valores nil.
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/HelloWorld", ReplyAction="*")]
         Proyecto.ServiceReference1.HelloWorldResponse HelloWorld(Proyecto.ServiceReference1.HelloWorldRequest request);
+        
+        // CODEGEN: Se está generando un contrato de mensaje, ya que el nombre de elemento LUsuariosResult del espacio de nombres http://tempuri.org/ no está marcado para aceptar valores nil.
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/LUsuarios", ReplyAction="*")]
+        Proyecto.ServiceReference1.LUsuariosResponse LUsuarios(Proyecto.ServiceReference1.LUsuariosRequest request);
         
         // CODEGEN: Se está generando un contrato de mensaje, ya que el nombre de elemento pusuario1 del espacio de nombres http://tempuri.org/ no está marcado para aceptar valores nil.
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/SetDatosJuego", ReplyAction="*")]
@@ -79,6 +129,10 @@ namespace Proyecto.ServiceReference1 {
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/BuscarUsuario", ReplyAction="*")]
         Proyecto.ServiceReference1.BuscarUsuarioResponse BuscarUsuario(Proyecto.ServiceReference1.BuscarUsuarioRequest request);
         
+        // CODEGEN: Se está generando un contrato de mensaje, ya que el nombre de elemento nickname del espacio de nombres http://tempuri.org/ no está marcado para aceptar valores nil.
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/Validar", ReplyAction="*")]
+        Proyecto.ServiceReference1.ValidarResponse Validar(Proyecto.ServiceReference1.ValidarRequest request);
+        
         // CODEGEN: Se está generando un contrato de mensaje, ya que el nombre de elemento tipo del espacio de nombres http://tempuri.org/ no está marcado para aceptar valores nil.
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/Llamadaagraficar", ReplyAction="*")]
         Proyecto.ServiceReference1.LlamadaagraficarResponse Llamadaagraficar(Proyecto.ServiceReference1.LlamadaagraficarRequest request);
@@ -98,6 +152,40 @@ namespace Proyecto.ServiceReference1 {
         // CODEGEN: Se está generando un contrato de mensaje, ya que el nombre de elemento pnickname del espacio de nombres http://tempuri.org/ no está marcado para aceptar valores nil.
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/EliminarUsuarios", ReplyAction="*")]
         Proyecto.ServiceReference1.EliminarUsuariosResponse EliminarUsuarios(Proyecto.ServiceReference1.EliminarUsuariosRequest request);
+        
+        // CODEGEN: Se está generando un contrato de mensaje, ya que el nombre de elemento jugador1 del espacio de nombres http://tempuri.org/ no está marcado para aceptar valores nil.
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/InsertarJuego", ReplyAction="*")]
+        Proyecto.ServiceReference1.InsertarJuegoResponse InsertarJuego(Proyecto.ServiceReference1.InsertarJuegoRequest request);
+        
+        // CODEGEN: Se está generando un contrato de mensaje, ya que el nombre de elemento jugador del espacio de nombres http://tempuri.org/ no está marcado para aceptar valores nil.
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/DevolverListajuegos", ReplyAction="*")]
+        Proyecto.ServiceReference1.DevolverListajuegosResponse DevolverListajuegos(Proyecto.ServiceReference1.DevolverListajuegosRequest request);
+        
+        // CODEGEN: Se está generando un contrato de mensaje, ya que el nombre de elemento jugador1 del espacio de nombres http://tempuri.org/ no está marcado para aceptar valores nil.
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/BorrardeListaJuegos", ReplyAction="*")]
+        Proyecto.ServiceReference1.BorrardeListaJuegosResponse BorrardeListaJuegos(Proyecto.ServiceReference1.BorrardeListaJuegosRequest request);
+        
+        // CODEGEN: Se está generando un contrato de mensaje, ya que el nombre de elemento jugador1 del espacio de nombres http://tempuri.org/ no está marcado para aceptar valores nil.
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/DevolverDatosJuego", ReplyAction="*")]
+        Proyecto.ServiceReference1.DevolverDatosJuegoResponse DevolverDatosJuego(Proyecto.ServiceReference1.DevolverDatosJuegoRequest request);
+        
+        // CODEGEN: Se está generando un contrato de mensaje, ya que el nombre de elemento jugador1 del espacio de nombres http://tempuri.org/ no está marcado para aceptar valores nil.
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ModificarDatosJuego", ReplyAction="*")]
+        Proyecto.ServiceReference1.ModificarDatosJuegoResponse ModificarDatosJuego(Proyecto.ServiceReference1.ModificarDatosJuegoRequest request);
+        
+        // CODEGEN: Se está generando un contrato de mensaje, ya que el nombre de elemento GenerarArbolEspejoResult del espacio de nombres http://tempuri.org/ no está marcado para aceptar valores nil.
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/GenerarArbolEspejo", ReplyAction="*")]
+        Proyecto.ServiceReference1.GenerarArbolEspejoResponse GenerarArbolEspejo(Proyecto.ServiceReference1.GenerarArbolEspejoRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/InicializarMatrizInicial", ReplyAction="*")]
+        void InicializarMatrizInicial();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ExisteNodo", ReplyAction="*")]
+        bool ExisteNodo(int nivel, char columna, int fila);
+        
+        // CODEGEN: Se está generando un contrato de mensaje, ya que el nombre de elemento idunidad del espacio de nombres http://tempuri.org/ no está marcado para aceptar valores nil.
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/InsertarTablero", ReplyAction="*")]
+        Proyecto.ServiceReference1.InsertarTableroResponse InsertarTablero(Proyecto.ServiceReference1.InsertarTableroRequest request);
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
@@ -158,6 +246,67 @@ namespace Proyecto.ServiceReference1 {
         
         public HelloWorldResponseBody(string HelloWorldResult) {
             this.HelloWorldResult = HelloWorldResult;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class LUsuariosRequest {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="LUsuarios", Namespace="http://tempuri.org/", Order=0)]
+        public Proyecto.ServiceReference1.LUsuariosRequestBody Body;
+        
+        public LUsuariosRequest() {
+        }
+        
+        public LUsuariosRequest(Proyecto.ServiceReference1.LUsuariosRequestBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute()]
+    public partial class LUsuariosRequestBody {
+        
+        public LUsuariosRequestBody() {
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class LUsuariosResponse {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="LUsuariosResponse", Namespace="http://tempuri.org/", Order=0)]
+        public Proyecto.ServiceReference1.LUsuariosResponseBody Body;
+        
+        public LUsuariosResponse() {
+        }
+        
+        public LUsuariosResponse(Proyecto.ServiceReference1.LUsuariosResponseBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://tempuri.org/")]
+    public partial class LUsuariosResponseBody {
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
+        public string LUsuariosResult;
+        
+        public LUsuariosResponseBody() {
+        }
+        
+        public LUsuariosResponseBody(string LUsuariosResult) {
+            this.LUsuariosResult = LUsuariosResult;
         }
     }
     
@@ -771,6 +920,78 @@ namespace Proyecto.ServiceReference1 {
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
     [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class ValidarRequest {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="Validar", Namespace="http://tempuri.org/", Order=0)]
+        public Proyecto.ServiceReference1.ValidarRequestBody Body;
+        
+        public ValidarRequest() {
+        }
+        
+        public ValidarRequest(Proyecto.ServiceReference1.ValidarRequestBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://tempuri.org/")]
+    public partial class ValidarRequestBody {
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
+        public string nickname;
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=1)]
+        public string password;
+        
+        public ValidarRequestBody() {
+        }
+        
+        public ValidarRequestBody(string nickname, string password) {
+            this.nickname = nickname;
+            this.password = password;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class ValidarResponse {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="ValidarResponse", Namespace="http://tempuri.org/", Order=0)]
+        public Proyecto.ServiceReference1.ValidarResponseBody Body;
+        
+        public ValidarResponse() {
+        }
+        
+        public ValidarResponse(Proyecto.ServiceReference1.ValidarResponseBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://tempuri.org/")]
+    public partial class ValidarResponseBody {
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Order=0)]
+        public bool ValidarResult;
+        
+        public ValidarResponseBody() {
+        }
+        
+        public ValidarResponseBody(bool ValidarResult) {
+            this.ValidarResult = ValidarResult;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
     public partial class LlamadaagraficarRequest {
         
         [System.ServiceModel.MessageBodyMemberAttribute(Name="Llamadaagraficar", Namespace="http://tempuri.org/", Order=0)]
@@ -1124,6 +1345,563 @@ namespace Proyecto.ServiceReference1 {
         }
     }
     
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class InsertarJuegoRequest {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="InsertarJuego", Namespace="http://tempuri.org/", Order=0)]
+        public Proyecto.ServiceReference1.InsertarJuegoRequestBody Body;
+        
+        public InsertarJuegoRequest() {
+        }
+        
+        public InsertarJuegoRequest(Proyecto.ServiceReference1.InsertarJuegoRequestBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://tempuri.org/")]
+    public partial class InsertarJuegoRequestBody {
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
+        public string jugador1;
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=1)]
+        public string jugador2;
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Order=2)]
+        public int unidadesdes;
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Order=3)]
+        public int unidadessob;
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Order=4)]
+        public int unidadesdest;
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Order=5)]
+        public bool gano;
+        
+        public InsertarJuegoRequestBody() {
+        }
+        
+        public InsertarJuegoRequestBody(string jugador1, string jugador2, int unidadesdes, int unidadessob, int unidadesdest, bool gano) {
+            this.jugador1 = jugador1;
+            this.jugador2 = jugador2;
+            this.unidadesdes = unidadesdes;
+            this.unidadessob = unidadessob;
+            this.unidadesdest = unidadesdest;
+            this.gano = gano;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class InsertarJuegoResponse {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="InsertarJuegoResponse", Namespace="http://tempuri.org/", Order=0)]
+        public Proyecto.ServiceReference1.InsertarJuegoResponseBody Body;
+        
+        public InsertarJuegoResponse() {
+        }
+        
+        public InsertarJuegoResponse(Proyecto.ServiceReference1.InsertarJuegoResponseBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute()]
+    public partial class InsertarJuegoResponseBody {
+        
+        public InsertarJuegoResponseBody() {
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class DevolverListajuegosRequest {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="DevolverListajuegos", Namespace="http://tempuri.org/", Order=0)]
+        public Proyecto.ServiceReference1.DevolverListajuegosRequestBody Body;
+        
+        public DevolverListajuegosRequest() {
+        }
+        
+        public DevolverListajuegosRequest(Proyecto.ServiceReference1.DevolverListajuegosRequestBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://tempuri.org/")]
+    public partial class DevolverListajuegosRequestBody {
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
+        public string jugador;
+        
+        public DevolverListajuegosRequestBody() {
+        }
+        
+        public DevolverListajuegosRequestBody(string jugador) {
+            this.jugador = jugador;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class DevolverListajuegosResponse {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="DevolverListajuegosResponse", Namespace="http://tempuri.org/", Order=0)]
+        public Proyecto.ServiceReference1.DevolverListajuegosResponseBody Body;
+        
+        public DevolverListajuegosResponse() {
+        }
+        
+        public DevolverListajuegosResponse(Proyecto.ServiceReference1.DevolverListajuegosResponseBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://tempuri.org/")]
+    public partial class DevolverListajuegosResponseBody {
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
+        public string DevolverListajuegosResult;
+        
+        public DevolverListajuegosResponseBody() {
+        }
+        
+        public DevolverListajuegosResponseBody(string DevolverListajuegosResult) {
+            this.DevolverListajuegosResult = DevolverListajuegosResult;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class BorrardeListaJuegosRequest {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="BorrardeListaJuegos", Namespace="http://tempuri.org/", Order=0)]
+        public Proyecto.ServiceReference1.BorrardeListaJuegosRequestBody Body;
+        
+        public BorrardeListaJuegosRequest() {
+        }
+        
+        public BorrardeListaJuegosRequest(Proyecto.ServiceReference1.BorrardeListaJuegosRequestBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://tempuri.org/")]
+    public partial class BorrardeListaJuegosRequestBody {
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
+        public string jugador1;
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=1)]
+        public string jugador2;
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Order=2)]
+        public int unidadesdes;
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Order=3)]
+        public int unidadessob;
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Order=4)]
+        public int unidadesdest;
+        
+        public BorrardeListaJuegosRequestBody() {
+        }
+        
+        public BorrardeListaJuegosRequestBody(string jugador1, string jugador2, int unidadesdes, int unidadessob, int unidadesdest) {
+            this.jugador1 = jugador1;
+            this.jugador2 = jugador2;
+            this.unidadesdes = unidadesdes;
+            this.unidadessob = unidadessob;
+            this.unidadesdest = unidadesdest;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class BorrardeListaJuegosResponse {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="BorrardeListaJuegosResponse", Namespace="http://tempuri.org/", Order=0)]
+        public Proyecto.ServiceReference1.BorrardeListaJuegosResponseBody Body;
+        
+        public BorrardeListaJuegosResponse() {
+        }
+        
+        public BorrardeListaJuegosResponse(Proyecto.ServiceReference1.BorrardeListaJuegosResponseBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute()]
+    public partial class BorrardeListaJuegosResponseBody {
+        
+        public BorrardeListaJuegosResponseBody() {
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class DevolverDatosJuegoRequest {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="DevolverDatosJuego", Namespace="http://tempuri.org/", Order=0)]
+        public Proyecto.ServiceReference1.DevolverDatosJuegoRequestBody Body;
+        
+        public DevolverDatosJuegoRequest() {
+        }
+        
+        public DevolverDatosJuegoRequest(Proyecto.ServiceReference1.DevolverDatosJuegoRequestBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://tempuri.org/")]
+    public partial class DevolverDatosJuegoRequestBody {
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
+        public string jugador1;
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=1)]
+        public string jugador2;
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Order=2)]
+        public int unidadesdes;
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Order=3)]
+        public int unidadessob;
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Order=4)]
+        public int unidadesdest;
+        
+        public DevolverDatosJuegoRequestBody() {
+        }
+        
+        public DevolverDatosJuegoRequestBody(string jugador1, string jugador2, int unidadesdes, int unidadessob, int unidadesdest) {
+            this.jugador1 = jugador1;
+            this.jugador2 = jugador2;
+            this.unidadesdes = unidadesdes;
+            this.unidadessob = unidadessob;
+            this.unidadesdest = unidadesdest;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class DevolverDatosJuegoResponse {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="DevolverDatosJuegoResponse", Namespace="http://tempuri.org/", Order=0)]
+        public Proyecto.ServiceReference1.DevolverDatosJuegoResponseBody Body;
+        
+        public DevolverDatosJuegoResponse() {
+        }
+        
+        public DevolverDatosJuegoResponse(Proyecto.ServiceReference1.DevolverDatosJuegoResponseBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://tempuri.org/")]
+    public partial class DevolverDatosJuegoResponseBody {
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
+        public string DevolverDatosJuegoResult;
+        
+        public DevolverDatosJuegoResponseBody() {
+        }
+        
+        public DevolverDatosJuegoResponseBody(string DevolverDatosJuegoResult) {
+            this.DevolverDatosJuegoResult = DevolverDatosJuegoResult;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class ModificarDatosJuegoRequest {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="ModificarDatosJuego", Namespace="http://tempuri.org/", Order=0)]
+        public Proyecto.ServiceReference1.ModificarDatosJuegoRequestBody Body;
+        
+        public ModificarDatosJuegoRequest() {
+        }
+        
+        public ModificarDatosJuegoRequest(Proyecto.ServiceReference1.ModificarDatosJuegoRequestBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://tempuri.org/")]
+    public partial class ModificarDatosJuegoRequestBody {
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
+        public string jugador1;
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=1)]
+        public string oponenteantiguo;
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=2)]
+        public string oponentenuevo;
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Order=3)]
+        public int unidadesdesant;
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Order=4)]
+        public int unidadesdesnue;
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Order=5)]
+        public int unidadessobant;
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Order=6)]
+        public int unidadessobnue;
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Order=7)]
+        public int unidadesdestant;
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Order=8)]
+        public int unidadesdestnue;
+        
+        public ModificarDatosJuegoRequestBody() {
+        }
+        
+        public ModificarDatosJuegoRequestBody(string jugador1, string oponenteantiguo, string oponentenuevo, int unidadesdesant, int unidadesdesnue, int unidadessobant, int unidadessobnue, int unidadesdestant, int unidadesdestnue) {
+            this.jugador1 = jugador1;
+            this.oponenteantiguo = oponenteantiguo;
+            this.oponentenuevo = oponentenuevo;
+            this.unidadesdesant = unidadesdesant;
+            this.unidadesdesnue = unidadesdesnue;
+            this.unidadessobant = unidadessobant;
+            this.unidadessobnue = unidadessobnue;
+            this.unidadesdestant = unidadesdestant;
+            this.unidadesdestnue = unidadesdestnue;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class ModificarDatosJuegoResponse {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="ModificarDatosJuegoResponse", Namespace="http://tempuri.org/", Order=0)]
+        public Proyecto.ServiceReference1.ModificarDatosJuegoResponseBody Body;
+        
+        public ModificarDatosJuegoResponse() {
+        }
+        
+        public ModificarDatosJuegoResponse(Proyecto.ServiceReference1.ModificarDatosJuegoResponseBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute()]
+    public partial class ModificarDatosJuegoResponseBody {
+        
+        public ModificarDatosJuegoResponseBody() {
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class GenerarArbolEspejoRequest {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="GenerarArbolEspejo", Namespace="http://tempuri.org/", Order=0)]
+        public Proyecto.ServiceReference1.GenerarArbolEspejoRequestBody Body;
+        
+        public GenerarArbolEspejoRequest() {
+        }
+        
+        public GenerarArbolEspejoRequest(Proyecto.ServiceReference1.GenerarArbolEspejoRequestBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute()]
+    public partial class GenerarArbolEspejoRequestBody {
+        
+        public GenerarArbolEspejoRequestBody() {
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class GenerarArbolEspejoResponse {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="GenerarArbolEspejoResponse", Namespace="http://tempuri.org/", Order=0)]
+        public Proyecto.ServiceReference1.GenerarArbolEspejoResponseBody Body;
+        
+        public GenerarArbolEspejoResponse() {
+        }
+        
+        public GenerarArbolEspejoResponse(Proyecto.ServiceReference1.GenerarArbolEspejoResponseBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://tempuri.org/")]
+    public partial class GenerarArbolEspejoResponseBody {
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
+        public Proyecto.ServiceReference1.ArbolUsuarios GenerarArbolEspejoResult;
+        
+        public GenerarArbolEspejoResponseBody() {
+        }
+        
+        public GenerarArbolEspejoResponseBody(Proyecto.ServiceReference1.ArbolUsuarios GenerarArbolEspejoResult) {
+            this.GenerarArbolEspejoResult = GenerarArbolEspejoResult;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class InsertarTableroRequest {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="InsertarTablero", Namespace="http://tempuri.org/", Order=0)]
+        public Proyecto.ServiceReference1.InsertarTableroRequestBody Body;
+        
+        public InsertarTableroRequest() {
+        }
+        
+        public InsertarTableroRequest(Proyecto.ServiceReference1.InsertarTableroRequestBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://tempuri.org/")]
+    public partial class InsertarTableroRequestBody {
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Order=0)]
+        public int fila;
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Order=1)]
+        public char columna;
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Order=2)]
+        public int nivel;
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Order=3)]
+        public int movimiento;
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Order=4)]
+        public int alcance;
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Order=5)]
+        public int ataque;
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Order=6)]
+        public int vida;
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=7)]
+        public string idunidad;
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=8)]
+        public string idjugador;
+        
+        public InsertarTableroRequestBody() {
+        }
+        
+        public InsertarTableroRequestBody(int fila, char columna, int nivel, int movimiento, int alcance, int ataque, int vida, string idunidad, string idjugador) {
+            this.fila = fila;
+            this.columna = columna;
+            this.nivel = nivel;
+            this.movimiento = movimiento;
+            this.alcance = alcance;
+            this.ataque = ataque;
+            this.vida = vida;
+            this.idunidad = idunidad;
+            this.idjugador = idjugador;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class InsertarTableroResponse {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="InsertarTableroResponse", Namespace="http://tempuri.org/", Order=0)]
+        public Proyecto.ServiceReference1.InsertarTableroResponseBody Body;
+        
+        public InsertarTableroResponse() {
+        }
+        
+        public InsertarTableroResponse(Proyecto.ServiceReference1.InsertarTableroResponseBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute()]
+    public partial class InsertarTableroResponseBody {
+        
+        public InsertarTableroResponseBody() {
+        }
+    }
+    
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     public interface WebServiceProyectoSoapChannel : Proyecto.ServiceReference1.WebServiceProyectoSoap, System.ServiceModel.IClientChannel {
     }
@@ -1165,6 +1943,18 @@ namespace Proyecto.ServiceReference1 {
             inValue.Body = new Proyecto.ServiceReference1.HelloWorldRequestBody();
             Proyecto.ServiceReference1.HelloWorldResponse retVal = ((Proyecto.ServiceReference1.WebServiceProyectoSoap)(this)).HelloWorld(inValue);
             return retVal.Body.HelloWorldResult;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        Proyecto.ServiceReference1.LUsuariosResponse Proyecto.ServiceReference1.WebServiceProyectoSoap.LUsuarios(Proyecto.ServiceReference1.LUsuariosRequest request) {
+            return base.Channel.LUsuarios(request);
+        }
+        
+        public string LUsuarios() {
+            Proyecto.ServiceReference1.LUsuariosRequest inValue = new Proyecto.ServiceReference1.LUsuariosRequest();
+            inValue.Body = new Proyecto.ServiceReference1.LUsuariosRequestBody();
+            Proyecto.ServiceReference1.LUsuariosResponse retVal = ((Proyecto.ServiceReference1.WebServiceProyectoSoap)(this)).LUsuarios(inValue);
+            return retVal.Body.LUsuariosResult;
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
@@ -1316,6 +2106,20 @@ namespace Proyecto.ServiceReference1 {
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        Proyecto.ServiceReference1.ValidarResponse Proyecto.ServiceReference1.WebServiceProyectoSoap.Validar(Proyecto.ServiceReference1.ValidarRequest request) {
+            return base.Channel.Validar(request);
+        }
+        
+        public bool Validar(string nickname, string password) {
+            Proyecto.ServiceReference1.ValidarRequest inValue = new Proyecto.ServiceReference1.ValidarRequest();
+            inValue.Body = new Proyecto.ServiceReference1.ValidarRequestBody();
+            inValue.Body.nickname = nickname;
+            inValue.Body.password = password;
+            Proyecto.ServiceReference1.ValidarResponse retVal = ((Proyecto.ServiceReference1.WebServiceProyectoSoap)(this)).Validar(inValue);
+            return retVal.Body.ValidarResult;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
         Proyecto.ServiceReference1.LlamadaagraficarResponse Proyecto.ServiceReference1.WebServiceProyectoSoap.Llamadaagraficar(Proyecto.ServiceReference1.LlamadaagraficarRequest request) {
             return base.Channel.Llamadaagraficar(request);
         }
@@ -1383,6 +2187,129 @@ namespace Proyecto.ServiceReference1 {
             inValue.Body.pnickname = pnickname;
             Proyecto.ServiceReference1.EliminarUsuariosResponse retVal = ((Proyecto.ServiceReference1.WebServiceProyectoSoap)(this)).EliminarUsuarios(inValue);
             return retVal.Body.EliminarUsuariosResult;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        Proyecto.ServiceReference1.InsertarJuegoResponse Proyecto.ServiceReference1.WebServiceProyectoSoap.InsertarJuego(Proyecto.ServiceReference1.InsertarJuegoRequest request) {
+            return base.Channel.InsertarJuego(request);
+        }
+        
+        public void InsertarJuego(string jugador1, string jugador2, int unidadesdes, int unidadessob, int unidadesdest, bool gano) {
+            Proyecto.ServiceReference1.InsertarJuegoRequest inValue = new Proyecto.ServiceReference1.InsertarJuegoRequest();
+            inValue.Body = new Proyecto.ServiceReference1.InsertarJuegoRequestBody();
+            inValue.Body.jugador1 = jugador1;
+            inValue.Body.jugador2 = jugador2;
+            inValue.Body.unidadesdes = unidadesdes;
+            inValue.Body.unidadessob = unidadessob;
+            inValue.Body.unidadesdest = unidadesdest;
+            inValue.Body.gano = gano;
+            Proyecto.ServiceReference1.InsertarJuegoResponse retVal = ((Proyecto.ServiceReference1.WebServiceProyectoSoap)(this)).InsertarJuego(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        Proyecto.ServiceReference1.DevolverListajuegosResponse Proyecto.ServiceReference1.WebServiceProyectoSoap.DevolverListajuegos(Proyecto.ServiceReference1.DevolverListajuegosRequest request) {
+            return base.Channel.DevolverListajuegos(request);
+        }
+        
+        public string DevolverListajuegos(string jugador) {
+            Proyecto.ServiceReference1.DevolverListajuegosRequest inValue = new Proyecto.ServiceReference1.DevolverListajuegosRequest();
+            inValue.Body = new Proyecto.ServiceReference1.DevolverListajuegosRequestBody();
+            inValue.Body.jugador = jugador;
+            Proyecto.ServiceReference1.DevolverListajuegosResponse retVal = ((Proyecto.ServiceReference1.WebServiceProyectoSoap)(this)).DevolverListajuegos(inValue);
+            return retVal.Body.DevolverListajuegosResult;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        Proyecto.ServiceReference1.BorrardeListaJuegosResponse Proyecto.ServiceReference1.WebServiceProyectoSoap.BorrardeListaJuegos(Proyecto.ServiceReference1.BorrardeListaJuegosRequest request) {
+            return base.Channel.BorrardeListaJuegos(request);
+        }
+        
+        public void BorrardeListaJuegos(string jugador1, string jugador2, int unidadesdes, int unidadessob, int unidadesdest) {
+            Proyecto.ServiceReference1.BorrardeListaJuegosRequest inValue = new Proyecto.ServiceReference1.BorrardeListaJuegosRequest();
+            inValue.Body = new Proyecto.ServiceReference1.BorrardeListaJuegosRequestBody();
+            inValue.Body.jugador1 = jugador1;
+            inValue.Body.jugador2 = jugador2;
+            inValue.Body.unidadesdes = unidadesdes;
+            inValue.Body.unidadessob = unidadessob;
+            inValue.Body.unidadesdest = unidadesdest;
+            Proyecto.ServiceReference1.BorrardeListaJuegosResponse retVal = ((Proyecto.ServiceReference1.WebServiceProyectoSoap)(this)).BorrardeListaJuegos(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        Proyecto.ServiceReference1.DevolverDatosJuegoResponse Proyecto.ServiceReference1.WebServiceProyectoSoap.DevolverDatosJuego(Proyecto.ServiceReference1.DevolverDatosJuegoRequest request) {
+            return base.Channel.DevolverDatosJuego(request);
+        }
+        
+        public string DevolverDatosJuego(string jugador1, string jugador2, int unidadesdes, int unidadessob, int unidadesdest) {
+            Proyecto.ServiceReference1.DevolverDatosJuegoRequest inValue = new Proyecto.ServiceReference1.DevolverDatosJuegoRequest();
+            inValue.Body = new Proyecto.ServiceReference1.DevolverDatosJuegoRequestBody();
+            inValue.Body.jugador1 = jugador1;
+            inValue.Body.jugador2 = jugador2;
+            inValue.Body.unidadesdes = unidadesdes;
+            inValue.Body.unidadessob = unidadessob;
+            inValue.Body.unidadesdest = unidadesdest;
+            Proyecto.ServiceReference1.DevolverDatosJuegoResponse retVal = ((Proyecto.ServiceReference1.WebServiceProyectoSoap)(this)).DevolverDatosJuego(inValue);
+            return retVal.Body.DevolverDatosJuegoResult;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        Proyecto.ServiceReference1.ModificarDatosJuegoResponse Proyecto.ServiceReference1.WebServiceProyectoSoap.ModificarDatosJuego(Proyecto.ServiceReference1.ModificarDatosJuegoRequest request) {
+            return base.Channel.ModificarDatosJuego(request);
+        }
+        
+        public void ModificarDatosJuego(string jugador1, string oponenteantiguo, string oponentenuevo, int unidadesdesant, int unidadesdesnue, int unidadessobant, int unidadessobnue, int unidadesdestant, int unidadesdestnue) {
+            Proyecto.ServiceReference1.ModificarDatosJuegoRequest inValue = new Proyecto.ServiceReference1.ModificarDatosJuegoRequest();
+            inValue.Body = new Proyecto.ServiceReference1.ModificarDatosJuegoRequestBody();
+            inValue.Body.jugador1 = jugador1;
+            inValue.Body.oponenteantiguo = oponenteantiguo;
+            inValue.Body.oponentenuevo = oponentenuevo;
+            inValue.Body.unidadesdesant = unidadesdesant;
+            inValue.Body.unidadesdesnue = unidadesdesnue;
+            inValue.Body.unidadessobant = unidadessobant;
+            inValue.Body.unidadessobnue = unidadessobnue;
+            inValue.Body.unidadesdestant = unidadesdestant;
+            inValue.Body.unidadesdestnue = unidadesdestnue;
+            Proyecto.ServiceReference1.ModificarDatosJuegoResponse retVal = ((Proyecto.ServiceReference1.WebServiceProyectoSoap)(this)).ModificarDatosJuego(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        Proyecto.ServiceReference1.GenerarArbolEspejoResponse Proyecto.ServiceReference1.WebServiceProyectoSoap.GenerarArbolEspejo(Proyecto.ServiceReference1.GenerarArbolEspejoRequest request) {
+            return base.Channel.GenerarArbolEspejo(request);
+        }
+        
+        public Proyecto.ServiceReference1.ArbolUsuarios GenerarArbolEspejo() {
+            Proyecto.ServiceReference1.GenerarArbolEspejoRequest inValue = new Proyecto.ServiceReference1.GenerarArbolEspejoRequest();
+            inValue.Body = new Proyecto.ServiceReference1.GenerarArbolEspejoRequestBody();
+            Proyecto.ServiceReference1.GenerarArbolEspejoResponse retVal = ((Proyecto.ServiceReference1.WebServiceProyectoSoap)(this)).GenerarArbolEspejo(inValue);
+            return retVal.Body.GenerarArbolEspejoResult;
+        }
+        
+        public void InicializarMatrizInicial() {
+            base.Channel.InicializarMatrizInicial();
+        }
+        
+        public bool ExisteNodo(int nivel, char columna, int fila) {
+            return base.Channel.ExisteNodo(nivel, columna, fila);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        Proyecto.ServiceReference1.InsertarTableroResponse Proyecto.ServiceReference1.WebServiceProyectoSoap.InsertarTablero(Proyecto.ServiceReference1.InsertarTableroRequest request) {
+            return base.Channel.InsertarTablero(request);
+        }
+        
+        public void InsertarTablero(int fila, char columna, int nivel, int movimiento, int alcance, int ataque, int vida, string idunidad, string idjugador) {
+            Proyecto.ServiceReference1.InsertarTableroRequest inValue = new Proyecto.ServiceReference1.InsertarTableroRequest();
+            inValue.Body = new Proyecto.ServiceReference1.InsertarTableroRequestBody();
+            inValue.Body.fila = fila;
+            inValue.Body.columna = columna;
+            inValue.Body.nivel = nivel;
+            inValue.Body.movimiento = movimiento;
+            inValue.Body.alcance = alcance;
+            inValue.Body.ataque = ataque;
+            inValue.Body.vida = vida;
+            inValue.Body.idunidad = idunidad;
+            inValue.Body.idjugador = idjugador;
+            Proyecto.ServiceReference1.InsertarTableroResponse retVal = ((Proyecto.ServiceReference1.WebServiceProyectoSoap)(this)).InsertarTablero(inValue);
         }
     }
 }

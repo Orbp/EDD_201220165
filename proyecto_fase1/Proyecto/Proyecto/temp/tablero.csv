@@ -1,0 +1,17 @@
+jugador,columna,fila,unidad,"destruida(0 si,1 no)"
+Mord86,A,1,Neosatelite1,1
+Mord86,B,10,Neosatelite2,0
+Mord86,B,11,Neosatelite5,0
+Mord86,C,2,Neosatelite3,1
+Mord86,A,8,Neosatelite4,1
+Mord86,C,2,Bombardero1,0
+Stin94,H,6,Submarino1,1
+Mord86,D,12,Bombardero2,1
+Mord86,E,8,Fragata1,1
+Mord86,F,2,Fragata2,1
+Mord86,G,5,Fragata3,1
+Mord86,V,7,Submarino1,1
+Mord86,X,9,Submarino2,0
+Mord86,T,10,Submarino3,0
+Mord86,A,8,Submarino4,0
+Mord86,A,11,Submarino4,0

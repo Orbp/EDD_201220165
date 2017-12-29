@@ -62,6 +62,10 @@
     <Content Include="Inicio.aspx" />
     <Content Include="Login.aspx" />
     <None Include="Properties\PublishProfiles\Proyecto.pubxml" />
+    <Content Include="Service References\ServiceReference1\Proyecto.ServiceReference1.ArbolUsuarios.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <None Include="Properties\PublishProfiles\Proyecto1.pubxml" />
     <None Include="Service References\ServiceReference1\WebServiceProyecto.disco" />
     <None Include="Service References\ServiceReference1\configuration91.svcinfo" />
     <None Include="Service References\ServiceReference1\configuration.svcinfo" />
@@ -74,6 +78,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ArbolUsuarios.cs" />
+    <Compile Include="EncabezadoFila.cs" />
+    <Compile Include="EncabezadosColumna.cs" />
     <Compile Include="Graficar.cs" />
     <Compile Include="Inicio.aspx.cs">
       <DependentUpon>Inicio.aspx</DependentUpon>
@@ -83,6 +89,8 @@
       <DependentUpon>Inicio.aspx</DependentUpon>
     </Compile>
     <Compile Include="ListaJuegos.cs" />
+    <Compile Include="ListaTopJuegosGanados.cs" />
+    <Compile Include="ListaTopUnidadesDestruidas.cs" />
     <Compile Include="Login.aspx.cs">
       <DependentUpon>Login.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -90,8 +98,13 @@
     <Compile Include="Login.aspx.designer.cs">
       <DependentUpon>Login.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Matriz.cs" />
     <Compile Include="NodoArbol.cs" />
+    <Compile Include="NodoEncabezado.cs" />
     <Compile Include="NodoListaJuegos.cs" />
+    <Compile Include="NodoMatriz.cs" />
+    <Compile Include="NodoTopJuegosGanados.cs" />
+    <Compile Include="NodoTopUnidadesDestruidas.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Service References\ServiceReference1\Reference.cs">
       <AutoGen>True</AutoGen>

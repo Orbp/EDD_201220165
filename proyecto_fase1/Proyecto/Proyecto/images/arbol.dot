@@ -1,5 +1,13 @@
 digraph{
 node[shape = record];
+subgraph clusterdatos{
+label = "Datos del arbol"
+alt[label="Altura: 7"];
+niv[label="Niveles: 6"];
+hoja[label="Numero de nodos hoja: 5"];
+rama[label="Numero de nodos rama: 9"];
+}
+subgraph clusterarbol{
 label = "Arbol de usuarios "
 aur[label = "<f0> | <f1> Nickname: Mord86\nCorreo: scelerisque.sed@lectusa.com\nConectado|<f2> "];
 ljr0[label = "Jugador Base: Mord86\nOponente: Stin94\nUnidades Desplegadas: 10\nUnidades Sobrevivientes: 8\nUnidades Destruidas: 2\nGano la partida"];
@@ -117,4 +125,5 @@ aurd:f2->aurdd:f1;
 aurd:f1->ljrd0;
 aurdd:f1->ljrdd0;
 
+}
 }

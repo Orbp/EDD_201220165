@@ -2,12 +2,14 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
+using System.Web.UI.WebControls;
 
 namespace Proyecto
 {
     public class ArbolUsuarios
     {
         private NodoArbol raiz;
+        public bool espejo = false;
 
         public NodoArbol GetRaiz()
         {
@@ -61,6 +63,31 @@ namespace Proyecto
                 while (aux != null)
                 {
                     if (aux.GetNickname() == pnickname)
+                    {
+                        return true;
+                    }
+
+                    if (aux.GetNickname().CompareTo(pnickname) > 0)
+                    {
+                        aux = aux.GetHijoIzquierdo();
+                    }
+                    else
+                    {
+                        aux = aux.GetHijoDerecho();
+                    }
+                }
+            }
+            return false;
+        }
+
+        public bool ExisteUsuario(string pnickname, string password)
+        {
+            if (!ArbolVacio())
+            {
+                NodoArbol aux = this.raiz;
+                while (aux != null)
+                {
+                    if (aux.GetNickname() == pnickname && aux.GetPassword() == password)
                     {
                         return true;
                     }
@@ -296,6 +323,251 @@ namespace Proyecto
             {
                 return false;
             }
+        }
+
+        
+        public string DevolverUsuarios(NodoArbol raiz)
+        {
+            string auxUsuarios = "";
+            if (raiz != null)
+            {
+                auxUsuarios += raiz.GetNickname() + ",";
+            }
+
+            if (raiz.GetHijoIzquierdo() != null)
+            {
+                auxUsuarios += DevolverUsuarios(raiz.GetHijoIzquierdo());
+            }
+            if(raiz.GetHijoDerecho() != null)
+            {
+                auxUsuarios += DevolverUsuarios(raiz.GetHijoDerecho());
+            }
+
+            return auxUsuarios;
+        }
+
+        public string DevolverJuegos(string pnickname)
+        {
+            string auxJuegos = "";
+            NodoArbol aux = this.raiz;
+            while (aux != null)
+            {
+                if (aux.GetNickname() == pnickname)
+                {
+                    return aux.GetListaJuegos().DevolverLista();
+                }
+                if (aux.GetNickname().CompareTo(pnickname) > 0)
+                {
+                    aux = aux.GetHijoIzquierdo();
+                }
+                else
+                {
+                    aux = aux.GetHijoDerecho();
+                }
+            }
+            return "";
+        }
+
+        public void BorrarJuegos(string jugador1, string jugador2, int unidadesdes, int unidadessob, int unidadesdest)
+        {
+            NodoArbol aux = this.raiz;
+            while (aux != null)
+            {
+                if (aux.GetNickname() == jugador1)
+                {
+                    aux.GetListaJuegos().EliminarJuego(jugador1, jugador2, unidadesdes, unidadessob, unidadesdest);
+                    break;
+                }
+                if (aux.GetNickname().CompareTo(jugador1) > 0)
+                {
+                    aux = aux.GetHijoIzquierdo();
+                }
+                else
+                {
+                    aux = aux.GetHijoDerecho();
+                }
+            }
+        }
+
+        public string DevDatosJuego(string jugador1, string jugador2, int unidadesdes, int unidadessob, int unidadesdest)
+        {
+            string dev = "";
+            NodoArbol aux = this.raiz;
+            while (aux != null)
+            {
+                if (aux.GetNickname() == jugador1)
+                {
+                    dev = aux.GetListaJuegos().DevolverDatos(jugador1, jugador2, unidadesdes, unidadessob, unidadesdest);
+                    break;
+                }
+                if (aux.GetNickname().CompareTo(jugador1) > 0)
+                {
+                    aux = aux.GetHijoIzquierdo();
+                }
+                else
+                {
+                    aux = aux.GetHijoDerecho();
+                }
+            }
+            return dev;
+        }
+
+        public void ModificarDatosJuego(string jugador1, string oponenteant, string oponentenue, int unidadesdesant, int unidadesdesnue, int unidadessobant, int unidadessobnue, int unidadesdestant, int unidadesdestnue)
+        {
+            NodoArbol aux = this.raiz;
+            while (aux != null)
+            {
+                if (aux.GetNickname() == jugador1)
+                {
+                    aux.GetListaJuegos().ModificarDatosJuego(jugador1, oponenteant, oponentenue, unidadesdesant, unidadesdesnue, unidadessobant, unidadessobnue, unidadesdestant, unidadesdestnue);
+                    break;
+                }
+                if (aux.GetNickname().CompareTo(jugador1) > 0)
+                {
+                    aux = aux.GetHijoIzquierdo();
+                }
+                else
+                {
+                    aux = aux.GetHijoDerecho();
+                }
+            }
+        }
+
+        public ArbolUsuarios Espejo(ArbolUsuarios arbol1)
+        {
+            if (arbol1.espejo)
+            {
+                arbol1.espejo = false;
+            }
+            else
+            {
+                arbol1.espejo = true;
+            }
+            arbol1.SetRaiz(nespejo(arbol1.GetRaiz()));
+            return arbol1;
+        }
+
+        private NodoArbol nespejo(NodoArbol nodo)
+        {
+            if (nodo == null)
+            {
+                return null;
+            }
+            else
+            {
+                NodoArbol temporal = nodo.GetHijoIzquierdo();
+                nodo.SetHijoIzquierdo(nespejo(nodo.GetHijoDerecho()));
+                nodo.SetHijoDerecho(nespejo(temporal));
+                return nodo;
+            }
+        }
+
+        public int Altura(NodoArbol raiz, int alt)
+        {
+            alt = AuxAltura(raiz, 1, alt);
+            return alt;
+        }
+
+        public int AuxAltura(NodoArbol raiz, int a, int alt)
+        {
+            if (raiz.GetHijoIzquierdo() != null)
+            {
+                alt = AuxAltura(raiz.GetHijoIzquierdo(), a + 1, alt);
+            }
+            if (raiz.GetHijoDerecho() != null)
+            {
+                alt = AuxAltura(raiz.GetHijoDerecho(), a + 1, alt);
+            }
+            if (raiz.GetHijoIzquierdo() == null && raiz.GetHijoDerecho() == null && a > alt)
+            {
+                alt = a;
+            }
+            return alt;
+        }
+
+        private int numnodos = 0;
+
+        
+        public int AuxNodosHoja(NodoArbol raiz, int cont)
+        {
+            if (raiz.GetHijoDerecho() == null && raiz.GetHijoIzquierdo() == null)
+            {
+                return ++cont;
+            }
+            int hijosiz = 0;
+            if (raiz.GetHijoIzquierdo() != null)
+            {
+                hijosiz = AuxNodosHoja(raiz.GetHijoIzquierdo(), cont);
+            }
+            int hijosder = 0;
+            if (raiz.GetHijoDerecho() != null)
+            {
+                hijosder = AuxNodosHoja(raiz.GetHijoDerecho(), cont);
+            }
+            return hijosiz + hijosder;
+        }
+
+        public int AuxNodosRama(NodoArbol raiz, int cont)
+        {
+            int ramasiz = 0;
+            if (raiz.GetHijoIzquierdo() != null)
+            {
+                ramasiz = AuxNodosRama(raiz.GetHijoIzquierdo(), cont);
+            }
+            int ramasder = 0;
+            if (raiz.GetHijoDerecho() != null)
+            {
+                ramasder = AuxNodosRama(raiz.GetHijoDerecho(), cont);
+            }
+
+            if (raiz.GetHijoIzquierdo() != null || raiz.GetHijoDerecho() != null)
+            {
+                cont++;
+            }
+            return cont + ramasiz+ ramasder;
+        }
+
+        public ListaTopJuegosGanados listajuegosg(NodoArbol raiz, ListaTopJuegosGanados lista)
+        {
+            if (raiz != null)
+            {
+                int nu = raiz.GetListaJuegos().DevolverJuegosGanados(raiz);
+                if (nu != 0)
+                {
+                    lista.InsertarListaJuegosGanados(raiz.GetNickname(), nu);
+                }
+                
+            }
+            if (raiz.GetHijoIzquierdo() != null)
+            {
+                listajuegosg(raiz.GetHijoIzquierdo(), lista);
+            }
+            if (raiz.GetHijoDerecho() != null)
+            {
+                listajuegosg(raiz.GetHijoDerecho(), lista);
+            }
+            return lista;
+        }
+
+        public ListaTopUnidadesDestruidas listaunidadesdes(NodoArbol raiz, ListaTopUnidadesDestruidas lista)
+        {
+            if (raiz != null)
+            {
+                double n = raiz.GetListaJuegos().DevolverPorcentajeUnidadesDest(raiz);
+                if (n != 0)
+                {
+                    lista.InsertarTopUnidades(raiz.GetNickname(), n);
+                }
+            }
+            if (raiz.GetHijoIzquierdo() != null)
+            {
+                listaunidadesdes(raiz.GetHijoIzquierdo(), lista);
+            }
+            if (raiz.GetHijoDerecho() != null)
+            {
+                listaunidadesdes(raiz.GetHijoDerecho(), lista);
+            }
+            return lista;
         }
     }
 }

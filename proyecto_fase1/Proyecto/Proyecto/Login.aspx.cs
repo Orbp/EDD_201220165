@@ -34,16 +34,17 @@ namespace Proyecto
             }
             else
             {
-                if (sr.BuscarUsuario(Login1.UserName))
-                {
-                    ScriptManager.RegisterStartupScript(this, this.GetType(), "alertIns", "alert('El usuario no existe');", true);
-                    e.Authenticated = false;
-                }
-                else
+                ServiceReference1.WebServiceProyectoSoapClient sr = new ServiceReference1.WebServiceProyectoSoapClient();
+                if (sr.Validar(Login1.UserName, Login1.Password))
                 {
                     e.Authenticated = true;
                     Session["Nombre"] = Login1.UserName;
                     Response.Redirect("Inicio.aspx");
+                }
+                else
+                {
+                    ScriptManager.RegisterStartupScript(this, this.GetType(), "alertIns", "alert('El usuario o el password son incorrectos. Verifique sus datos');", true);
+                    e.Authenticated = false;
                 }
             }
         }

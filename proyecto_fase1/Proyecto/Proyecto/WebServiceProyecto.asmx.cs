@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.Services;
 using System.IO;
+using System.Web.UI.WebControls;
 
 namespace Proyecto
 {
@@ -19,6 +20,9 @@ namespace Proyecto
     {
 
         static ArbolUsuarios arbol = new ArbolUsuarios();
+        static Matriz TableroInicial = null;
+        static Matriz TableroActual = null;
+        static ListaTopJuegosGanados topjuegosg = null;
         public static string usuario1;
         public static string usuario2;
         public static int numerodenavesnivel1;
@@ -40,6 +44,14 @@ namespace Proyecto
         public string HelloWorld()
         {
             return "Hola a todos";
+        }
+
+        [WebMethod]
+        public string LUsuarios()
+        {
+           /* arbol.LimpiarDDLUsuarios();
+            usuarios = arbol.DevolverUsuarios(arbol.GetRaiz());*/
+            return arbol.DevolverUsuarios(arbol.GetRaiz());
         }
 
         [WebMethod]
@@ -169,12 +181,153 @@ namespace Proyecto
         {
             StreamReader sr = new StreamReader(ruta);
             string linea = "";
+            TableroActual = new Matriz();
             while (linea != null)
             {
-                if (!linea.Contains("jugador,"))
+                if (!linea.Contains("jugador,") && linea != "")
                 {
                     string[] datos = linea.Split(',');
-
+                    string idjugador = datos[0];
+                    char columna = char.Parse(datos[1]);
+                    int fila = int.Parse(datos[2]);
+                    string idnave = datos[3];
+                    int nivel;
+                    int vida;
+                    int ataque;
+                    int alcance;
+                    int movimiento;
+                    if (datos[4].Contains("1"))
+                    {
+                        if (idnave.Contains("Neosatelite") || idnave.Contains("neosatelite"))
+                        {
+                            nivel = 3;
+                            vida = 10;
+                            ataque = 2;
+                            alcance = 0;
+                            movimiento = 6;
+                            TableroActual.Insertar(fila, columna, nivel, movimiento, alcance, ataque, vida, idnave, idjugador);
+                        }
+                        else if (idnave.Contains("Bombardero") || idnave.Contains("bombardero"))
+                        {
+                            nivel = 2;
+                            vida = 10;
+                            ataque = 5;
+                            alcance = 0;
+                            movimiento = 7;
+                            TableroActual.Insertar(fila, columna, nivel, movimiento, alcance, ataque, vida, idnave, idjugador);
+                        }
+                        else if (idnave.Contains("Caza") || idnave.Contains("caza"))
+                        {
+                            nivel = 2;
+                            vida = 20;
+                            ataque = 2;
+                            alcance = 1;
+                            movimiento = 9;
+                            TableroActual.Insertar(fila, columna, nivel, movimiento, alcance, ataque, vida, idnave, idjugador);
+                        }
+                        else if (idnave.Contains("Helicoptero") || idnave.Contains("helicoptero"))
+                        {
+                            nivel = 2;
+                            vida = 15;
+                            ataque = 3;
+                            alcance = 1;
+                            movimiento = 9;
+                            TableroActual.Insertar(fila, columna, nivel, movimiento, alcance, ataque, vida, idnave, idjugador);
+                        }
+                        else if (idnave.Contains("Fragata") || idnave.Contains("fragata"))
+                        {
+                            nivel = 1;
+                            vida = 10;
+                            ataque = 3;
+                            alcance = 4;
+                            movimiento = 5;
+                            TableroActual.Insertar(fila, columna, nivel, movimiento, alcance, ataque, vida, idnave, idjugador);
+                        }
+                        else if (idnave.Contains("Crucero") || idnave.Contains("crucero"))
+                        {
+                            nivel = 1;
+                            vida = 15;
+                            ataque = 3;
+                            alcance = 1;
+                            movimiento = 6;
+                            TableroActual.Insertar(fila, columna, nivel, movimiento, alcance, ataque, vida, idnave, idjugador);
+                        }
+                        else if (idnave.Contains("Submarino") || idnave.Contains("submarino"))
+                        {
+                            nivel = 0;
+                            vida = 10;
+                            ataque = 2;
+                            alcance = 1;
+                            movimiento = 5;
+                            TableroActual.Insertar(fila, columna, nivel, movimiento, alcance, ataque, vida, idnave, idjugador);
+                        }
+                    }
+                    else
+                    {
+                        if (idnave.Contains("Neosatelite") || idnave.Contains("neosatelite"))
+                        {
+                            nivel = 3;
+                            vida = 0;
+                            ataque = 2;
+                            alcance = 0;
+                            movimiento = 6;
+                            TableroActual.Insertar(fila, columna, nivel, movimiento, alcance, ataque, vida, idnave, idjugador);
+                        }
+                        else if (idnave.Contains("Bombardero") || idnave.Contains("bombardero"))
+                        {
+                            nivel = 2;
+                            vida = 0;
+                            ataque = 5;
+                            alcance = 0;
+                            movimiento = 7;
+                            TableroActual.Insertar(fila, columna, nivel, movimiento, alcance, ataque, vida, idnave, idjugador);
+                        }
+                        else if (idnave.Contains("Caza") || idnave.Contains("caza"))
+                        {
+                            nivel = 2;
+                            vida = 0;
+                            ataque = 2;
+                            alcance = 1;
+                            movimiento = 9;
+                            TableroActual.Insertar(fila, columna, nivel, movimiento, alcance, ataque, vida, idnave, idjugador);
+                        }
+                        else if (idnave.Contains("Helicoptero") || idnave.Contains("helicoptero"))
+                        {
+                            nivel = 2;
+                            vida = 0;
+                            ataque = 3;
+                            alcance = 1;
+                            movimiento = 9;
+                            TableroActual.Insertar(fila, columna, nivel, movimiento, alcance, ataque, vida, idnave, idjugador);
+                        }
+                        else if (idnave.Contains("Fragata") || idnave.Contains("fragata"))
+                        {
+                            nivel = 1;
+                            vida = 0;
+                            ataque = 3;
+                            alcance = 4;
+                            movimiento = 5;
+                            TableroActual.Insertar(fila, columna, nivel, movimiento, alcance, ataque, vida, idnave, idjugador);
+                        }
+                        else if (idnave.Contains("Crucero") || idnave.Contains("crucero"))
+                        {
+                            nivel = 1;
+                            vida = 0;
+                            ataque = 3;
+                            alcance = 1;
+                            movimiento = 6;
+                            TableroActual.Insertar(fila, columna, nivel, movimiento, alcance, ataque, vida, idnave, idjugador);
+                        }
+                        else if (idnave.Contains("Submarino") || idnave.Contains("submarino"))
+                        {
+                            nivel = 0;
+                            vida = 0;
+                            ataque = 2;
+                            alcance = 1;
+                            movimiento = 5;
+                            TableroActual.Insertar(fila, columna, nivel, movimiento, alcance, ataque, vida, idnave, idjugador);
+                        }
+                    }
                 }
                 linea = sr.ReadLine();
             }
@@ -238,12 +391,88 @@ namespace Proyecto
         }
 
         [WebMethod]
+        public bool Validar(string nickname, string password)
+        {
+            if (arbol.ExisteUsuario(nickname, password))
+            {
+                return true;
+            }
+            return false;
+        }
+
+        [WebMethod]
         public bool Llamadaagraficar(string tipo, string ruta)
         {
             if (tipo == "u" && !arbol.ArbolVacio())
             {
                 Graficar g = new Graficar(ruta);
-                g.GraficarArbol(arbol);
+                if (arbol.espejo)
+                {
+                    arbol.Espejo(arbol);
+                }
+                g.GraficarArbol(arbol, "normal");
+                return true;
+            }
+            else if (tipo == "ue" && !arbol.ArbolVacio())
+            {
+                if (!arbol.espejo)
+                {
+                    arbol.Espejo(arbol);
+                }
+                Graficar g = new Graficar(ruta);
+                g.GraficarArbol(arbol, "espejo");
+                return true;
+            }
+            else if (tipo == "ta" && TableroActual != null)
+            {
+                Graficar g = new Graficar(ruta);
+                g.GraficarTableroActual(TableroActual);
+                return true;
+            }
+            else if (tipo == "tia" && TableroInicial != null)
+            {
+                Graficar g = new Graficar(ruta);
+                g.GraficarTableroInicial(TableroInicial, "admin");
+                return true;
+            }
+            else if (tipo.Contains("ta,") && TableroActual != null)
+            {
+                Graficar g = new Graficar(ruta);
+                g.GraficarTableroInicial(TableroActual, tipo.Split(',')[1]);
+                return true;
+            }
+            else if (tipo.Contains("ti,") && TableroInicial != null)
+            {
+                Graficar g = new Graficar(ruta);
+                g.GraficarTableroInicial(TableroInicial, tipo.Split(',')[1]);
+                return true;
+            }
+            else if (tipo == "ud" && TableroActual != null)
+            {
+                Graficar g = new Graficar(ruta);
+                g.GraficarMuertos(TableroActual, true);
+                return true;
+            }
+            else if (tipo == "us" && TableroActual != null)
+            {
+                Graficar g = new Graficar(ruta);
+                g.GraficarMuertos(TableroActual, false);
+                return true;
+            }
+            else if (tipo == "topj" && !arbol.ArbolVacio())
+            {
+                topjuegosg = new ListaTopJuegosGanados();
+                arbol.listajuegosg(arbol.GetRaiz(), topjuegosg);
+                Graficar g = new Graficar(ruta);
+                g.GraficarTopJugadoresJuegos(topjuegosg);
+                return true;
+            }
+            else if (tipo == "topu" && !arbol.ArbolVacio())
+            {
+                ListaTopUnidadesDestruidas list = new ListaTopUnidadesDestruidas();
+                arbol.listaunidadesdes(arbol.GetRaiz(), list);
+                Graficar g = new Graficar(ruta);
+                g.GraficarTopUniDes(list);
                 return true;
             }
             return false;
@@ -262,6 +491,8 @@ namespace Proyecto
             }
             return aux;
         }
+
+
 
         [WebMethod]
         public void ModificarUsuarios(string pnickname, string password, string correo)
@@ -328,6 +559,91 @@ namespace Proyecto
             {
                 return false;
             }
+        }
+
+        [WebMethod]
+        public void InsertarJuego(string jugador1, string jugador2, int unidadesdes, int unidadessob, int unidadesdest, bool gano)
+        {
+            arbol.Insertarenlistajuegos(jugador1, jugador2, unidadesdes, unidadessob, unidadesdest, gano);
+            arbol.Insertarenlistajuegos(jugador2, jugador1, unidadesdes, unidadessob, unidadesdest, !gano);
+        }
+
+        [WebMethod]
+        public string DevolverListajuegos(string jugador)
+        {
+            return arbol.DevolverJuegos(jugador);
+        }
+
+        [WebMethod]
+        public void BorrardeListaJuegos(string jugador1, string jugador2, int unidadesdes, int unidadessob, int unidadesdest)
+        {
+            arbol.BorrarJuegos(jugador1, jugador2, unidadesdes, unidadessob, unidadesdest);
+        }
+
+        [WebMethod]
+        public string DevolverDatosJuego(string jugador1, string jugador2, int unidadesdes, int unidadessob, int unidadesdest)
+        {
+            return arbol.DevDatosJuego(jugador1, jugador2, unidadesdes, unidadessob, unidadesdest);
+        }
+
+        [WebMethod]
+        public void ModificarDatosJuego(string jugador1, string oponenteantiguo, string oponentenuevo, int unidadesdesant, int unidadesdesnue, int unidadessobant, int unidadessobnue, int unidadesdestant, int unidadesdestnue)
+        {
+            if (oponentenuevo != oponenteantiguo || unidadesdesant != unidadesdesnue || unidadessobant != unidadessobnue || unidadesdestant != unidadesdestnue)
+            {
+                arbol.ModificarDatosJuego(jugador1, oponenteantiguo, oponentenuevo, unidadesdesant, unidadesdesnue, unidadessobant, unidadessobnue, unidadesdestant, unidadesdestnue);
+            }
+        }
+
+        [WebMethod]
+        public ArbolUsuarios GenerarArbolEspejo()
+        {
+            return arbol.Espejo(arbol);
+        }
+
+        [WebMethod]
+        public void InicializarMatrizInicial()
+        {
+            if (TableroInicial == null)
+            {
+                TableroInicial = new Matriz();
+            }
+        }
+
+        [WebMethod]
+        public bool ExisteNodo(int nivel, char columna, int fila)
+        {
+            NodoMatriz aux = null;
+            if (nivel == 0)
+            {
+                aux = TableroInicial.ExisteNodo(TableroInicial.enfnivel0, TableroInicial.encnivel0, fila, columna);
+            }
+            else if (nivel == 1)
+            {
+                aux = TableroInicial.ExisteNodo(TableroInicial.enfnivel1, TableroInicial.encnivel1, fila, columna);
+            }
+            else if (nivel == 2)
+            {
+                aux = TableroInicial.ExisteNodo(TableroInicial.enfnivel2, TableroInicial.encnivel2, fila, columna);
+            }
+            else if (nivel == 3)
+            {
+                aux = TableroInicial.ExisteNodo(TableroInicial.enfnivel3, TableroInicial.encnivel3, fila, columna);
+            }
+            if (aux == null)
+            {
+                return false;
+            }
+            else
+            {
+                return true;
+            }
+        }
+
+        [WebMethod]
+        public void InsertarTablero(int fila, char columna, int nivel, int movimiento, int alcance, int ataque, int vida, string idunidad, string idjugador)
+        {
+            TableroInicial.Insertar(fila, columna, nivel, movimiento, alcance, ataque, vida, idunidad, idjugador);
         }
     }
 }
