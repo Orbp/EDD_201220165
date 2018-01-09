@@ -1,0 +1,5 @@
+Coordenada X,Coordenada Y,Unidad Atacante,Resultado (golpe = 0 eliminacion de objetivo = 1),Unidad Atacada,Emisor,Receptor,Fecha,Tiempo Restante,numero de ataque
+2,3,Neosatelite1,0,Bombardero1,Mord86,Stin94,8/01/2017,02:00,1
+5,4,Neosatelite1,1,Caza1,Stin94,Mord96,8/01/2017,01:58,2
+5,2,Helicóptero1,1,Caza2,Mord86,Stin94,8/01/2017,01:50,3
+6,8,Submarino1,0,Fragata1,Stin94,Mord96,8/01/2017,01:45,4

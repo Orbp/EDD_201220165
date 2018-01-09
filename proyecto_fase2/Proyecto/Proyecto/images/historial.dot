@@ -1,0 +1,11 @@
+digraph{
+node[shape = record];
+subgraph clusterHistorial{
+label = "Historial de tiros"
+ab0[label = "{{X: 5\nY: 4\nUnidad Atacante: Neosatelite1\nResultado: 1\nTipo de unidad dañada: Caza1\nEmisor: Stin94\nReceptor: Mord96\nFecha: 08/01/2017 12:00:00 a. m.\nTiempo Restante: 158\nNumero de ataque: 2}|{<f0>|<f1>}}"];
+ab0:<f0>->ab00;
+ab00[label = "{{X: 2\nY: 3\nUnidad Atacante: Neosatelite1\nResultado: 0\nTipo de unidad dañada: Bombardero1\nEmisor: Mord86\nReceptor: Stin94\nFecha: 08/01/2017 12:00:00 a. m.\nTiempo Restante: 200\nNumero de ataque: 1}|{<f0>|<f1>}}"];
+ab0:<f1>->ab01;
+ab01[label = "{{X: 5\nY: 2\nUnidad Atacante: Helic�ptero1\nResultado: 1\nTipo de unidad dañada: Caza2\nEmisor: Mord86\nReceptor: Stin94\nFecha: 08/01/2017 12:00:00 a. m.\nTiempo Restante: 150\nNumero de ataque: 3|X: 6\nY: 8\nUnidad Atacante: Submarino1\nResultado: 0\nTipo de unidad dañada: Fragata1\nEmisor: Stin94\nReceptor: Mord96\nFecha: 08/01/2017 12:00:00 a. m.\nTiempo Restante: 145\nNumero de ataque: 4}|{<f0>|<f1>|<f2>}}"];
+}
+}

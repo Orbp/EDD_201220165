@@ -1,0 +1,35 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!--
+Este archivo es utilizado por el proceso de paquete/publicación de nuestro proyecto Web. Puede personalizar el comportamiento de este proceso
+editando este archivo MSBuild. Para conocer más acerca de esto, visite http://go.microsoft.com/fwlink/?LinkID=208121. 
+-->
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <LastUsedBuildConfiguration>Debug</LastUsedBuildConfiguration>
+    <LastUsedPlatform>Any CPU</LastUsedPlatform>
+    <TimeStampOfAssociatedLegacyPublishXmlFile />
+  </PropertyGroup>
+  <ItemGroup>
+    <File Include="bin/Proyecto.dll">
+      <publishTime>12/28/2017 20:10:16</publishTime>
+    </File>
+    <File Include="bin/Proyecto.pdb">
+      <publishTime>12/28/2017 20:10:16</publishTime>
+    </File>
+    <File Include="Inicio.aspx">
+      <publishTime>12/28/2017 20:04:32</publishTime>
+    </File>
+    <File Include="Login.aspx">
+      <publishTime>12/26/2017 17:09:52</publishTime>
+    </File>
+    <File Include="Service References/ServiceReference1/Proyecto.ServiceReference1.ArbolUsuarios.datasource">
+      <publishTime>12/28/2017 20:03:15</publishTime>
+    </File>
+    <File Include="Web.config">
+      <publishTime>12/28/2017 20:11:40</publishTime>
+    </File>
+    <File Include="WebServiceProyecto.asmx">
+      <publishTime>12/26/2017 18:40:47</publishTime>
+    </File>
+  </ItemGroup>
+</Project>

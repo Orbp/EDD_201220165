@@ -1,0 +1,9 @@
+C:\Users\oscar\Documents\GitHub\EDD_201220165\proyecto_fase2\WebService\WebService\obj\Release\Fakes\p\b\Proyecto.Fakes.xml
+C:\Users\oscar\Documents\GitHub\EDD_201220165\proyecto_fase2\WebService\WebService\obj\Release\Fakes\p\b\Proyecto.Fakes.dll
+C:\Users\oscar\Documents\GitHub\EDD_201220165\proyecto_fase2\WebService\WebService\obj\Release\Fakes\p\b\Proyecto.Fakes.pdb
+C:\Users\oscar\Documents\GitHub\EDD_201220165\proyecto_fase2\WebService\WebService\obj\Release\Fakes\p\b\Microsoft.QualityTools.Testing.Fakes.dll
+C:\Users\oscar\Documents\GitHub\EDD_201220165\proyecto_fase2\WebService\WebService\obj\Release\Fakes\p\b\Proyecto.dll
+C:\Users\oscar\Documents\GitHub\EDD_201220165\proyecto_fase2\WebService\WebService\obj\Release\Fakes\p\b\Proyecto.pdb
+C:\Users\oscar\Documents\GitHub\EDD_201220165\proyecto_fase2\WebService\WebService\obj\Release\Fakes\p\o\f.csprojResolveAssemblyReference.cache
+C:\Users\oscar\Documents\GitHub\EDD_201220165\proyecto_fase2\WebService\WebService\obj\Release\Fakes\p\o\Proyecto.Fakes.dll
+C:\Users\oscar\Documents\GitHub\EDD_201220165\proyecto_fase2\WebService\WebService\obj\Release\Fakes\p\o\Proyecto.Fakes.pdb

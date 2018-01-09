@@ -1,0 +1,143 @@
+digraph{
+ node[shape = record];
+subgraph clustertablero{
+label = "Tablero Actual";
+subgraph clusterNivel0{
+label = "Nivel 0"
+{rank = same
+ec650[label = "Numero de columna: A"];
+ec720[label = "Numero de columna: H"];
+ec840[label = "Numero de columna: T"];
+ec860[label = "Numero de columna: V"];
+ec880[label = "Numero de columna: X"];
+}
+ec650->ec720
+ec650->c8A0
+ec720->ec840
+ec720->c6H0
+ec840->ec860
+ec840->c10T0
+ec860->ec880
+ec860->c7V0
+ec880->c9X0
+{rank = same
+ef60[label = "Numero de fila: 6"];
+c6H0[label = "Fila: 6\nColumna: H\nUnidad: Submarino1\nJugador: Stin94"];
+}{rank = same
+ef70[label = "Numero de fila: 7"];
+c7V0[label = "Fila: 7\nColumna: V\nUnidad: Submarino1\nJugador: Mord86"];
+}{rank = same
+ef80[label = "Numero de fila: 8"];
+c8A0[label = "Fila: 8\nColumna: A\nUnidad: Submarino4\nJugador: Mord86\nArriba: 8,A-Neosatelite4"];
+}{rank = same
+ef90[label = "Numero de fila: 9"];
+c9X0[label = "Fila: 9\nColumna: X\nUnidad: Submarino2\nJugador: Mord86"];
+}{rank = same
+ef100[label = "Numero de fila: 10"];
+c10T0[label = "Fila: 10\nColumna: T\nUnidad: Submarino3\nJugador: Mord86"];
+}{rank = same
+ef110[label = "Numero de fila: 11"];
+c11A0[label = "Fila: 11\nColumna: A\nUnidad: Submarino4\nJugador: Mord86"];
+}ef60->ef70
+ef60->c6H0
+ef70->ef80
+ef70->c7V0
+ef80->ef90
+ef80->c8A0
+ef90->ef100
+ef90->c9X0
+ef100->ef110
+ef100->c10T0
+ef110->c11A0
+c8A0->c11A0
+c11A0->c8A0
+}
+subgraph clusterNivel1{
+label = "Nivel 1"
+{rank = same
+ec691[label = "Numero de columna: E"];
+ec701[label = "Numero de columna: F"];
+ec711[label = "Numero de columna: G"];
+}
+ec691->ec701
+ec691->c8E1
+ec701->ec711
+ec701->c2F1
+ec711->c5G1
+{rank = same
+ef21[label = "Numero de fila: 2"];
+c2F1[label = "Fila: 2\nColumna: F\nUnidad: Fragata2\nJugador: Mord86"];
+}{rank = same
+ef51[label = "Numero de fila: 5"];
+c5G1[label = "Fila: 5\nColumna: G\nUnidad: Fragata3\nJugador: Mord86"];
+}{rank = same
+ef81[label = "Numero de fila: 8"];
+c8E1[label = "Fila: 8\nColumna: E\nUnidad: Fragata1\nJugador: Mord86"];
+}ef21->ef51
+ef21->c2F1
+ef51->ef81
+ef51->c5G1
+ef81->c8E1
+}
+subgraph clusterNivel2{
+label = "Nivel 2"
+{rank = same
+ec672[label = "Numero de columna: C"];
+ec682[label = "Numero de columna: D"];
+}
+ec672->ec682
+ec672->c2C2
+ec682->c12D2
+{rank = same
+ef22[label = "Numero de fila: 2"];
+c2C2[label = "Fila: 2\nColumna: C\nUnidad: Bombardero1\nJugador: Mord86\nArriba: 2,C-Neosatelite3"];
+}{rank = same
+ef122[label = "Numero de fila: 12"];
+c12D2[label = "Fila: 12\nColumna: D\nUnidad: Bombardero2\nJugador: Mord86"];
+}ef22->ef122
+ef22->c2C2
+ef122->c12D2
+}
+subgraph clusterNivel3{
+label = "Nivel 3"
+{rank = same
+ec653[label = "Numero de columna: A"];
+ec663[label = "Numero de columna: B"];
+ec673[label = "Numero de columna: C"];
+}
+ec653->ec663
+ec653->c1A3
+ec663->ec673
+ec663->c10B3
+ec673->c2C3
+{rank = same
+ef13[label = "Numero de fila: 1"];
+c1A3[label = "Fila: 1\nColumna: A\nUnidad: Neosatelite1\nJugador: Mord86"];
+}{rank = same
+ef23[label = "Numero de fila: 2"];
+c2C3[label = "Fila: 2\nColumna: C\nUnidad: Neosatelite3\nJugador: Mord86\nAbajo: 2,C-Bombardero1"];
+}{rank = same
+ef83[label = "Numero de fila: 8"];
+c8A3[label = "Fila: 8\nColumna: A\nUnidad: Neosatelite4\nJugador: Mord86\nAbajo: 8,A-Submarino4"];
+}{rank = same
+ef103[label = "Numero de fila: 10"];
+c10B3[label = "Fila: 10\nColumna: B\nUnidad: Neosatelite2\nJugador: Mord86"];
+}{rank = same
+ef113[label = "Numero de fila: 11"];
+c11B3[label = "Fila: 11\nColumna: B\nUnidad: Neosatelite2\nJugador: Mord86"];
+}ef13->ef23
+ef13->c1A3
+ef23->ef83
+ef23->c2C3
+ef83->ef103
+ef83->c8A3
+ef103->ef113
+ef103->c10B3
+ef113->c11B3
+c1A3->c8A3
+c8A3->c1A3
+c10B3->c11B3
+c11B3->c10B3
+}
+}
+}

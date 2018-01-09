@@ -1,0 +1,16 @@
+digraph{
+node[shape = record];
+subgraph clusterarbol{
+aur[label = "<f0> | <f1> Nickname contacto: Imre78\nCorreo: eget.dictum.placerat@atsem.net\nFe:1|<f2> "];
+auri[label = "<f0> | <f1> Nickname contacto: Asro25\nCorreo: turpis.Aliquam.adipiscing@tincidunt.net\nFe:0|<f2> "];
+aurd[label = "<f0> | <f1> Nickname contacto: otro\nCorreo: correo2@dominio.com\nFe:0|<f2> "];
+aurdi[label = "<f0> | <f1> Nickname contacto: Nuevo\nCorreo: correo@dominio.com\nFe:0|<f2> "];
+aurdd[label = "<f0> | <f1> Nickname contacto: Stin94\nCorreo: in.tempus@a.com\nFe:0|<f2> "];
+
+aur:f0->auri:f1;
+aur:f2->aurd:f1;
+aurd:f0->aurdi:f1;
+aurd:f2->aurdd:f1;
+
+}
+}

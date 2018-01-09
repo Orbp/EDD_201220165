@@ -1,0 +1,35 @@
+digraph{
+ node[shape = record];
+subgraph clustertablero{
+label = "Tablero Inicial";
+subgraph clusterNivel0{
+label = "Nivel 0"
+{rank = same
+ec650[label = "Numero de columna: A"];
+
+}
+ec650->c1A0
+{rank = same
+ef10[label = "Numero de fila: 1"];
+c1A0[label = "Fila: 1\nColumna: A\nUnidad: Submarino1\nJugador: Mord86"];
+ef10->c1A0
+}}
+subgraph clusterNivel1{
+label = "Nivel 1"
+{rank = same
+ec651[label = "Numero de columna: A"];
+}
+ec651->c12A1
+{rank = same
+ef121[label = "Numero de fila: 12"];
+c12A1[label = "Fila: 12\nColumna: A\nUnidad: Fragata1\nJugador: Stin94"];
+}ef121->c12A1
+}
+subgraph clusterNivel2{
+label = "Nivel 2"
+}
+subgraph clusterNivel3{
+label = "Nivel 3"
+}
+}
+}

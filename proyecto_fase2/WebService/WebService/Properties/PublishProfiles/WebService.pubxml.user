@@ -1,0 +1,44 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!--
+Este archivo es utilizado por el proceso de paquete/publicación de nuestro proyecto Web. Puede personalizar el comportamiento de este proceso
+editando este archivo MSBuild. Para conocer más acerca de esto, visite http://go.microsoft.com/fwlink/?LinkID=208121. 
+-->
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <LastUsedBuildConfiguration>Debug</LastUsedBuildConfiguration>
+    <LastUsedPlatform>Any CPU</LastUsedPlatform>
+    <TimeStampOfAssociatedLegacyPublishXmlFile />
+  </PropertyGroup>
+  <ItemGroup>
+    <File Include="app.manifest">
+      <publishTime>01/06/2018 03:42:23</publishTime>
+    </File>
+    <File Include="bin/Microsoft.QualityTools.Testing.Fakes.dll">
+      <publishTime>07/26/2012 19:41:24</publishTime>
+    </File>
+    <File Include="bin/Proyecto.dll">
+      <publishTime>01/06/2018 03:54:06</publishTime>
+    </File>
+    <File Include="bin/Proyecto.Fakes.dll">
+      <publishTime>01/03/2018 12:32:27</publishTime>
+    </File>
+    <File Include="bin/Proyecto.Fakes.fakesconfig">
+      <publishTime>01/06/2018 01:43:45</publishTime>
+    </File>
+    <File Include="bin/Proyecto.pdb">
+      <publishTime>01/06/2018 03:54:06</publishTime>
+    </File>
+    <File Include="bin/WebService.dll">
+      <publishTime>01/06/2018 03:58:28</publishTime>
+    </File>
+    <File Include="bin/WebService.pdb">
+      <publishTime>01/06/2018 03:58:28</publishTime>
+    </File>
+    <File Include="Web.config">
+      <publishTime>01/06/2018 03:58:38</publishTime>
+    </File>
+    <File Include="WebServiceProyecto.asmx">
+      <publishTime>01/02/2018 22:24:46</publishTime>
+    </File>
+  </ItemGroup>
+</Project>

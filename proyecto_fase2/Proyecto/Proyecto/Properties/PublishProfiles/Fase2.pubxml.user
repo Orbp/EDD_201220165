@@ -1,0 +1,65 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!--
+Este archivo es utilizado por el proceso de paquete/publicación de nuestro proyecto Web. Puede personalizar el comportamiento de este proceso
+editando este archivo MSBuild. Para conocer más acerca de esto, visite http://go.microsoft.com/fwlink/?LinkID=208121. 
+-->
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <LastUsedBuildConfiguration>Debug</LastUsedBuildConfiguration>
+    <LastUsedPlatform>Any CPU</LastUsedPlatform>
+    <TimeStampOfAssociatedLegacyPublishXmlFile />
+  </PropertyGroup>
+  <ItemGroup>
+    <File Include="bin/Proyecto.dll">
+      <publishTime>01/08/2018 02:47:12</publishTime>
+    </File>
+    <File Include="bin/Proyecto.pdb">
+      <publishTime>01/08/2018 02:47:12</publishTime>
+    </File>
+    <File Include="Inicio.aspx">
+      <publishTime>01/08/2018 00:58:07</publishTime>
+    </File>
+    <File Include="Juego.aspx">
+      <publishTime>01/07/2018 22:02:47</publishTime>
+    </File>
+    <File Include="Login.aspx">
+      <publishTime>12/26/2017 17:09:52</publishTime>
+    </File>
+    <File Include="Properties/Settings.settings">
+      <publishTime>01/02/2018 23:24:18</publishTime>
+    </File>
+    <File Include="Service References/ServiceReference1/configuration.svcinfo">
+      <publishTime>01/02/2018 23:16:44</publishTime>
+    </File>
+    <File Include="Service References/ServiceReference1/configuration91.svcinfo">
+      <publishTime>01/02/2018 23:16:44</publishTime>
+    </File>
+    <File Include="Service References/ServiceReference1/Proyecto.ServiceReference1.ArbolUsuarios.datasource">
+      <publishTime>01/07/2018 23:48:46</publishTime>
+    </File>
+    <File Include="Service References/ServiceReference1/Reference.svcmap">
+      <publishTime>01/02/2018 23:16:44</publishTime>
+    </File>
+    <File Include="Service References/ServiceReference1/WebServiceProyecto.disco">
+      <publishTime>01/02/2018 23:16:44</publishTime>
+    </File>
+    <File Include="Service References/ServiceReference1/WebServiceProyecto.wsdl">
+      <publishTime>01/02/2018 23:16:44</publishTime>
+    </File>
+    <File Include="Web References/localhost/ArbolUsuarios.datasource">
+      <publishTime>01/02/2018 22:39:12</publishTime>
+    </File>
+    <File Include="Web References/localhost/Reference.map">
+      <publishTime>01/02/2018 22:39:10</publishTime>
+    </File>
+    <File Include="Web References/localhost/WebServiceProyecto.disco">
+      <publishTime>01/02/2018 22:39:10</publishTime>
+    </File>
+    <File Include="Web References/localhost/WebServiceProyecto.wsdl">
+      <publishTime>01/02/2018 22:39:10</publishTime>
+    </File>
+    <File Include="Web.config">
+      <publishTime>01/08/2018 02:47:27</publishTime>
+    </File>
+  </ItemGroup>
+</Project>

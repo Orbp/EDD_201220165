@@ -1,0 +1,88 @@
+digraph{
+ node[shape = record];
+subgraph clustertablero{
+label = "Tablero de unidades muertas";
+subgraph clusterNivel0{
+label = "Nivel 0"
+{rank = same
+ec650[label = "Numero de columna: A"];
+
+ec840[label = "Numero de columna: T"];
+
+ec880[label = "Numero de columna: X"];
+
+}
+ec650->ec840
+ec840->ec880
+ec650->c8A0
+c8A0->c11A0
+c11A0->c8A0
+ec840->c10T0
+ec880->c9X0
+{rank = same
+}{rank = same
+}{rank = same
+ef80[label = "Numero de fila: 8"];
+c8A0[label = "Fila: 8\nColumna: A\nUnidad: Submarino4\nJugador: Mord86\nArriba: 8,A-Neosatelite4"];
+ef80->c8A0
+}{rank = same
+ef90[label = "Numero de fila: 9"];
+c9X0[label = "Fila: 9\nColumna: X\nUnidad: Submarino2\nJugador: Mord86"];
+ef90->c9X0
+}{rank = same
+ef100[label = "Numero de fila: 10"];
+c10T0[label = "Fila: 10\nColumna: T\nUnidad: Submarino3\nJugador: Mord86"];
+ef100->c10T0
+}{rank = same
+ef110[label = "Numero de fila: 11"];
+c11A0[label = "Fila: 11\nColumna: A\nUnidad: Submarino4\nJugador: Mord86"];
+ef110->c11A0
+}ef80->ef90
+ef90->ef100
+ef100->ef110
+}
+subgraph clusterNivel1{
+label = "Nivel 1"
+{rank = same
+}
+{rank = same
+}{rank = same
+}{rank = same
+}}
+subgraph clusterNivel2{
+label = "Nivel 2"
+{rank = same
+ec672[label = "Numero de columna: C"];
+
+}
+ec672->c2C2
+{rank = same
+ef22[label = "Numero de fila: 2"];
+c2C2[label = "Fila: 2\nColumna: C\nUnidad: Bombardero1\nJugador: Mord86\nArriba: 2,C-Neosatelite3"];
+ef22->c2C2
+}{rank = same
+}}
+subgraph clusterNivel3{
+label = "Nivel 3"
+{rank = same
+ec663[label = "Numero de columna: B"];
+
+}
+ec663->c10B3
+c10B3->c11B3
+c11B3->c10B3
+{rank = same
+}{rank = same
+}{rank = same
+}{rank = same
+ef103[label = "Numero de fila: 10"];
+c10B3[label = "Fila: 10\nColumna: B\nUnidad: Neosatelite2\nJugador: Mord86"];
+ef103->c10B3
+}{rank = same
+ef113[label = "Numero de fila: 11"];
+c11B3[label = "Fila: 11\nColumna: B\nUnidad: Neosatelite5\nJugador: Mord86"];
+ef113->c11B3
+}ef103->ef113
+}
+}
+}

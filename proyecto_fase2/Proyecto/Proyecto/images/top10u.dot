@@ -1,0 +1,16 @@
+digraph{
+node[shape = record]
+subgraph clusterTop{
+label="Top 10 de Jugadores con mayor porcentaje de unidades destruidas"
+top0[label = "Jugador: Jado86\nNumero de juegos ganados: 96"];
+top1[label = "Jugador: Imre78\nNumero de juegos ganados: 85"];
+top2[label = "Jugador: Stin94\nNumero de juegos ganados: 61.3636363636364"];
+top3[label = "Jugador: Avey48\nNumero de juegos ganados: 55.5555555555556"];
+top4[label = "Jugador: Kaez42\nNumero de juegos ganados: 51.3513513513514"];
+top5[label = "Jugador: Taon95\nNumero de juegos ganados: 26.9230769230769"];
+top6[label = "Jugador: Asro25\nNumero de juegos ganados: 26.3157894736842"];
+top7[label = "Jugador: Mord86\nNumero de juegos ganados: 18.4210526315789"];
+top8[label = "Jugador: Amer64\nNumero de juegos ganados: NaN"];
+top9[label = "Jugador: Abwn30\nNumero de juegos ganados: NaN"];
+}
+}

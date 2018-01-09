@@ -1,0 +1,14 @@
+digraph{
+node[shape = record]
+subgraph clusterTop{
+label="Top 10 de jugadores con mas partidas ganadas"
+top0[label = "Jugador: Mord86\nNumero de juegos ganados: 4"];
+top1[label = "Jugador: Stin94\nNumero de juegos ganados: 4"];
+top2[label = "Jugador: Kaez42\nNumero de juegos ganados: 2"];
+top3[label = "Jugador: Taon95\nNumero de juegos ganados: 2"];
+top4[label = "Jugador: Asro25\nNumero de juegos ganados: 1"];
+top5[label = "Jugador: Jado86\nNumero de juegos ganados: 1"];
+top6[label = "Jugador: Avey48\nNumero de juegos ganados: 1"];
+top7[label = "Jugador: Imre78\nNumero de juegos ganados: 1"];
+}
+}
