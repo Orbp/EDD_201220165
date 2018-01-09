@@ -610,5 +610,23 @@ namespace Proyecto
                 }
             }
         }
+
+        public void PonerNumeroContactos(NodoArbol nodo, TopContactos lista)
+        {
+            if (nodo != null)
+            {
+                lista.Insertar(nodo.GetNickname(), nodo.GetContactos().Numerodecontactos(nodo.GetContactos().GetRaiz()));
+
+                if (nodo.GetHijoIzquierdo() != null)
+                {
+                    PonerNumeroContactos(nodo.GetHijoIzquierdo(), lista);
+                }
+
+                if (nodo.GetHijoDerecho() != null)
+                {
+                    PonerNumeroContactos(nodo.GetHijoDerecho(), lista);
+                }
+            }
+        }
     }
 }

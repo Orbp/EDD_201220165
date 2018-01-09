@@ -14,14 +14,15 @@
             <asp:Panel ID="Panel1" runat="server" Width="590px" style="margin-top: 0px" Height="590px">
             &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
             <asp:Label ID="Label1" runat ="server">Tablero</asp:Label>
+            &nbsp;<asp:Button ID="Button5" runat="server" OnClick="Button5_Click" Text="Actualizar imagen" />
             <br />
                 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
             <br />
-            <asp:Image ID="TableroNivel0" runat="server" Height="534px" Width="571px" style="margin-left: 8px" />
-            &nbsp;
-            <br />
+                <asp:Image ID="TableroNivel0" runat="server" Height="534px" style="margin-left: 8px" Width="571px" />
+                &nbsp;
+                <br />
                 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
-            <br />
+                <br />
                 &nbsp; &nbsp;
                         
         </asp:Panel>
@@ -86,11 +87,13 @@
                     <asp:TextBox ID="TextBox12" runat="server" Width="121px"></asp:TextBox>
 
                     <br />
-                    <br />
                 </center>
                 <br />
                 <center>
                     <asp:Button ID="Button2" runat="server" Text="Atacar" OnClick="Button2_Click" />
+                    <br />
+                    <br />
+                    <asp:Button ID="Button4" runat="server" OnClick="Button4_Click" Text="Finalizar turno" />
                 </center>
             </asp:Panel>
         </div>

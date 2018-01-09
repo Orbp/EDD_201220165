@@ -461,7 +461,43 @@ namespace Proyecto
                 {
                     ScriptManager.RegisterStartupScript(this, this.GetType(), "alertIns", "alert('El arbol de usuarios se encuentra vacio');", true);
                 }
-                
+
+            }
+            else if (DropDownList1.SelectedValue.ToString().CompareTo("Historial de partida actual") == 0)
+            {
+                ServiceReference1.WebServiceProyectoSoapClient sr = new ServiceReference1.WebServiceProyectoSoapClient();
+                if (sr.Llamadaagraficar("ha", "C:\\Reportes"))
+                {
+                    string imagen = ObtenerImagen("C:\\Reportes\\historial.jpg");
+                    if (imagen != "")
+                    {
+                        Image1.ImageUrl = imagen;
+                        Image1.Visible = true;
+                        string pathdestino = Server.MapPath("/images/");
+                        string pathob = @"C:\\Reportes";
+                        string archivofuente = System.IO.Path.Combine(pathob, "historial.jpg");
+                        string archivodestino = System.IO.Path.Combine(pathdestino, "historial.jpg");
+                        System.IO.File.Copy(archivofuente, archivodestino, true);
+                    }
+                }
+            }
+            else if (DropDownList1.SelectedValue.ToString().CompareTo("Top 10 Jugadores con mas contactos") == 0)
+            {
+                ServiceReference1.WebServiceProyectoSoapClient sr = new ServiceReference1.WebServiceProyectoSoapClient();
+                if (sr.Llamadaagraficar("topc", "C:\\Reportes"))
+                {
+                    string imagen = ObtenerImagen("C:\\Reportes\\topc.jpg");
+                    if (imagen != "")
+                    {
+                        Image1.ImageUrl = imagen;
+                        Image1.Visible = true;
+                        string pathdestino = Server.MapPath("/images/");
+                        string pathob = @"C:\\Reportes";
+                        string archivofuente = System.IO.Path.Combine(pathob, "topc.jpg");
+                        string archivodestino = System.IO.Path.Combine(pathdestino, "topc.jpg");
+                        System.IO.File.Copy(archivofuente, archivodestino, true);
+                    }
+                }
             }
             else
             {
@@ -1207,6 +1243,7 @@ namespace Proyecto
                 string archivodestino = System.IO.Path.Combine(pathdestino, "tableroinicial" + Session["Nombre"].ToString() + ".jpg");
                 System.IO.File.Copy(archivofuente, archivodestino, true);
                 sr.SetPrimerTurno();
+                sr.InicializarArbol();
                 Response.Redirect("Juego.aspx");
             }
             else

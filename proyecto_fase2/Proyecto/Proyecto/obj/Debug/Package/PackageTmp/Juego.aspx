@@ -8,27 +8,29 @@
     <title></title>
 </head>
 <body>
-    <center><h1>NAVAL WARS</h1></center>
     <form id="form1" runat="server">
+    <center><h1>NAVAL WARS</h1></center>
         <div style="float:left">
-            <asp:Panel ID="Panel1" runat="server" Width="459px" style="margin-top: 0px" Height="485px">
+            <asp:Panel ID="Panel1" runat="server" Width="590px" style="margin-top: 0px" Height="590px">
             &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
             <asp:Label ID="Label1" runat ="server">Tablero</asp:Label>
+            &nbsp;<asp:Button ID="Button5" runat="server" OnClick="Button5_Click" Text="Actualizar imagen" />
             <br />
                 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
             <br />
-            <asp:Image ID="TableroNivel0" runat="server" Height="429px" Width="448px" style="margin-left: 8px" />
-            &nbsp;
-            <br />
+                <asp:Image ID="TableroNivel0" runat="server" Height="534px" style="margin-left: 8px" Width="571px" />
+                &nbsp;
+                <br />
                 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
-            <br />
+                <br />
                 &nbsp; &nbsp;
                         
         </asp:Panel>
-        </div>
+            </div>
+        
     
-        <div style="float:left; width: 535px; height: 485px;">
-            <asp:Panel ID="panel2" runat="server" Height="482px">
+        <div style="float:left;">
+            <asp:Panel ID="panel2" runat="server" Height="590px" Width="590px">
                 <br />
                 <center>
                     <asp:Label runat="server">Movimiento de unidades</asp:Label>
@@ -65,32 +67,46 @@
                 <br />
                 <center>
                     <asp:Label runat="server">Pieza:</asp:Label>
-                    &nbsp;
-                    <asp:DropDownList ID="ddlpiezaataque" runat="server"></asp:DropDownList>
+                    &nbsp;<asp:TextBox ID="TextBox7" runat="server"></asp:TextBox>
                 </center>
                 <br />
                 <center>
+                    &nbsp; Poscion inicial
+                    <br />
                     <asp:Label runat="server">Fila:</asp:Label>
+                    <asp:TextBox ID="TextBox8" runat="server" Width="124px"></asp:TextBox>
                     &nbsp;
-                    <asp:DropDownList ID="ddlfilaataque" runat="server"></asp:DropDownList>
-                    &nbsp;
-                    &nbsp;
-                    <asp:Label runat ="server">Columna:</asp:Label>
-                    &nbsp;
-                    <asp:DropDownList ID="ddlcolumnaataque" runat="server"></asp:DropDownList>
+                    <asp:Label runat="server">Columna:</asp:Label>
+                    &nbsp;<asp:TextBox ID="TextBox9" runat="server" Width="131px"></asp:TextBox>
+                    <br />
+                    Posicion final<br /> Fila:
+                    <asp:TextBox ID="TextBox10" runat="server" Width="119px"></asp:TextBox>
+                    &nbsp;Columna:&nbsp;
+                    <asp:TextBox ID="TextBox11" runat="server" Width="121px"></asp:TextBox>
+                    &nbsp;Nivel:&nbsp;
+                    <asp:TextBox ID="TextBox12" runat="server" Width="121px"></asp:TextBox>
+
+                    <br />
                 </center>
                 <br />
                 <center>
-                    <asp:Button ID="Button2" runat="server" Text="Atacar" />
+                    <asp:Button ID="Button2" runat="server" Text="Atacar" OnClick="Button2_Click" />
+                    <br />
+                    <br />
+                    <asp:Button ID="Button4" runat="server" OnClick="Button4_Click" Text="Finalizar turno" />
                 </center>
             </asp:Panel>
         </div>
-        <div style="float:left; width: 460px; height: 481px;">
-            &nbsp;
-            <asp:Label runat="server">Consola:</asp:Label>
+
+        <div style="float:left; height: 590px;">
+            <asp:Panel ID ="panel3" runat ="server" Height="590px" Width="590px">
+                <asp:Label ID="Label2" runat="server">Consola:</asp:Label>
             <br />
             <br />
-            <asp:TextBox ID="TextBox1" runat="server" Height="418px" ReadOnly="True" Rows="50" Width="450px"></asp:TextBox>
+            <asp:TextBox ID="TextBox1" runat="server" Height="489px" ReadOnly="True" Rows="50" Width="543px"></asp:TextBox>
+        
+            </asp:Panel>
+            
         </div>
     </form>
 </body>

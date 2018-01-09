@@ -41,6 +41,7 @@ namespace WebService
         static bool jugador1listo = false;
         static bool jugador2listo = false;
         static string turnoactual = "";
+        static int numerodetiro;
 
         [WebMethod]
         public void IniciarArbol()
@@ -112,12 +113,16 @@ namespace WebService
             historialcargado = new ArbolHistorial(indice);
             index = indice;
             formaor = forma;
+            numerodetiro = 0;
         }
 
         [WebMethod]
         public void InicializarArbol()
         {
-            historialactual = new ArbolHistorial(index);
+            if (historialactual == null)
+            {
+                historialactual = new ArbolHistorial(index);
+            }
         }
 
         [WebMethod]
@@ -139,7 +144,7 @@ namespace WebService
             tamx = ptamx;
             tamy = ptamy;
             tipo = ptipo;
-            if (tipo == 1 || tipo == 2)
+            if (tipo == 1 || tipo == 3)
             {
                 tiempoenminutos = "";
             }
@@ -634,9 +639,6 @@ namespace WebService
                     arbol.Espejo(arbol);
                 }
                 g.GraficarArbol(arbol, "normal");
-
-                
-
                 return true;
             }
             else if (tipo == "ue" && !arbol.ArbolVacio())
@@ -725,6 +727,20 @@ namespace WebService
             {
                 Graficar g = new Graficar("");
                 g.GraficarTabla(tabla);
+                return true;
+            }
+            else if (tipo == "ha" && historialactual != null)
+            {
+                Graficar g = new Graficar(ruta);
+                g.GraficarHistorial(historialactual);
+                return true;
+            }
+            else if (tipo == "topc" && !arbol.ArbolVacio())
+            {
+                Graficar g = new Graficar(ruta);
+                TopContactos lista = new TopContactos();
+                arbol.PonerNumeroContactos(arbol.GetRaiz(), lista);
+                g.GraficarTopContactos(lista);
                 return true;
             }
             return false;
@@ -1103,7 +1119,7 @@ namespace WebService
             }
             NodoMatriz auxatacado = TableroJuegoActual.ExisteNodo(auxenf, auxenc, filafinal, columnafinal);
             NodoMatriz auxatacante = TableroJuegoActual.ExisteNodo(auxenf, auxenc, fila, col);
-            if (!auxatacante.atacar)
+            if (!auxatacante.atacar && auxatacado != null && auxatacado.vidad > 0)
             {
                 int ataque = auxatacante.ataque;
                 int vida = auxatacado.vidad;
@@ -1116,6 +1132,72 @@ namespace WebService
                     auxatacado.vidad = vida - ataque;
                 }
                 auxatacante.atacar = true;
+                DatosNodoHistoria datos1 = new DatosNodoHistoria();
+                datos1.SetCoordenadaX(columnafinal.ToString());
+                datos1.SetCoordenadaY(fila.ToString());
+                datos1.SetUnidadatacante(auxatacante.idunidad);
+                if (auxatacado.vidad == 0)
+                {
+                    datos1.SetResultado("1");
+                }
+                else
+                {
+                    datos1.SetResultado("0");
+                }
+                datos1.SetTipoUnidadesDan(auxatacado.idunidad);
+                datos1.SetEmisor(auxatacante.idjugador);
+                datos1.SetReceptor(auxatacado.idjugador);
+                datos1.SetFecha(DateTime.Now);
+                if (tipo == 1 || tipo == 3)
+                {
+                    datos1.SetTiempo(0000);
+                }
+                else
+                {
+
+                }
+                datos1.SetNumerodeataque(numerodetiro);
+                if (formaor == "Coordenada X")
+                {
+                    historialactual.InsertarHistorialCoordenadaX(datos1);
+                }
+                else if (formaor == "Coordenada Y")
+                {
+                    historialactual.InsertarHistorialCoordenadaY(datos1);
+                }
+                else if (formaor == "Unidad Atacante")
+                {
+                    historialactual.InsertarHistorialUnidadAtacante(datos1);
+                }
+                else if (formaor == "Resultado(Daño, eliminacion del objetivo)")
+                {
+                    historialactual.InsertarHistorialResultado(datos1);
+                }
+                else if (formaor == "Tipo de Unidad Dañada")
+                {
+                    historialactual.InsertarHistorialUnidadDan(datos1);
+                }
+                else if (formaor == "Emisor")
+                {
+                    historialactual.InsertarHistorialEmisor(datos1);
+                }
+                else if (formaor == "Receptor")
+                {
+                    historialactual.InsertarHistorialReceptor(datos1);
+                }
+                else if (formaor == "Fecha")
+                {
+                    historialactual.InsertarHistorialFecha(datos1);
+                }
+                else if (formaor == "Numero de ataque")
+                {
+                    historialactual.InsertarHistorialNumerodetiro(datos1);
+                }
+                else
+                {
+                    historialactual.InsertarHistorialTiempo(datos1);
+                }
+                numerodetiro++;
                 return true;
             }
             return false;
@@ -1149,7 +1231,7 @@ namespace WebService
             }
 
             NodoMatriz aux = TableroJuegoActual.Eliminar(auxenf, auxenc, fila, col);
-            if (aux != null && !aux.mover)
+            if (aux != null && !aux.mover && aux.vidad > 0)
             {
                 TableroJuegoActual.Insertar(filadest, coldest, nivel, aux.movimiento, aux.alcance, aux.ataque, aux.vidad, aux.idunidad, aux.idjugador);
                 aux = TableroJuegoActual.ExisteNodo(auxenf, auxenc, filadest, coldest);

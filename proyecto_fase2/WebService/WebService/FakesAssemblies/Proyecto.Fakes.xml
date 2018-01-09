@@ -40,6 +40,9 @@
         <member name="P:Proyecto.Fakes.ShimArbolContactos.InsertarStringStringString">
             <summary>Establecer el shim de ArbolContactos.Insertar(String usuario, String password, String correo)</summary>
         </member>
+        <member name="P:Proyecto.Fakes.ShimArbolContactos.NumerodecontactosNodoAVL">
+            <summary>Establecer el shim de ArbolContactos.Numerodecontactos(NodoAVL nodo)</summary>
+        </member>
         <member name="P:Proyecto.Fakes.ShimArbolContactos.RotacionDobleNodoAVLNodoAVLString">
             <summary>Establecer el shim de ArbolContactos.RotacionDoble(NodoAVL nodo, NodoAVL padre, String tipo)</summary>
         </member>
@@ -66,6 +69,9 @@
         </member>
         <member name="P:Proyecto.Fakes.ShimArbolContactos.AllInstances.InsertarStringStringString">
             <summary>Establecer el shim de ArbolContactos.Insertar(String usuario, String password, String correo)</summary>
+        </member>
+        <member name="P:Proyecto.Fakes.ShimArbolContactos.AllInstances.NumerodecontactosNodoAVL">
+            <summary>Establecer el shim de ArbolContactos.Numerodecontactos(NodoAVL nodo)</summary>
         </member>
         <member name="P:Proyecto.Fakes.ShimArbolContactos.AllInstances.RotacionDobleNodoAVLNodoAVLString">
             <summary>Establecer el shim de ArbolContactos.RotacionDoble(NodoAVL nodo, NodoAVL padre, String tipo)</summary>
@@ -259,6 +265,9 @@
         <member name="P:Proyecto.Fakes.ShimArbolUsuarios.ModificarDatosJuegoStringStringStringInt32Int32Int32Int32Int32Int32">
             <summary>Establecer el shim de ArbolUsuarios.ModificarDatosJuego(String jugador1, String oponenteant, String oponentenue, Int32 unidadesdesant, Int32 unidadesdesnue, Int32 unidadessobant, Int32 unidadessobnue, Int32 unidadesdestant, Int32 unidadesdestnue)</summary>
         </member>
+        <member name="P:Proyecto.Fakes.ShimArbolUsuarios.PonerNumeroContactosNodoArbolTopContactos">
+            <summary>Establecer el shim de ArbolUsuarios.PonerNumeroContactos(NodoArbol nodo, TopContactos lista)</summary>
+        </member>
         <member name="P:Proyecto.Fakes.ShimArbolUsuarios.SetRaizNodoArbol">
             <summary>Establecer el shim de ArbolUsuarios.SetRaiz(NodoArbol aux)</summary>
         </member>
@@ -333,6 +342,9 @@
         </member>
         <member name="P:Proyecto.Fakes.ShimArbolUsuarios.AllInstances.ModificarDatosJuegoStringStringStringInt32Int32Int32Int32Int32Int32">
             <summary>Establecer el shim de ArbolUsuarios.ModificarDatosJuego(String jugador1, String oponenteant, String oponentenue, Int32 unidadesdesant, Int32 unidadesdesnue, Int32 unidadessobant, Int32 unidadessobnue, Int32 unidadesdestant, Int32 unidadesdestnue)</summary>
+        </member>
+        <member name="P:Proyecto.Fakes.ShimArbolUsuarios.AllInstances.PonerNumeroContactosNodoArbolTopContactos">
+            <summary>Establecer el shim de ArbolUsuarios.PonerNumeroContactos(NodoArbol nodo, TopContactos lista)</summary>
         </member>
         <member name="P:Proyecto.Fakes.ShimArbolUsuarios.AllInstances.SetRaizNodoArbol">
             <summary>Establecer el shim de ArbolUsuarios.SetRaiz(NodoArbol aux)</summary>
@@ -907,6 +919,12 @@
         <member name="P:Proyecto.Fakes.ShimJuego.Button2_ClickObjectEventArgs">
             <summary>Establecer el shim de Juego.Button2_Click(Object sender, EventArgs e)</summary>
         </member>
+        <member name="P:Proyecto.Fakes.ShimJuego.Button4_ClickObjectEventArgs">
+            <summary>Establecer el shim de Juego.Button4_Click(Object sender, EventArgs e)</summary>
+        </member>
+        <member name="P:Proyecto.Fakes.ShimJuego.Button5_ClickObjectEventArgs">
+            <summary>Establecer el shim de Juego.Button5_Click(Object sender, EventArgs e)</summary>
+        </member>
         <member name="P:Proyecto.Fakes.ShimJuego.Constructor">
             <summary>Establecer el shim de Juego.Juego()</summary>
         </member>
@@ -921,6 +939,12 @@
         </member>
         <member name="P:Proyecto.Fakes.ShimJuego.AllInstances.Button2_ClickObjectEventArgs">
             <summary>Establecer el shim de Juego.Button2_Click(Object sender, EventArgs e)</summary>
+        </member>
+        <member name="P:Proyecto.Fakes.ShimJuego.AllInstances.Button4_ClickObjectEventArgs">
+            <summary>Establecer el shim de Juego.Button4_Click(Object sender, EventArgs e)</summary>
+        </member>
+        <member name="P:Proyecto.Fakes.ShimJuego.AllInstances.Button5_ClickObjectEventArgs">
+            <summary>Establecer el shim de Juego.Button5_Click(Object sender, EventArgs e)</summary>
         </member>
         <member name="P:Proyecto.Fakes.ShimJuego.AllInstances.Page_LoadObjectEventArgs">
             <summary>Establecer el shim de Juego.Page_Load(Object sender, EventArgs e)</summary>
@@ -1693,6 +1717,30 @@
         <member name="T:Proyecto.Fakes.ShimNodoMatriz.AllInstances">
             <summary>Definir correcciones de compatibilidad (shim) para todos los miembros de instancia</summary>
         </member>
+        <member name="T:Proyecto.Fakes.ShimNodoTopContactos">
+            <summary>Tipo de correcciones de compatibilidad (shim) de Proyecto.NodoTopContactos</summary>
+        </member>
+        <member name="M:Proyecto.Fakes.ShimNodoTopContactos.#ctor">
+            <summary>Inicializa una nueva instancia de correcciones de compatibilidad (shim)</summary>
+        </member>
+        <member name="M:Proyecto.Fakes.ShimNodoTopContactos.#ctor(Proyecto.NodoTopContactos)">
+            <summary>Inicializa nuevas correcciones de compatibilidad (shim) para la instancia especificada</summary>
+        </member>
+        <member name="M:Proyecto.Fakes.ShimNodoTopContactos.BehaveAsCurrent">
+            <summary>Asigna el comportamiento &apos;Current&apos; a todos los métodos del tipo corregido para compatibilidad</summary>
+        </member>
+        <member name="M:Proyecto.Fakes.ShimNodoTopContactos.BehaveAsNotImplemented">
+            <summary>Asigna el comportamiento &apos;NotImplemented&apos; a todos los métodos del tipo corregido para compatibilidad</summary>
+        </member>
+        <member name="P:Proyecto.Fakes.ShimNodoTopContactos.Behavior">
+            <summary>Asigna el comportamiento a todos los métodos del tipo corregido para compatibilidad</summary>
+        </member>
+        <member name="P:Proyecto.Fakes.ShimNodoTopContactos.ConstructorStringInt32">
+            <summary>Establecer el shim de NodoTopContactos.NodoTopContactos(String usuarios, Int32 numero)</summary>
+        </member>
+        <member name="T:Proyecto.Fakes.ShimNodoTopContactos.AllInstances">
+            <summary>Definir correcciones de compatibilidad (shim) para todos los miembros de instancia</summary>
+        </member>
         <member name="T:Proyecto.Fakes.ShimNodoTopJuegosGanados">
             <summary>Tipo de correcciones de compatibilidad (shim) de Proyecto.NodoTopJuegosGanados</summary>
         </member>
@@ -1848,6 +1896,36 @@
         </member>
         <member name="P:Proyecto.Fakes.ShimTablaHashUsuarios.AllInstances.porcentajeocupacion">
             <summary>Establecer el shim de TablaHashUsuarios.porcentajeocupacion()</summary>
+        </member>
+        <member name="T:Proyecto.Fakes.ShimTopContactos">
+            <summary>Tipo de correcciones de compatibilidad (shim) de Proyecto.TopContactos</summary>
+        </member>
+        <member name="M:Proyecto.Fakes.ShimTopContactos.#ctor">
+            <summary>Inicializa una nueva instancia de correcciones de compatibilidad (shim)</summary>
+        </member>
+        <member name="M:Proyecto.Fakes.ShimTopContactos.#ctor(Proyecto.TopContactos)">
+            <summary>Inicializa nuevas correcciones de compatibilidad (shim) para la instancia especificada</summary>
+        </member>
+        <member name="M:Proyecto.Fakes.ShimTopContactos.BehaveAsCurrent">
+            <summary>Asigna el comportamiento &apos;Current&apos; a todos los métodos del tipo corregido para compatibilidad</summary>
+        </member>
+        <member name="M:Proyecto.Fakes.ShimTopContactos.BehaveAsNotImplemented">
+            <summary>Asigna el comportamiento &apos;NotImplemented&apos; a todos los métodos del tipo corregido para compatibilidad</summary>
+        </member>
+        <member name="P:Proyecto.Fakes.ShimTopContactos.Behavior">
+            <summary>Asigna el comportamiento a todos los métodos del tipo corregido para compatibilidad</summary>
+        </member>
+        <member name="P:Proyecto.Fakes.ShimTopContactos.Constructor">
+            <summary>Establecer el shim de TopContactos.TopContactos()</summary>
+        </member>
+        <member name="P:Proyecto.Fakes.ShimTopContactos.InsertarStringInt32">
+            <summary>Establecer el shim de TopContactos.Insertar(String usuario, Int32 numero)</summary>
+        </member>
+        <member name="T:Proyecto.Fakes.ShimTopContactos.AllInstances">
+            <summary>Definir correcciones de compatibilidad (shim) para todos los miembros de instancia</summary>
+        </member>
+        <member name="P:Proyecto.Fakes.ShimTopContactos.AllInstances.InsertarStringInt32">
+            <summary>Establecer el shim de TopContactos.Insertar(String usuario, Int32 numero)</summary>
         </member>
         <member name="T:Proyecto.Fakes.StubArbolContactos">
             <summary>Tipo stub de Proyecto.ArbolContactos</summary>
@@ -3976,6 +4054,24 @@
         <member name="P:Proyecto.Fakes.StubNodoMatriz.InstanceObserver">
             <summary>Obtiene o establece el observador de la instancia.</summary>
         </member>
+        <member name="T:Proyecto.Fakes.StubNodoTopContactos">
+            <summary>Tipo stub de Proyecto.NodoTopContactos</summary>
+        </member>
+        <member name="M:Proyecto.Fakes.StubNodoTopContactos.#ctor(System.String,System.Int32)">
+            <summary>Inicializa una nueva instancia</summary>
+        </member>
+        <member name="M:Proyecto.Fakes.StubNodoTopContactos.InitializeStub">
+            <summary>Inicializa una nueva instancia de type StubNodoTopContactos</summary>
+        </member>
+        <member name="P:Proyecto.Fakes.StubNodoTopContactos.CallBase">
+            <summary>Obtiene o establece un valor que indica si debe llamarse al método base en lugar del comportamiento de reserva</summary>
+        </member>
+        <member name="P:Proyecto.Fakes.StubNodoTopContactos.InstanceBehavior">
+            <summary>Obtiene o establece el comportamiento de instancia.</summary>
+        </member>
+        <member name="P:Proyecto.Fakes.StubNodoTopContactos.InstanceObserver">
+            <summary>Obtiene o establece el observador de la instancia.</summary>
+        </member>
         <member name="T:Proyecto.Fakes.StubNodoTopJuegosGanados">
             <summary>Tipo stub de Proyecto.NodoTopJuegosGanados</summary>
         </member>
@@ -4028,6 +4124,24 @@
             <summary>Obtiene o establece el comportamiento de instancia.</summary>
         </member>
         <member name="P:Proyecto.Fakes.StubTablaHashUsuarios.InstanceObserver">
+            <summary>Obtiene o establece el observador de la instancia.</summary>
+        </member>
+        <member name="T:Proyecto.Fakes.StubTopContactos">
+            <summary>Tipo stub de Proyecto.TopContactos</summary>
+        </member>
+        <member name="M:Proyecto.Fakes.StubTopContactos.#ctor">
+            <summary>Inicializa una nueva instancia</summary>
+        </member>
+        <member name="M:Proyecto.Fakes.StubTopContactos.InitializeStub">
+            <summary>Inicializa una nueva instancia de type StubTopContactos</summary>
+        </member>
+        <member name="P:Proyecto.Fakes.StubTopContactos.CallBase">
+            <summary>Obtiene o establece un valor que indica si debe llamarse al método base en lugar del comportamiento de reserva</summary>
+        </member>
+        <member name="P:Proyecto.Fakes.StubTopContactos.InstanceBehavior">
+            <summary>Obtiene o establece el comportamiento de instancia.</summary>
+        </member>
+        <member name="P:Proyecto.Fakes.StubTopContactos.InstanceObserver">
             <summary>Obtiene o establece el observador de la instancia.</summary>
         </member>
         <member name="T:Proyecto.ServiceReference1.Fakes.ShimArbolUsuarios">
@@ -5387,6 +5501,114 @@
             <summary>Establecer el shim de EliminarUsuariosResponseBody.EliminarUsuariosResponseBody(Boolean EliminarUsuariosResult)</summary>
         </member>
         <member name="T:Proyecto.ServiceReference1.Fakes.ShimEliminarUsuariosResponseBody.AllInstances">
+            <summary>Definir correcciones de compatibilidad (shim) para todos los miembros de instancia</summary>
+        </member>
+        <member name="T:Proyecto.ServiceReference1.Fakes.ShimEsMiTurnoRequest">
+            <summary>Tipo de correcciones de compatibilidad (shim) de Proyecto.ServiceReference1.EsMiTurnoRequest</summary>
+        </member>
+        <member name="M:Proyecto.ServiceReference1.Fakes.ShimEsMiTurnoRequest.#ctor">
+            <summary>Inicializa una nueva instancia de correcciones de compatibilidad (shim)</summary>
+        </member>
+        <member name="M:Proyecto.ServiceReference1.Fakes.ShimEsMiTurnoRequest.#ctor(Proyecto.ServiceReference1.EsMiTurnoRequest)">
+            <summary>Inicializa nuevas correcciones de compatibilidad (shim) para la instancia especificada</summary>
+        </member>
+        <member name="M:Proyecto.ServiceReference1.Fakes.ShimEsMiTurnoRequest.BehaveAsCurrent">
+            <summary>Asigna el comportamiento &apos;Current&apos; a todos los métodos del tipo corregido para compatibilidad</summary>
+        </member>
+        <member name="M:Proyecto.ServiceReference1.Fakes.ShimEsMiTurnoRequest.BehaveAsNotImplemented">
+            <summary>Asigna el comportamiento &apos;NotImplemented&apos; a todos los métodos del tipo corregido para compatibilidad</summary>
+        </member>
+        <member name="P:Proyecto.ServiceReference1.Fakes.ShimEsMiTurnoRequest.Behavior">
+            <summary>Asigna el comportamiento a todos los métodos del tipo corregido para compatibilidad</summary>
+        </member>
+        <member name="P:Proyecto.ServiceReference1.Fakes.ShimEsMiTurnoRequest.Constructor">
+            <summary>Establecer el shim de EsMiTurnoRequest.EsMiTurnoRequest()</summary>
+        </member>
+        <member name="P:Proyecto.ServiceReference1.Fakes.ShimEsMiTurnoRequest.ConstructorEsMiTurnoRequestBody">
+            <summary>Establecer el shim de EsMiTurnoRequest.EsMiTurnoRequest(EsMiTurnoRequestBody Body)</summary>
+        </member>
+        <member name="T:Proyecto.ServiceReference1.Fakes.ShimEsMiTurnoRequest.AllInstances">
+            <summary>Definir correcciones de compatibilidad (shim) para todos los miembros de instancia</summary>
+        </member>
+        <member name="T:Proyecto.ServiceReference1.Fakes.ShimEsMiTurnoRequestBody">
+            <summary>Tipo de correcciones de compatibilidad (shim) de Proyecto.ServiceReference1.EsMiTurnoRequestBody</summary>
+        </member>
+        <member name="M:Proyecto.ServiceReference1.Fakes.ShimEsMiTurnoRequestBody.#ctor">
+            <summary>Inicializa una nueva instancia de correcciones de compatibilidad (shim)</summary>
+        </member>
+        <member name="M:Proyecto.ServiceReference1.Fakes.ShimEsMiTurnoRequestBody.#ctor(Proyecto.ServiceReference1.EsMiTurnoRequestBody)">
+            <summary>Inicializa nuevas correcciones de compatibilidad (shim) para la instancia especificada</summary>
+        </member>
+        <member name="M:Proyecto.ServiceReference1.Fakes.ShimEsMiTurnoRequestBody.BehaveAsCurrent">
+            <summary>Asigna el comportamiento &apos;Current&apos; a todos los métodos del tipo corregido para compatibilidad</summary>
+        </member>
+        <member name="M:Proyecto.ServiceReference1.Fakes.ShimEsMiTurnoRequestBody.BehaveAsNotImplemented">
+            <summary>Asigna el comportamiento &apos;NotImplemented&apos; a todos los métodos del tipo corregido para compatibilidad</summary>
+        </member>
+        <member name="P:Proyecto.ServiceReference1.Fakes.ShimEsMiTurnoRequestBody.Behavior">
+            <summary>Asigna el comportamiento a todos los métodos del tipo corregido para compatibilidad</summary>
+        </member>
+        <member name="P:Proyecto.ServiceReference1.Fakes.ShimEsMiTurnoRequestBody.Constructor">
+            <summary>Establecer el shim de EsMiTurnoRequestBody.EsMiTurnoRequestBody()</summary>
+        </member>
+        <member name="P:Proyecto.ServiceReference1.Fakes.ShimEsMiTurnoRequestBody.ConstructorString">
+            <summary>Establecer el shim de EsMiTurnoRequestBody.EsMiTurnoRequestBody(String usuario)</summary>
+        </member>
+        <member name="T:Proyecto.ServiceReference1.Fakes.ShimEsMiTurnoRequestBody.AllInstances">
+            <summary>Definir correcciones de compatibilidad (shim) para todos los miembros de instancia</summary>
+        </member>
+        <member name="T:Proyecto.ServiceReference1.Fakes.ShimEsMiTurnoResponse">
+            <summary>Tipo de correcciones de compatibilidad (shim) de Proyecto.ServiceReference1.EsMiTurnoResponse</summary>
+        </member>
+        <member name="M:Proyecto.ServiceReference1.Fakes.ShimEsMiTurnoResponse.#ctor">
+            <summary>Inicializa una nueva instancia de correcciones de compatibilidad (shim)</summary>
+        </member>
+        <member name="M:Proyecto.ServiceReference1.Fakes.ShimEsMiTurnoResponse.#ctor(Proyecto.ServiceReference1.EsMiTurnoResponse)">
+            <summary>Inicializa nuevas correcciones de compatibilidad (shim) para la instancia especificada</summary>
+        </member>
+        <member name="M:Proyecto.ServiceReference1.Fakes.ShimEsMiTurnoResponse.BehaveAsCurrent">
+            <summary>Asigna el comportamiento &apos;Current&apos; a todos los métodos del tipo corregido para compatibilidad</summary>
+        </member>
+        <member name="M:Proyecto.ServiceReference1.Fakes.ShimEsMiTurnoResponse.BehaveAsNotImplemented">
+            <summary>Asigna el comportamiento &apos;NotImplemented&apos; a todos los métodos del tipo corregido para compatibilidad</summary>
+        </member>
+        <member name="P:Proyecto.ServiceReference1.Fakes.ShimEsMiTurnoResponse.Behavior">
+            <summary>Asigna el comportamiento a todos los métodos del tipo corregido para compatibilidad</summary>
+        </member>
+        <member name="P:Proyecto.ServiceReference1.Fakes.ShimEsMiTurnoResponse.Constructor">
+            <summary>Establecer el shim de EsMiTurnoResponse.EsMiTurnoResponse()</summary>
+        </member>
+        <member name="P:Proyecto.ServiceReference1.Fakes.ShimEsMiTurnoResponse.ConstructorEsMiTurnoResponseBody">
+            <summary>Establecer el shim de EsMiTurnoResponse.EsMiTurnoResponse(EsMiTurnoResponseBody Body)</summary>
+        </member>
+        <member name="T:Proyecto.ServiceReference1.Fakes.ShimEsMiTurnoResponse.AllInstances">
+            <summary>Definir correcciones de compatibilidad (shim) para todos los miembros de instancia</summary>
+        </member>
+        <member name="T:Proyecto.ServiceReference1.Fakes.ShimEsMiTurnoResponseBody">
+            <summary>Tipo de correcciones de compatibilidad (shim) de Proyecto.ServiceReference1.EsMiTurnoResponseBody</summary>
+        </member>
+        <member name="M:Proyecto.ServiceReference1.Fakes.ShimEsMiTurnoResponseBody.#ctor">
+            <summary>Inicializa una nueva instancia de correcciones de compatibilidad (shim)</summary>
+        </member>
+        <member name="M:Proyecto.ServiceReference1.Fakes.ShimEsMiTurnoResponseBody.#ctor(Proyecto.ServiceReference1.EsMiTurnoResponseBody)">
+            <summary>Inicializa nuevas correcciones de compatibilidad (shim) para la instancia especificada</summary>
+        </member>
+        <member name="M:Proyecto.ServiceReference1.Fakes.ShimEsMiTurnoResponseBody.BehaveAsCurrent">
+            <summary>Asigna el comportamiento &apos;Current&apos; a todos los métodos del tipo corregido para compatibilidad</summary>
+        </member>
+        <member name="M:Proyecto.ServiceReference1.Fakes.ShimEsMiTurnoResponseBody.BehaveAsNotImplemented">
+            <summary>Asigna el comportamiento &apos;NotImplemented&apos; a todos los métodos del tipo corregido para compatibilidad</summary>
+        </member>
+        <member name="P:Proyecto.ServiceReference1.Fakes.ShimEsMiTurnoResponseBody.Behavior">
+            <summary>Asigna el comportamiento a todos los métodos del tipo corregido para compatibilidad</summary>
+        </member>
+        <member name="P:Proyecto.ServiceReference1.Fakes.ShimEsMiTurnoResponseBody.Constructor">
+            <summary>Establecer el shim de EsMiTurnoResponseBody.EsMiTurnoResponseBody()</summary>
+        </member>
+        <member name="P:Proyecto.ServiceReference1.Fakes.ShimEsMiTurnoResponseBody.ConstructorBoolean">
+            <summary>Establecer el shim de EsMiTurnoResponseBody.EsMiTurnoResponseBody(Boolean EsMiTurnoResult)</summary>
+        </member>
+        <member name="T:Proyecto.ServiceReference1.Fakes.ShimEsMiTurnoResponseBody.AllInstances">
             <summary>Definir correcciones de compatibilidad (shim) para todos los miembros de instancia</summary>
         </member>
         <member name="T:Proyecto.ServiceReference1.Fakes.ShimExistePiezaRequest">
@@ -7078,6 +7300,111 @@
         <member name="T:Proyecto.ServiceReference1.Fakes.ShimSetDatosJuegoResponseBody.AllInstances">
             <summary>Definir correcciones de compatibilidad (shim) para todos los miembros de instancia</summary>
         </member>
+        <member name="T:Proyecto.ServiceReference1.Fakes.ShimSetTurnoActualRequest">
+            <summary>Tipo de correcciones de compatibilidad (shim) de Proyecto.ServiceReference1.SetTurnoActualRequest</summary>
+        </member>
+        <member name="M:Proyecto.ServiceReference1.Fakes.ShimSetTurnoActualRequest.#ctor">
+            <summary>Inicializa una nueva instancia de correcciones de compatibilidad (shim)</summary>
+        </member>
+        <member name="M:Proyecto.ServiceReference1.Fakes.ShimSetTurnoActualRequest.#ctor(Proyecto.ServiceReference1.SetTurnoActualRequest)">
+            <summary>Inicializa nuevas correcciones de compatibilidad (shim) para la instancia especificada</summary>
+        </member>
+        <member name="M:Proyecto.ServiceReference1.Fakes.ShimSetTurnoActualRequest.BehaveAsCurrent">
+            <summary>Asigna el comportamiento &apos;Current&apos; a todos los métodos del tipo corregido para compatibilidad</summary>
+        </member>
+        <member name="M:Proyecto.ServiceReference1.Fakes.ShimSetTurnoActualRequest.BehaveAsNotImplemented">
+            <summary>Asigna el comportamiento &apos;NotImplemented&apos; a todos los métodos del tipo corregido para compatibilidad</summary>
+        </member>
+        <member name="P:Proyecto.ServiceReference1.Fakes.ShimSetTurnoActualRequest.Behavior">
+            <summary>Asigna el comportamiento a todos los métodos del tipo corregido para compatibilidad</summary>
+        </member>
+        <member name="P:Proyecto.ServiceReference1.Fakes.ShimSetTurnoActualRequest.Constructor">
+            <summary>Establecer el shim de SetTurnoActualRequest.SetTurnoActualRequest()</summary>
+        </member>
+        <member name="P:Proyecto.ServiceReference1.Fakes.ShimSetTurnoActualRequest.ConstructorSetTurnoActualRequestBody">
+            <summary>Establecer el shim de SetTurnoActualRequest.SetTurnoActualRequest(SetTurnoActualRequestBody Body)</summary>
+        </member>
+        <member name="T:Proyecto.ServiceReference1.Fakes.ShimSetTurnoActualRequest.AllInstances">
+            <summary>Definir correcciones de compatibilidad (shim) para todos los miembros de instancia</summary>
+        </member>
+        <member name="T:Proyecto.ServiceReference1.Fakes.ShimSetTurnoActualRequestBody">
+            <summary>Tipo de correcciones de compatibilidad (shim) de Proyecto.ServiceReference1.SetTurnoActualRequestBody</summary>
+        </member>
+        <member name="M:Proyecto.ServiceReference1.Fakes.ShimSetTurnoActualRequestBody.#ctor">
+            <summary>Inicializa una nueva instancia de correcciones de compatibilidad (shim)</summary>
+        </member>
+        <member name="M:Proyecto.ServiceReference1.Fakes.ShimSetTurnoActualRequestBody.#ctor(Proyecto.ServiceReference1.SetTurnoActualRequestBody)">
+            <summary>Inicializa nuevas correcciones de compatibilidad (shim) para la instancia especificada</summary>
+        </member>
+        <member name="M:Proyecto.ServiceReference1.Fakes.ShimSetTurnoActualRequestBody.BehaveAsCurrent">
+            <summary>Asigna el comportamiento &apos;Current&apos; a todos los métodos del tipo corregido para compatibilidad</summary>
+        </member>
+        <member name="M:Proyecto.ServiceReference1.Fakes.ShimSetTurnoActualRequestBody.BehaveAsNotImplemented">
+            <summary>Asigna el comportamiento &apos;NotImplemented&apos; a todos los métodos del tipo corregido para compatibilidad</summary>
+        </member>
+        <member name="P:Proyecto.ServiceReference1.Fakes.ShimSetTurnoActualRequestBody.Behavior">
+            <summary>Asigna el comportamiento a todos los métodos del tipo corregido para compatibilidad</summary>
+        </member>
+        <member name="P:Proyecto.ServiceReference1.Fakes.ShimSetTurnoActualRequestBody.Constructor">
+            <summary>Establecer el shim de SetTurnoActualRequestBody.SetTurnoActualRequestBody()</summary>
+        </member>
+        <member name="P:Proyecto.ServiceReference1.Fakes.ShimSetTurnoActualRequestBody.ConstructorString">
+            <summary>Establecer el shim de SetTurnoActualRequestBody.SetTurnoActualRequestBody(String usuario)</summary>
+        </member>
+        <member name="T:Proyecto.ServiceReference1.Fakes.ShimSetTurnoActualRequestBody.AllInstances">
+            <summary>Definir correcciones de compatibilidad (shim) para todos los miembros de instancia</summary>
+        </member>
+        <member name="T:Proyecto.ServiceReference1.Fakes.ShimSetTurnoActualResponse">
+            <summary>Tipo de correcciones de compatibilidad (shim) de Proyecto.ServiceReference1.SetTurnoActualResponse</summary>
+        </member>
+        <member name="M:Proyecto.ServiceReference1.Fakes.ShimSetTurnoActualResponse.#ctor">
+            <summary>Inicializa una nueva instancia de correcciones de compatibilidad (shim)</summary>
+        </member>
+        <member name="M:Proyecto.ServiceReference1.Fakes.ShimSetTurnoActualResponse.#ctor(Proyecto.ServiceReference1.SetTurnoActualResponse)">
+            <summary>Inicializa nuevas correcciones de compatibilidad (shim) para la instancia especificada</summary>
+        </member>
+        <member name="M:Proyecto.ServiceReference1.Fakes.ShimSetTurnoActualResponse.BehaveAsCurrent">
+            <summary>Asigna el comportamiento &apos;Current&apos; a todos los métodos del tipo corregido para compatibilidad</summary>
+        </member>
+        <member name="M:Proyecto.ServiceReference1.Fakes.ShimSetTurnoActualResponse.BehaveAsNotImplemented">
+            <summary>Asigna el comportamiento &apos;NotImplemented&apos; a todos los métodos del tipo corregido para compatibilidad</summary>
+        </member>
+        <member name="P:Proyecto.ServiceReference1.Fakes.ShimSetTurnoActualResponse.Behavior">
+            <summary>Asigna el comportamiento a todos los métodos del tipo corregido para compatibilidad</summary>
+        </member>
+        <member name="P:Proyecto.ServiceReference1.Fakes.ShimSetTurnoActualResponse.Constructor">
+            <summary>Establecer el shim de SetTurnoActualResponse.SetTurnoActualResponse()</summary>
+        </member>
+        <member name="P:Proyecto.ServiceReference1.Fakes.ShimSetTurnoActualResponse.ConstructorSetTurnoActualResponseBody">
+            <summary>Establecer el shim de SetTurnoActualResponse.SetTurnoActualResponse(SetTurnoActualResponseBody Body)</summary>
+        </member>
+        <member name="T:Proyecto.ServiceReference1.Fakes.ShimSetTurnoActualResponse.AllInstances">
+            <summary>Definir correcciones de compatibilidad (shim) para todos los miembros de instancia</summary>
+        </member>
+        <member name="T:Proyecto.ServiceReference1.Fakes.ShimSetTurnoActualResponseBody">
+            <summary>Tipo de correcciones de compatibilidad (shim) de Proyecto.ServiceReference1.SetTurnoActualResponseBody</summary>
+        </member>
+        <member name="M:Proyecto.ServiceReference1.Fakes.ShimSetTurnoActualResponseBody.#ctor">
+            <summary>Inicializa una nueva instancia de correcciones de compatibilidad (shim)</summary>
+        </member>
+        <member name="M:Proyecto.ServiceReference1.Fakes.ShimSetTurnoActualResponseBody.#ctor(Proyecto.ServiceReference1.SetTurnoActualResponseBody)">
+            <summary>Inicializa nuevas correcciones de compatibilidad (shim) para la instancia especificada</summary>
+        </member>
+        <member name="M:Proyecto.ServiceReference1.Fakes.ShimSetTurnoActualResponseBody.BehaveAsCurrent">
+            <summary>Asigna el comportamiento &apos;Current&apos; a todos los métodos del tipo corregido para compatibilidad</summary>
+        </member>
+        <member name="M:Proyecto.ServiceReference1.Fakes.ShimSetTurnoActualResponseBody.BehaveAsNotImplemented">
+            <summary>Asigna el comportamiento &apos;NotImplemented&apos; a todos los métodos del tipo corregido para compatibilidad</summary>
+        </member>
+        <member name="P:Proyecto.ServiceReference1.Fakes.ShimSetTurnoActualResponseBody.Behavior">
+            <summary>Asigna el comportamiento a todos los métodos del tipo corregido para compatibilidad</summary>
+        </member>
+        <member name="P:Proyecto.ServiceReference1.Fakes.ShimSetTurnoActualResponseBody.Constructor">
+            <summary>Establecer el shim de SetTurnoActualResponseBody.SetTurnoActualResponseBody()</summary>
+        </member>
+        <member name="T:Proyecto.ServiceReference1.Fakes.ShimSetTurnoActualResponseBody.AllInstances">
+            <summary>Definir correcciones de compatibilidad (shim) para todos los miembros de instancia</summary>
+        </member>
         <member name="T:Proyecto.ServiceReference1.Fakes.ShimValidarAtaqueRequest">
             <summary>Tipo de correcciones de compatibilidad (shim) de Proyecto.ServiceReference1.ValidarAtaqueRequest</summary>
         </member>
@@ -7486,6 +7813,9 @@
         <member name="P:Proyecto.ServiceReference1.Fakes.ShimWebServiceProyectoSoapClient.EliminarUsuariosString">
             <summary>Establecer el shim de WebServiceProyectoSoapClient.EliminarUsuarios(String pnickname)</summary>
         </member>
+        <member name="P:Proyecto.ServiceReference1.Fakes.ShimWebServiceProyectoSoapClient.EsMiTurnoString">
+            <summary>Establecer el shim de WebServiceProyectoSoapClient.EsMiTurno(String usuario)</summary>
+        </member>
         <member name="P:Proyecto.ServiceReference1.Fakes.ShimWebServiceProyectoSoapClient.ExisteNodoInt32CharInt32">
             <summary>Establecer el shim de WebServiceProyectoSoapClient.ExisteNodo(Int32 nivel, Char columna, Int32 fila)</summary>
         </member>
@@ -7609,6 +7939,9 @@
         <member name="P:Proyecto.ServiceReference1.Fakes.ShimWebServiceProyectoSoapClient.ProyectoServiceReference1WebServiceProyectoSoapEliminarUsuariosEliminarUsuariosRequest">
             <summary>Establecer el shim de WebServiceProyectoSoapClient.Proyecto.ServiceReference1.WebServiceProyectoSoap.EliminarUsuarios(EliminarUsuariosRequest request)</summary>
         </member>
+        <member name="P:Proyecto.ServiceReference1.Fakes.ShimWebServiceProyectoSoapClient.ProyectoServiceReference1WebServiceProyectoSoapEsMiTurnoEsMiTurnoRequest">
+            <summary>Establecer el shim de WebServiceProyectoSoapClient.Proyecto.ServiceReference1.WebServiceProyectoSoap.EsMiTurno(EsMiTurnoRequest request)</summary>
+        </member>
         <member name="P:Proyecto.ServiceReference1.Fakes.ShimWebServiceProyectoSoapClient.ProyectoServiceReference1WebServiceProyectoSoapExistePiezaExistePiezaRequest">
             <summary>Establecer el shim de WebServiceProyectoSoapClient.Proyecto.ServiceReference1.WebServiceProyectoSoap.ExistePieza(ExistePiezaRequest request)</summary>
         </member>
@@ -7657,6 +7990,9 @@
         <member name="P:Proyecto.ServiceReference1.Fakes.ShimWebServiceProyectoSoapClient.ProyectoServiceReference1WebServiceProyectoSoapSetDatosJuegoSetDatosJuegoRequest">
             <summary>Establecer el shim de WebServiceProyectoSoapClient.Proyecto.ServiceReference1.WebServiceProyectoSoap.SetDatosJuego(SetDatosJuegoRequest request)</summary>
         </member>
+        <member name="P:Proyecto.ServiceReference1.Fakes.ShimWebServiceProyectoSoapClient.ProyectoServiceReference1WebServiceProyectoSoapSetTurnoActualSetTurnoActualRequest">
+            <summary>Establecer el shim de WebServiceProyectoSoapClient.Proyecto.ServiceReference1.WebServiceProyectoSoap.SetTurnoActual(SetTurnoActualRequest request)</summary>
+        </member>
         <member name="P:Proyecto.ServiceReference1.Fakes.ShimWebServiceProyectoSoapClient.ProyectoServiceReference1WebServiceProyectoSoapValidarAtaqueValidarAtaqueRequest">
             <summary>Establecer el shim de WebServiceProyectoSoapClient.Proyecto.ServiceReference1.WebServiceProyectoSoap.ValidarAtaque(ValidarAtaqueRequest request)</summary>
         </member>
@@ -7668,6 +8004,12 @@
         </member>
         <member name="P:Proyecto.ServiceReference1.Fakes.ShimWebServiceProyectoSoapClient.SetDatosJuegoStringStringInt32Int32Int32Int32Int32Int32Int32String">
             <summary>Establecer el shim de WebServiceProyectoSoapClient.SetDatosJuego(String pusuario1, String pusuario2, Int32 pnivel1, Int32 pnivel2, Int32 pnivel3, Int32 pnivel4, Int32 ptamx, Int32 ptamy, Int32 ptipo, String ptiempo)</summary>
+        </member>
+        <member name="P:Proyecto.ServiceReference1.Fakes.ShimWebServiceProyectoSoapClient.SetPrimerTurno">
+            <summary>Establecer el shim de WebServiceProyectoSoapClient.SetPrimerTurno()</summary>
+        </member>
+        <member name="P:Proyecto.ServiceReference1.Fakes.ShimWebServiceProyectoSoapClient.SetTurnoActualString">
+            <summary>Establecer el shim de WebServiceProyectoSoapClient.SetTurnoActual(String usuario)</summary>
         </member>
         <member name="P:Proyecto.ServiceReference1.Fakes.ShimWebServiceProyectoSoapClient.ValidarAtaqueStringInt32Int32CharInt32Int32Char">
             <summary>Establecer el shim de WebServiceProyectoSoapClient.ValidarAtaque(String idnave, Int32 nivel, Int32 fila, Char columna, Int32 nivelfinal, Int32 filafinal, Char columnafinal)</summary>
@@ -7722,6 +8064,9 @@
         </member>
         <member name="P:Proyecto.ServiceReference1.Fakes.ShimWebServiceProyectoSoapClient.AllInstances.EliminarUsuariosString">
             <summary>Establecer el shim de WebServiceProyectoSoapClient.EliminarUsuarios(String pnickname)</summary>
+        </member>
+        <member name="P:Proyecto.ServiceReference1.Fakes.ShimWebServiceProyectoSoapClient.AllInstances.EsMiTurnoString">
+            <summary>Establecer el shim de WebServiceProyectoSoapClient.EsMiTurno(String usuario)</summary>
         </member>
         <member name="P:Proyecto.ServiceReference1.Fakes.ShimWebServiceProyectoSoapClient.AllInstances.ExisteNodoInt32CharInt32">
             <summary>Establecer el shim de WebServiceProyectoSoapClient.ExisteNodo(Int32 nivel, Char columna, Int32 fila)</summary>
@@ -7846,6 +8191,9 @@
         <member name="P:Proyecto.ServiceReference1.Fakes.ShimWebServiceProyectoSoapClient.AllInstances.ProyectoServiceReference1WebServiceProyectoSoapEliminarUsuariosEliminarUsuariosRequest">
             <summary>Establecer el shim de WebServiceProyectoSoapClient.Proyecto.ServiceReference1.WebServiceProyectoSoap.EliminarUsuarios(EliminarUsuariosRequest request)</summary>
         </member>
+        <member name="P:Proyecto.ServiceReference1.Fakes.ShimWebServiceProyectoSoapClient.AllInstances.ProyectoServiceReference1WebServiceProyectoSoapEsMiTurnoEsMiTurnoRequest">
+            <summary>Establecer el shim de WebServiceProyectoSoapClient.Proyecto.ServiceReference1.WebServiceProyectoSoap.EsMiTurno(EsMiTurnoRequest request)</summary>
+        </member>
         <member name="P:Proyecto.ServiceReference1.Fakes.ShimWebServiceProyectoSoapClient.AllInstances.ProyectoServiceReference1WebServiceProyectoSoapExistePiezaExistePiezaRequest">
             <summary>Establecer el shim de WebServiceProyectoSoapClient.Proyecto.ServiceReference1.WebServiceProyectoSoap.ExistePieza(ExistePiezaRequest request)</summary>
         </member>
@@ -7894,6 +8242,9 @@
         <member name="P:Proyecto.ServiceReference1.Fakes.ShimWebServiceProyectoSoapClient.AllInstances.ProyectoServiceReference1WebServiceProyectoSoapSetDatosJuegoSetDatosJuegoRequest">
             <summary>Establecer el shim de WebServiceProyectoSoapClient.Proyecto.ServiceReference1.WebServiceProyectoSoap.SetDatosJuego(SetDatosJuegoRequest request)</summary>
         </member>
+        <member name="P:Proyecto.ServiceReference1.Fakes.ShimWebServiceProyectoSoapClient.AllInstances.ProyectoServiceReference1WebServiceProyectoSoapSetTurnoActualSetTurnoActualRequest">
+            <summary>Establecer el shim de WebServiceProyectoSoapClient.Proyecto.ServiceReference1.WebServiceProyectoSoap.SetTurnoActual(SetTurnoActualRequest request)</summary>
+        </member>
         <member name="P:Proyecto.ServiceReference1.Fakes.ShimWebServiceProyectoSoapClient.AllInstances.ProyectoServiceReference1WebServiceProyectoSoapValidarAtaqueValidarAtaqueRequest">
             <summary>Establecer el shim de WebServiceProyectoSoapClient.Proyecto.ServiceReference1.WebServiceProyectoSoap.ValidarAtaque(ValidarAtaqueRequest request)</summary>
         </member>
@@ -7905,6 +8256,12 @@
         </member>
         <member name="P:Proyecto.ServiceReference1.Fakes.ShimWebServiceProyectoSoapClient.AllInstances.SetDatosJuegoStringStringInt32Int32Int32Int32Int32Int32Int32String">
             <summary>Establecer el shim de WebServiceProyectoSoapClient.SetDatosJuego(String pusuario1, String pusuario2, Int32 pnivel1, Int32 pnivel2, Int32 pnivel3, Int32 pnivel4, Int32 ptamx, Int32 ptamy, Int32 ptipo, String ptiempo)</summary>
+        </member>
+        <member name="P:Proyecto.ServiceReference1.Fakes.ShimWebServiceProyectoSoapClient.AllInstances.SetPrimerTurno">
+            <summary>Establecer el shim de WebServiceProyectoSoapClient.SetPrimerTurno()</summary>
+        </member>
+        <member name="P:Proyecto.ServiceReference1.Fakes.ShimWebServiceProyectoSoapClient.AllInstances.SetTurnoActualString">
+            <summary>Establecer el shim de WebServiceProyectoSoapClient.SetTurnoActual(String usuario)</summary>
         </member>
         <member name="P:Proyecto.ServiceReference1.Fakes.ShimWebServiceProyectoSoapClient.AllInstances.ValidarAtaqueStringInt32Int32CharInt32Int32Char">
             <summary>Establecer el shim de WebServiceProyectoSoapClient.ValidarAtaque(String idnave, Int32 nivel, Int32 fila, Char columna, Int32 nivelfinal, Int32 filafinal, Char columnafinal)</summary>
@@ -8930,6 +9287,90 @@
             <summary>Obtiene o establece el comportamiento de instancia.</summary>
         </member>
         <member name="P:Proyecto.ServiceReference1.Fakes.StubEliminarUsuariosResponseBody.InstanceObserver">
+            <summary>Obtiene o establece el observador de la instancia.</summary>
+        </member>
+        <member name="T:Proyecto.ServiceReference1.Fakes.StubEsMiTurnoRequest">
+            <summary>Tipo stub de Proyecto.ServiceReference1.EsMiTurnoRequest</summary>
+        </member>
+        <member name="M:Proyecto.ServiceReference1.Fakes.StubEsMiTurnoRequest.#ctor">
+            <summary>Inicializa una nueva instancia</summary>
+        </member>
+        <member name="M:Proyecto.ServiceReference1.Fakes.StubEsMiTurnoRequest.#ctor(Proyecto.ServiceReference1.EsMiTurnoRequestBody)">
+            <summary>Inicializa una nueva instancia</summary>
+        </member>
+        <member name="M:Proyecto.ServiceReference1.Fakes.StubEsMiTurnoRequest.InitializeStub">
+            <summary>Inicializa una nueva instancia de type StubEsMiTurnoRequest</summary>
+        </member>
+        <member name="P:Proyecto.ServiceReference1.Fakes.StubEsMiTurnoRequest.CallBase">
+            <summary>Obtiene o establece un valor que indica si debe llamarse al método base en lugar del comportamiento de reserva</summary>
+        </member>
+        <member name="P:Proyecto.ServiceReference1.Fakes.StubEsMiTurnoRequest.InstanceBehavior">
+            <summary>Obtiene o establece el comportamiento de instancia.</summary>
+        </member>
+        <member name="P:Proyecto.ServiceReference1.Fakes.StubEsMiTurnoRequest.InstanceObserver">
+            <summary>Obtiene o establece el observador de la instancia.</summary>
+        </member>
+        <member name="T:Proyecto.ServiceReference1.Fakes.StubEsMiTurnoRequestBody">
+            <summary>Tipo stub de Proyecto.ServiceReference1.EsMiTurnoRequestBody</summary>
+        </member>
+        <member name="M:Proyecto.ServiceReference1.Fakes.StubEsMiTurnoRequestBody.#ctor">
+            <summary>Inicializa una nueva instancia</summary>
+        </member>
+        <member name="M:Proyecto.ServiceReference1.Fakes.StubEsMiTurnoRequestBody.#ctor(System.String)">
+            <summary>Inicializa una nueva instancia</summary>
+        </member>
+        <member name="M:Proyecto.ServiceReference1.Fakes.StubEsMiTurnoRequestBody.InitializeStub">
+            <summary>Inicializa una nueva instancia de type StubEsMiTurnoRequestBody</summary>
+        </member>
+        <member name="P:Proyecto.ServiceReference1.Fakes.StubEsMiTurnoRequestBody.CallBase">
+            <summary>Obtiene o establece un valor que indica si debe llamarse al método base en lugar del comportamiento de reserva</summary>
+        </member>
+        <member name="P:Proyecto.ServiceReference1.Fakes.StubEsMiTurnoRequestBody.InstanceBehavior">
+            <summary>Obtiene o establece el comportamiento de instancia.</summary>
+        </member>
+        <member name="P:Proyecto.ServiceReference1.Fakes.StubEsMiTurnoRequestBody.InstanceObserver">
+            <summary>Obtiene o establece el observador de la instancia.</summary>
+        </member>
+        <member name="T:Proyecto.ServiceReference1.Fakes.StubEsMiTurnoResponse">
+            <summary>Tipo stub de Proyecto.ServiceReference1.EsMiTurnoResponse</summary>
+        </member>
+        <member name="M:Proyecto.ServiceReference1.Fakes.StubEsMiTurnoResponse.#ctor">
+            <summary>Inicializa una nueva instancia</summary>
+        </member>
+        <member name="M:Proyecto.ServiceReference1.Fakes.StubEsMiTurnoResponse.#ctor(Proyecto.ServiceReference1.EsMiTurnoResponseBody)">
+            <summary>Inicializa una nueva instancia</summary>
+        </member>
+        <member name="M:Proyecto.ServiceReference1.Fakes.StubEsMiTurnoResponse.InitializeStub">
+            <summary>Inicializa una nueva instancia de type StubEsMiTurnoResponse</summary>
+        </member>
+        <member name="P:Proyecto.ServiceReference1.Fakes.StubEsMiTurnoResponse.CallBase">
+            <summary>Obtiene o establece un valor que indica si debe llamarse al método base en lugar del comportamiento de reserva</summary>
+        </member>
+        <member name="P:Proyecto.ServiceReference1.Fakes.StubEsMiTurnoResponse.InstanceBehavior">
+            <summary>Obtiene o establece el comportamiento de instancia.</summary>
+        </member>
+        <member name="P:Proyecto.ServiceReference1.Fakes.StubEsMiTurnoResponse.InstanceObserver">
+            <summary>Obtiene o establece el observador de la instancia.</summary>
+        </member>
+        <member name="T:Proyecto.ServiceReference1.Fakes.StubEsMiTurnoResponseBody">
+            <summary>Tipo stub de Proyecto.ServiceReference1.EsMiTurnoResponseBody</summary>
+        </member>
+        <member name="M:Proyecto.ServiceReference1.Fakes.StubEsMiTurnoResponseBody.#ctor">
+            <summary>Inicializa una nueva instancia</summary>
+        </member>
+        <member name="M:Proyecto.ServiceReference1.Fakes.StubEsMiTurnoResponseBody.#ctor(System.Boolean)">
+            <summary>Inicializa una nueva instancia</summary>
+        </member>
+        <member name="M:Proyecto.ServiceReference1.Fakes.StubEsMiTurnoResponseBody.InitializeStub">
+            <summary>Inicializa una nueva instancia de type StubEsMiTurnoResponseBody</summary>
+        </member>
+        <member name="P:Proyecto.ServiceReference1.Fakes.StubEsMiTurnoResponseBody.CallBase">
+            <summary>Obtiene o establece un valor que indica si debe llamarse al método base en lugar del comportamiento de reserva</summary>
+        </member>
+        <member name="P:Proyecto.ServiceReference1.Fakes.StubEsMiTurnoResponseBody.InstanceBehavior">
+            <summary>Obtiene o establece el comportamiento de instancia.</summary>
+        </member>
+        <member name="P:Proyecto.ServiceReference1.Fakes.StubEsMiTurnoResponseBody.InstanceObserver">
             <summary>Obtiene o establece el observador de la instancia.</summary>
         </member>
         <member name="T:Proyecto.ServiceReference1.Fakes.StubExistePiezaRequest">
@@ -10237,6 +10678,87 @@
         <member name="P:Proyecto.ServiceReference1.Fakes.StubSetDatosJuegoResponseBody.InstanceObserver">
             <summary>Obtiene o establece el observador de la instancia.</summary>
         </member>
+        <member name="T:Proyecto.ServiceReference1.Fakes.StubSetTurnoActualRequest">
+            <summary>Tipo stub de Proyecto.ServiceReference1.SetTurnoActualRequest</summary>
+        </member>
+        <member name="M:Proyecto.ServiceReference1.Fakes.StubSetTurnoActualRequest.#ctor">
+            <summary>Inicializa una nueva instancia</summary>
+        </member>
+        <member name="M:Proyecto.ServiceReference1.Fakes.StubSetTurnoActualRequest.#ctor(Proyecto.ServiceReference1.SetTurnoActualRequestBody)">
+            <summary>Inicializa una nueva instancia</summary>
+        </member>
+        <member name="M:Proyecto.ServiceReference1.Fakes.StubSetTurnoActualRequest.InitializeStub">
+            <summary>Inicializa una nueva instancia de type StubSetTurnoActualRequest</summary>
+        </member>
+        <member name="P:Proyecto.ServiceReference1.Fakes.StubSetTurnoActualRequest.CallBase">
+            <summary>Obtiene o establece un valor que indica si debe llamarse al método base en lugar del comportamiento de reserva</summary>
+        </member>
+        <member name="P:Proyecto.ServiceReference1.Fakes.StubSetTurnoActualRequest.InstanceBehavior">
+            <summary>Obtiene o establece el comportamiento de instancia.</summary>
+        </member>
+        <member name="P:Proyecto.ServiceReference1.Fakes.StubSetTurnoActualRequest.InstanceObserver">
+            <summary>Obtiene o establece el observador de la instancia.</summary>
+        </member>
+        <member name="T:Proyecto.ServiceReference1.Fakes.StubSetTurnoActualRequestBody">
+            <summary>Tipo stub de Proyecto.ServiceReference1.SetTurnoActualRequestBody</summary>
+        </member>
+        <member name="M:Proyecto.ServiceReference1.Fakes.StubSetTurnoActualRequestBody.#ctor">
+            <summary>Inicializa una nueva instancia</summary>
+        </member>
+        <member name="M:Proyecto.ServiceReference1.Fakes.StubSetTurnoActualRequestBody.#ctor(System.String)">
+            <summary>Inicializa una nueva instancia</summary>
+        </member>
+        <member name="M:Proyecto.ServiceReference1.Fakes.StubSetTurnoActualRequestBody.InitializeStub">
+            <summary>Inicializa una nueva instancia de type StubSetTurnoActualRequestBody</summary>
+        </member>
+        <member name="P:Proyecto.ServiceReference1.Fakes.StubSetTurnoActualRequestBody.CallBase">
+            <summary>Obtiene o establece un valor que indica si debe llamarse al método base en lugar del comportamiento de reserva</summary>
+        </member>
+        <member name="P:Proyecto.ServiceReference1.Fakes.StubSetTurnoActualRequestBody.InstanceBehavior">
+            <summary>Obtiene o establece el comportamiento de instancia.</summary>
+        </member>
+        <member name="P:Proyecto.ServiceReference1.Fakes.StubSetTurnoActualRequestBody.InstanceObserver">
+            <summary>Obtiene o establece el observador de la instancia.</summary>
+        </member>
+        <member name="T:Proyecto.ServiceReference1.Fakes.StubSetTurnoActualResponse">
+            <summary>Tipo stub de Proyecto.ServiceReference1.SetTurnoActualResponse</summary>
+        </member>
+        <member name="M:Proyecto.ServiceReference1.Fakes.StubSetTurnoActualResponse.#ctor">
+            <summary>Inicializa una nueva instancia</summary>
+        </member>
+        <member name="M:Proyecto.ServiceReference1.Fakes.StubSetTurnoActualResponse.#ctor(Proyecto.ServiceReference1.SetTurnoActualResponseBody)">
+            <summary>Inicializa una nueva instancia</summary>
+        </member>
+        <member name="M:Proyecto.ServiceReference1.Fakes.StubSetTurnoActualResponse.InitializeStub">
+            <summary>Inicializa una nueva instancia de type StubSetTurnoActualResponse</summary>
+        </member>
+        <member name="P:Proyecto.ServiceReference1.Fakes.StubSetTurnoActualResponse.CallBase">
+            <summary>Obtiene o establece un valor que indica si debe llamarse al método base en lugar del comportamiento de reserva</summary>
+        </member>
+        <member name="P:Proyecto.ServiceReference1.Fakes.StubSetTurnoActualResponse.InstanceBehavior">
+            <summary>Obtiene o establece el comportamiento de instancia.</summary>
+        </member>
+        <member name="P:Proyecto.ServiceReference1.Fakes.StubSetTurnoActualResponse.InstanceObserver">
+            <summary>Obtiene o establece el observador de la instancia.</summary>
+        </member>
+        <member name="T:Proyecto.ServiceReference1.Fakes.StubSetTurnoActualResponseBody">
+            <summary>Tipo stub de Proyecto.ServiceReference1.SetTurnoActualResponseBody</summary>
+        </member>
+        <member name="M:Proyecto.ServiceReference1.Fakes.StubSetTurnoActualResponseBody.#ctor">
+            <summary>Inicializa una nueva instancia</summary>
+        </member>
+        <member name="M:Proyecto.ServiceReference1.Fakes.StubSetTurnoActualResponseBody.InitializeStub">
+            <summary>Inicializa una nueva instancia de type StubSetTurnoActualResponseBody</summary>
+        </member>
+        <member name="P:Proyecto.ServiceReference1.Fakes.StubSetTurnoActualResponseBody.CallBase">
+            <summary>Obtiene o establece un valor que indica si debe llamarse al método base en lugar del comportamiento de reserva</summary>
+        </member>
+        <member name="P:Proyecto.ServiceReference1.Fakes.StubSetTurnoActualResponseBody.InstanceBehavior">
+            <summary>Obtiene o establece el comportamiento de instancia.</summary>
+        </member>
+        <member name="P:Proyecto.ServiceReference1.Fakes.StubSetTurnoActualResponseBody.InstanceObserver">
+            <summary>Obtiene o establece el observador de la instancia.</summary>
+        </member>
         <member name="T:Proyecto.ServiceReference1.Fakes.StubValidarAtaqueRequest">
             <summary>Tipo stub de Proyecto.ServiceReference1.ValidarAtaqueRequest</summary>
         </member>
@@ -10537,6 +11059,9 @@
         <member name="F:Proyecto.ServiceReference1.Fakes.StubWebServiceProyectoSoap.EliminarUsuariosEliminarUsuariosRequest">
             <summary>Establecer el stub de WebServiceProyectoSoap.EliminarUsuarios(EliminarUsuariosRequest request)</summary>
         </member>
+        <member name="F:Proyecto.ServiceReference1.Fakes.StubWebServiceProyectoSoap.EsMiTurnoEsMiTurnoRequest">
+            <summary>Establecer el stub de WebServiceProyectoSoap.EsMiTurno(EsMiTurnoRequest request)</summary>
+        </member>
         <member name="F:Proyecto.ServiceReference1.Fakes.StubWebServiceProyectoSoap.ExisteNodoInt32CharInt32">
             <summary>Establecer el stub de WebServiceProyectoSoap.ExisteNodo(Int32 nivel, Char columna, Int32 fila)</summary>
         </member>
@@ -10666,6 +11191,9 @@
         <member name="M:Proyecto.ServiceReference1.Fakes.StubWebServiceProyectoSoap.p::Proyecto#ServiceReference1#WebServiceProyectoSoap#EliminarUsuarios(Proyecto.ServiceReference1.EliminarUsuariosRequest)">
             <summary>Establecer el stub de WebServiceProyectoSoap.EliminarUsuarios(EliminarUsuariosRequest request)</summary>
         </member>
+        <member name="M:Proyecto.ServiceReference1.Fakes.StubWebServiceProyectoSoap.p::Proyecto#ServiceReference1#WebServiceProyectoSoap#EsMiTurno(Proyecto.ServiceReference1.EsMiTurnoRequest)">
+            <summary>Establecer el stub de WebServiceProyectoSoap.EsMiTurno(EsMiTurnoRequest request)</summary>
+        </member>
         <member name="M:Proyecto.ServiceReference1.Fakes.StubWebServiceProyectoSoap.p::Proyecto#ServiceReference1#WebServiceProyectoSoap#ExisteNodo(System.Int32,System.Char,System.Int32)">
             <summary>Establecer el stub de WebServiceProyectoSoap.ExisteNodo(Int32 nivel, Char columna, Int32 fila)</summary>
         </member>
@@ -10756,6 +11284,12 @@
         <member name="M:Proyecto.ServiceReference1.Fakes.StubWebServiceProyectoSoap.p::Proyecto#ServiceReference1#WebServiceProyectoSoap#SetDatosJuego(Proyecto.ServiceReference1.SetDatosJuegoRequest)">
             <summary>Establecer el stub de WebServiceProyectoSoap.SetDatosJuego(SetDatosJuegoRequest request)</summary>
         </member>
+        <member name="M:Proyecto.ServiceReference1.Fakes.StubWebServiceProyectoSoap.p::Proyecto#ServiceReference1#WebServiceProyectoSoap#SetPrimerTurno">
+            <summary>Establecer el stub de WebServiceProyectoSoap.SetPrimerTurno()</summary>
+        </member>
+        <member name="M:Proyecto.ServiceReference1.Fakes.StubWebServiceProyectoSoap.p::Proyecto#ServiceReference1#WebServiceProyectoSoap#SetTurnoActual(Proyecto.ServiceReference1.SetTurnoActualRequest)">
+            <summary>Establecer el stub de WebServiceProyectoSoap.SetTurnoActual(SetTurnoActualRequest request)</summary>
+        </member>
         <member name="M:Proyecto.ServiceReference1.Fakes.StubWebServiceProyectoSoap.p::Proyecto#ServiceReference1#WebServiceProyectoSoap#Validar(Proyecto.ServiceReference1.ValidarRequest)">
             <summary>Establecer el stub de WebServiceProyectoSoap.Validar(ValidarRequest request)</summary>
         </member>
@@ -10767,6 +11301,12 @@
         </member>
         <member name="F:Proyecto.ServiceReference1.Fakes.StubWebServiceProyectoSoap.SetDatosJuegoSetDatosJuegoRequest">
             <summary>Establecer el stub de WebServiceProyectoSoap.SetDatosJuego(SetDatosJuegoRequest request)</summary>
+        </member>
+        <member name="F:Proyecto.ServiceReference1.Fakes.StubWebServiceProyectoSoap.SetPrimerTurno">
+            <summary>Establecer el stub de WebServiceProyectoSoap.SetPrimerTurno()</summary>
+        </member>
+        <member name="F:Proyecto.ServiceReference1.Fakes.StubWebServiceProyectoSoap.SetTurnoActualSetTurnoActualRequest">
+            <summary>Establecer el stub de WebServiceProyectoSoap.SetTurnoActual(SetTurnoActualRequest request)</summary>
         </member>
         <member name="F:Proyecto.ServiceReference1.Fakes.StubWebServiceProyectoSoap.ValidarAtaqueValidarAtaqueRequest">
             <summary>Establecer el stub de WebServiceProyectoSoap.ValidarAtaque(ValidarAtaqueRequest request)</summary>
@@ -10887,6 +11427,9 @@
         </member>
         <member name="F:Proyecto.ServiceReference1.Fakes.StubWebServiceProyectoSoapChannel.EndOpenIAsyncResult">
             <summary>Establecer el stub de ICommunicationObject.EndOpen(IAsyncResult result)</summary>
+        </member>
+        <member name="F:Proyecto.ServiceReference1.Fakes.StubWebServiceProyectoSoapChannel.EsMiTurnoEsMiTurnoRequest">
+            <summary>Establecer el stub de WebServiceProyectoSoap.EsMiTurno(EsMiTurnoRequest request)</summary>
         </member>
         <member name="F:Proyecto.ServiceReference1.Fakes.StubWebServiceProyectoSoapChannel.ExisteNodoInt32CharInt32">
             <summary>Establecer el stub de WebServiceProyectoSoap.ExisteNodo(Int32 nivel, Char columna, Int32 fila)</summary>
@@ -11044,6 +11587,9 @@
         <member name="M:Proyecto.ServiceReference1.Fakes.StubWebServiceProyectoSoapChannel.p::Proyecto#ServiceReference1#WebServiceProyectoSoap#EliminarUsuarios(Proyecto.ServiceReference1.EliminarUsuariosRequest)">
             <summary>Establecer el stub de WebServiceProyectoSoap.EliminarUsuarios(EliminarUsuariosRequest request)</summary>
         </member>
+        <member name="M:Proyecto.ServiceReference1.Fakes.StubWebServiceProyectoSoapChannel.p::Proyecto#ServiceReference1#WebServiceProyectoSoap#EsMiTurno(Proyecto.ServiceReference1.EsMiTurnoRequest)">
+            <summary>Establecer el stub de WebServiceProyectoSoap.EsMiTurno(EsMiTurnoRequest request)</summary>
+        </member>
         <member name="M:Proyecto.ServiceReference1.Fakes.StubWebServiceProyectoSoapChannel.p::Proyecto#ServiceReference1#WebServiceProyectoSoap#ExisteNodo(System.Int32,System.Char,System.Int32)">
             <summary>Establecer el stub de WebServiceProyectoSoap.ExisteNodo(Int32 nivel, Char columna, Int32 fila)</summary>
         </member>
@@ -11134,6 +11680,12 @@
         <member name="M:Proyecto.ServiceReference1.Fakes.StubWebServiceProyectoSoapChannel.p::Proyecto#ServiceReference1#WebServiceProyectoSoap#SetDatosJuego(Proyecto.ServiceReference1.SetDatosJuegoRequest)">
             <summary>Establecer el stub de WebServiceProyectoSoap.SetDatosJuego(SetDatosJuegoRequest request)</summary>
         </member>
+        <member name="M:Proyecto.ServiceReference1.Fakes.StubWebServiceProyectoSoapChannel.p::Proyecto#ServiceReference1#WebServiceProyectoSoap#SetPrimerTurno">
+            <summary>Establecer el stub de WebServiceProyectoSoap.SetPrimerTurno()</summary>
+        </member>
+        <member name="M:Proyecto.ServiceReference1.Fakes.StubWebServiceProyectoSoapChannel.p::Proyecto#ServiceReference1#WebServiceProyectoSoap#SetTurnoActual(Proyecto.ServiceReference1.SetTurnoActualRequest)">
+            <summary>Establecer el stub de WebServiceProyectoSoap.SetTurnoActual(SetTurnoActualRequest request)</summary>
+        </member>
         <member name="M:Proyecto.ServiceReference1.Fakes.StubWebServiceProyectoSoapChannel.p::Proyecto#ServiceReference1#WebServiceProyectoSoap#Validar(Proyecto.ServiceReference1.ValidarRequest)">
             <summary>Establecer el stub de WebServiceProyectoSoap.Validar(ValidarRequest request)</summary>
         </member>
@@ -11151,6 +11703,12 @@
         </member>
         <member name="F:Proyecto.ServiceReference1.Fakes.StubWebServiceProyectoSoapChannel.SetDatosJuegoSetDatosJuegoRequest">
             <summary>Establecer el stub de WebServiceProyectoSoap.SetDatosJuego(SetDatosJuegoRequest request)</summary>
+        </member>
+        <member name="F:Proyecto.ServiceReference1.Fakes.StubWebServiceProyectoSoapChannel.SetPrimerTurno">
+            <summary>Establecer el stub de WebServiceProyectoSoap.SetPrimerTurno()</summary>
+        </member>
+        <member name="F:Proyecto.ServiceReference1.Fakes.StubWebServiceProyectoSoapChannel.SetTurnoActualSetTurnoActualRequest">
+            <summary>Establecer el stub de WebServiceProyectoSoap.SetTurnoActual(SetTurnoActualRequest request)</summary>
         </member>
         <member name="F:Proyecto.ServiceReference1.Fakes.StubWebServiceProyectoSoapChannel.StateGet">
             <summary>Establecer el stub de ICommunicationObject.get_State()</summary>

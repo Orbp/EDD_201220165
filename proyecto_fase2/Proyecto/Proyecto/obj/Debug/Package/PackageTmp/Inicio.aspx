@@ -81,6 +81,8 @@
                     <asp:ListItem>Contactos</asp:ListItem>
                     <asp:ListItem>Historial Cargado</asp:ListItem>
                     <asp:ListItem>Dispersion de usuarios</asp:ListItem>
+                    <asp:ListItem>Historial de partida actual</asp:ListItem>
+                    <asp:ListItem>Top 10 Jugadores con mas contactos</asp:ListItem>
                 </asp:DropDownList>
             </center>
             <br />

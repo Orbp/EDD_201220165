@@ -11,16 +11,16 @@ editando este archivo MSBuild. Para conocer más acerca de esto, visite http://g
   </PropertyGroup>
   <ItemGroup>
     <File Include="bin/Proyecto.dll">
-      <publishTime>01/08/2018 02:47:12</publishTime>
+      <publishTime>01/08/2018 23:38:16</publishTime>
     </File>
     <File Include="bin/Proyecto.pdb">
-      <publishTime>01/08/2018 02:47:12</publishTime>
+      <publishTime>01/08/2018 23:38:16</publishTime>
     </File>
     <File Include="Inicio.aspx">
-      <publishTime>01/08/2018 00:58:07</publishTime>
+      <publishTime>01/08/2018 23:38:16</publishTime>
     </File>
     <File Include="Juego.aspx">
-      <publishTime>01/07/2018 22:02:47</publishTime>
+      <publishTime>01/08/2018 23:25:15</publishTime>
     </File>
     <File Include="Login.aspx">
       <publishTime>12/26/2017 17:09:52</publishTime>
@@ -35,7 +35,7 @@ editando este archivo MSBuild. Para conocer más acerca de esto, visite http://g
       <publishTime>01/02/2018 23:16:44</publishTime>
     </File>
     <File Include="Service References/ServiceReference1/Proyecto.ServiceReference1.ArbolUsuarios.datasource">
-      <publishTime>01/07/2018 23:48:46</publishTime>
+      <publishTime>01/08/2018 19:52:42</publishTime>
     </File>
     <File Include="Service References/ServiceReference1/Reference.svcmap">
       <publishTime>01/02/2018 23:16:44</publishTime>
@@ -59,7 +59,7 @@ editando este archivo MSBuild. Para conocer más acerca de esto, visite http://g
       <publishTime>01/02/2018 22:39:10</publishTime>
     </File>
     <File Include="Web.config">
-      <publishTime>01/08/2018 02:47:27</publishTime>
+      <publishTime>01/08/2018 23:48:36</publishTime>
     </File>
   </ItemGroup>
 </Project>

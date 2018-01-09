@@ -77,6 +77,8 @@ namespace WebService
             }
         }
 
+        
+
         private string GraficarNodos(NodoArbol raiz, string lugar)
         {
             string aux = "";
@@ -181,6 +183,39 @@ namespace WebService
             }
 
             return aux;
+        }
+
+        public void GraficarTopContactos(TopContactos lista)
+        {
+            sw = new StreamWriter(ruta + "\\topc.dot");
+            sw.WriteLine("digraph{");
+            sw.WriteLine("node[shape = record]");
+            sw.WriteLine("subgraph clustertop{");
+            NodoTopContactos aux = lista.inicio;
+            int cont = 0;
+            while (aux != null && cont < 10)
+            {
+                sw.WriteLine("t" + cont + "[label = \"Nombre: " + aux.usuarios + "\\nNumero de contactos: " + aux.numero + "\"];");
+                aux = aux.siguiente;
+                cont++;
+            }
+            for (int i = 0; i < cont - 1; i++)
+            {
+                sw.WriteLine("t" + i + "->t" + (i + 1).ToString());
+            }
+            sw.WriteLine("}");
+            sw.WriteLine("}");
+            sw.Close();
+            var comando = "";
+
+            comando = string.Format("dot -Tjpg {0} -o {1}", ruta + "\\topc.dot", ruta + "\\topc.jpg");
+
+
+            var informacion = new System.Diagnostics.ProcessStartInfo("cmd", "/C" + comando);
+            var proceso = new System.Diagnostics.Process();
+            proceso.StartInfo = informacion;
+            proceso.Start();
+            proceso.WaitForExit();
         }
 
         private string GraficarListaJuegos(ListaJuegos lista, string lugar)

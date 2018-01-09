@@ -388,5 +388,23 @@ namespace Proyecto
             }
             return false;
         }
+
+        public int Numerodecontactos(NodoAVL nodo)
+        {
+            int aux = 0;
+            if (nodo != null)
+            {
+                aux+=1;
+                if (nodo.GetHijoIzquierdo() != null)
+                {
+                    aux += Numerodecontactos(nodo.GetHijoIzquierdo());
+                }
+                if (nodo.GetHijoDerecho() != null)
+                {
+                    aux += Numerodecontactos(nodo.GetHijoDerecho());
+                }
+            }
+            return aux;
+        }
     }
 }

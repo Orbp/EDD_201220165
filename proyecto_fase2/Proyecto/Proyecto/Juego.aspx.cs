@@ -192,5 +192,21 @@ namespace Proyecto
             ServiceReference1.WebServiceProyectoSoapClient sr = new ServiceReference1.WebServiceProyectoSoapClient();
             sr.SetTurnoActual(Session["Nombre"].ToString());
         }
+
+        protected void Button5_Click(object sender, EventArgs e)
+        {
+            ServiceReference1.WebServiceProyectoSoapClient sr = new ServiceReference1.WebServiceProyectoSoapClient();
+            if (sr.EsMiTurno(Session["Nombre"].ToString()))
+            {
+                sr.Llamadaagraficar("tiu," + Session["Nombre"].ToString(), "C:\\Reportes\\");
+                string pathdestino = Server.MapPath("/images/");
+                string pathob = @"C:\\Reportes";
+                string archivofuente = System.IO.Path.Combine(pathob, "tableroinicial" + Session["Nombre"].ToString() + ".jpg");
+                string archivodestino = System.IO.Path.Combine(pathdestino, "tableroinicial" + Session["Nombre"].ToString() + ".jpg");
+                System.IO.File.Copy(archivofuente, archivodestino, true);
+                TableroNivel0.ImageUrl = "/images/tableroinicial" + Session["Nombre"].ToString() + ".jpg";
+                //TextBox7.Text = TextBox8.Text = TextBox9.Text = TextBox10.Text = TextBox11.Text = TextBox12.Text = "";
+            }
+        }
     }
 }

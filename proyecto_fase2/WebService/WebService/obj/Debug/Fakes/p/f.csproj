@@ -8,7 +8,7 @@
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProductVersion>9.0.21022</ProductVersion>
-    <ProjectGuid>0143ad95-505e-4840-affa-2cbf451af7e4</ProjectGuid>
+    <ProjectGuid>059e0f8e-d871-444a-a917-77d398a84b5d</ProjectGuid>
     <!-- update GUID here -->
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
