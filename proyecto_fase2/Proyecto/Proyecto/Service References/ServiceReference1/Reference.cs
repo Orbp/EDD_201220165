@@ -68,6 +68,14 @@ namespace Proyecto.ServiceReference1 {
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/HelloWorld", ReplyAction="*")]
         Proyecto.ServiceReference1.HelloWorldResponse HelloWorld(Proyecto.ServiceReference1.HelloWorldRequest request);
         
+        // CODEGEN: Se está generando un contrato de mensaje, ya que el nombre de elemento auxconsola del espacio de nombres http://tempuri.org/ no está marcado para aceptar valores nil.
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/SetConsola", ReplyAction="*")]
+        Proyecto.ServiceReference1.SetConsolaResponse SetConsola(Proyecto.ServiceReference1.SetConsolaRequest request);
+        
+        // CODEGEN: Se está generando un contrato de mensaje, ya que el nombre de elemento GetConsolaResult del espacio de nombres http://tempuri.org/ no está marcado para aceptar valores nil.
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/GetConsola", ReplyAction="*")]
+        Proyecto.ServiceReference1.GetConsolaResponse GetConsola(Proyecto.ServiceReference1.GetConsolaRequest request);
+        
         // CODEGEN: Se está generando un contrato de mensaje, ya que el nombre de elemento usuario del espacio de nombres http://tempuri.org/ no está marcado para aceptar valores nil.
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/SetTurnoActual", ReplyAction="*")]
         Proyecto.ServiceReference1.SetTurnoActualResponse SetTurnoActual(Proyecto.ServiceReference1.SetTurnoActualRequest request);
@@ -177,6 +185,10 @@ namespace Proyecto.ServiceReference1 {
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/Devolverusuario", ReplyAction="*")]
         Proyecto.ServiceReference1.DevolverusuarioResponse Devolverusuario(Proyecto.ServiceReference1.DevolverusuarioRequest request);
         
+        // CODEGEN: Se está generando un contrato de mensaje, ya que el nombre de elemento usuario del espacio de nombres http://tempuri.org/ no está marcado para aceptar valores nil.
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ObtenerGanador", ReplyAction="*")]
+        Proyecto.ServiceReference1.ObtenerGanadorResponse ObtenerGanador(Proyecto.ServiceReference1.ObtenerGanadorRequest request);
+        
         // CODEGEN: Se está generando un contrato de mensaje, ya que el nombre de elemento pnickname del espacio de nombres http://tempuri.org/ no está marcado para aceptar valores nil.
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ModificarUsuarios", ReplyAction="*")]
         Proyecto.ServiceReference1.ModificarUsuariosResponse ModificarUsuarios(Proyecto.ServiceReference1.ModificarUsuariosRequest request);
@@ -216,6 +228,10 @@ namespace Proyecto.ServiceReference1 {
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/InicializarMatrizInicial", ReplyAction="*")]
         void InicializarMatrizInicial();
         
+        // CODEGEN: Se está generando un contrato de mensaje, ya que el nombre de elemento DevolverNombreatacadoResult del espacio de nombres http://tempuri.org/ no está marcado para aceptar valores nil.
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/DevolverNombreatacado", ReplyAction="*")]
+        Proyecto.ServiceReference1.DevolverNombreatacadoResponse DevolverNombreatacado(Proyecto.ServiceReference1.DevolverNombreatacadoRequest request);
+        
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ExisteNodo", ReplyAction="*")]
         bool ExisteNodo(int nivel, char columna, int fila);
         
@@ -230,9 +246,20 @@ namespace Proyecto.ServiceReference1 {
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ValidarMovimiento", ReplyAction="*")]
         Proyecto.ServiceReference1.ValidarMovimientoResponse ValidarMovimiento(Proyecto.ServiceReference1.ValidarMovimientoRequest request);
         
+        // CODEGEN: Se está generando un contrato de mensaje, ya que el nombre de elemento usuario del espacio de nombres http://tempuri.org/ no está marcado para aceptar valores nil.
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/FinallizarTurno", ReplyAction="*")]
+        Proyecto.ServiceReference1.FinallizarTurnoResponse FinallizarTurno(Proyecto.ServiceReference1.FinallizarTurnoRequest request);
+        
+        // CODEGEN: Se está generando un contrato de mensaje, ya que el nombre de elemento nombre del espacio de nombres http://tempuri.org/ no está marcado para aceptar valores nil.
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/FinalizarPartida", ReplyAction="*")]
+        Proyecto.ServiceReference1.FinalizarPartidaResponse FinalizarPartida(Proyecto.ServiceReference1.FinalizarPartidaRequest request);
+        
         // CODEGEN: Se está generando un contrato de mensaje, ya que el nombre de elemento idnave del espacio de nombres http://tempuri.org/ no está marcado para aceptar valores nil.
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ValidarAtaque", ReplyAction="*")]
         Proyecto.ServiceReference1.ValidarAtaqueResponse ValidarAtaque(Proyecto.ServiceReference1.ValidarAtaqueRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/Atacardondenohaynada", ReplyAction="*")]
+        bool Atacardondenohaynada(int nivel, int fila, char col, int nivelfinal, int filafinal, char columnafinal);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/Atacar", ReplyAction="*")]
         bool Atacar(int nivel, int fila, char col, int nivelfinal, int filafinal, char columnafinal);
@@ -303,6 +330,128 @@ namespace Proyecto.ServiceReference1 {
         
         public HelloWorldResponseBody(string HelloWorldResult) {
             this.HelloWorldResult = HelloWorldResult;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class SetConsolaRequest {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="SetConsola", Namespace="http://tempuri.org/", Order=0)]
+        public Proyecto.ServiceReference1.SetConsolaRequestBody Body;
+        
+        public SetConsolaRequest() {
+        }
+        
+        public SetConsolaRequest(Proyecto.ServiceReference1.SetConsolaRequestBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://tempuri.org/")]
+    public partial class SetConsolaRequestBody {
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
+        public string auxconsola;
+        
+        public SetConsolaRequestBody() {
+        }
+        
+        public SetConsolaRequestBody(string auxconsola) {
+            this.auxconsola = auxconsola;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class SetConsolaResponse {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="SetConsolaResponse", Namespace="http://tempuri.org/", Order=0)]
+        public Proyecto.ServiceReference1.SetConsolaResponseBody Body;
+        
+        public SetConsolaResponse() {
+        }
+        
+        public SetConsolaResponse(Proyecto.ServiceReference1.SetConsolaResponseBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute()]
+    public partial class SetConsolaResponseBody {
+        
+        public SetConsolaResponseBody() {
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class GetConsolaRequest {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="GetConsola", Namespace="http://tempuri.org/", Order=0)]
+        public Proyecto.ServiceReference1.GetConsolaRequestBody Body;
+        
+        public GetConsolaRequest() {
+        }
+        
+        public GetConsolaRequest(Proyecto.ServiceReference1.GetConsolaRequestBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute()]
+    public partial class GetConsolaRequestBody {
+        
+        public GetConsolaRequestBody() {
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class GetConsolaResponse {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="GetConsolaResponse", Namespace="http://tempuri.org/", Order=0)]
+        public Proyecto.ServiceReference1.GetConsolaResponseBody Body;
+        
+        public GetConsolaResponse() {
+        }
+        
+        public GetConsolaResponse(Proyecto.ServiceReference1.GetConsolaResponseBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://tempuri.org/")]
+    public partial class GetConsolaResponseBody {
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
+        public string GetConsolaResult;
+        
+        public GetConsolaResponseBody() {
+        }
+        
+        public GetConsolaResponseBody(string GetConsolaResult) {
+            this.GetConsolaResult = GetConsolaResult;
         }
     }
     
@@ -1584,6 +1733,74 @@ namespace Proyecto.ServiceReference1 {
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
     [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class ObtenerGanadorRequest {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="ObtenerGanador", Namespace="http://tempuri.org/", Order=0)]
+        public Proyecto.ServiceReference1.ObtenerGanadorRequestBody Body;
+        
+        public ObtenerGanadorRequest() {
+        }
+        
+        public ObtenerGanadorRequest(Proyecto.ServiceReference1.ObtenerGanadorRequestBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://tempuri.org/")]
+    public partial class ObtenerGanadorRequestBody {
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
+        public string usuario;
+        
+        public ObtenerGanadorRequestBody() {
+        }
+        
+        public ObtenerGanadorRequestBody(string usuario) {
+            this.usuario = usuario;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class ObtenerGanadorResponse {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="ObtenerGanadorResponse", Namespace="http://tempuri.org/", Order=0)]
+        public Proyecto.ServiceReference1.ObtenerGanadorResponseBody Body;
+        
+        public ObtenerGanadorResponse() {
+        }
+        
+        public ObtenerGanadorResponse(Proyecto.ServiceReference1.ObtenerGanadorResponseBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://tempuri.org/")]
+    public partial class ObtenerGanadorResponseBody {
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
+        public string ObtenerGanadorResult;
+        
+        public ObtenerGanadorResponseBody() {
+        }
+        
+        public ObtenerGanadorResponseBody(string ObtenerGanadorResult) {
+            this.ObtenerGanadorResult = ObtenerGanadorResult;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
     public partial class ModificarUsuariosRequest {
         
         [System.ServiceModel.MessageBodyMemberAttribute(Name="ModificarUsuarios", Namespace="http://tempuri.org/", Order=0)]
@@ -2265,6 +2482,82 @@ namespace Proyecto.ServiceReference1 {
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
     [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class DevolverNombreatacadoRequest {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="DevolverNombreatacado", Namespace="http://tempuri.org/", Order=0)]
+        public Proyecto.ServiceReference1.DevolverNombreatacadoRequestBody Body;
+        
+        public DevolverNombreatacadoRequest() {
+        }
+        
+        public DevolverNombreatacadoRequest(Proyecto.ServiceReference1.DevolverNombreatacadoRequestBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://tempuri.org/")]
+    public partial class DevolverNombreatacadoRequestBody {
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Order=0)]
+        public int nivel;
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Order=1)]
+        public int fila;
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Order=2)]
+        public char columna;
+        
+        public DevolverNombreatacadoRequestBody() {
+        }
+        
+        public DevolverNombreatacadoRequestBody(int nivel, int fila, char columna) {
+            this.nivel = nivel;
+            this.fila = fila;
+            this.columna = columna;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class DevolverNombreatacadoResponse {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="DevolverNombreatacadoResponse", Namespace="http://tempuri.org/", Order=0)]
+        public Proyecto.ServiceReference1.DevolverNombreatacadoResponseBody Body;
+        
+        public DevolverNombreatacadoResponse() {
+        }
+        
+        public DevolverNombreatacadoResponse(Proyecto.ServiceReference1.DevolverNombreatacadoResponseBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://tempuri.org/")]
+    public partial class DevolverNombreatacadoResponseBody {
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
+        public string DevolverNombreatacadoResult;
+        
+        public DevolverNombreatacadoResponseBody() {
+        }
+        
+        public DevolverNombreatacadoResponseBody(string DevolverNombreatacadoResult) {
+            this.DevolverNombreatacadoResult = DevolverNombreatacadoResult;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
     public partial class ExistePiezaRequest {
         
         [System.ServiceModel.MessageBodyMemberAttribute(Name="ExistePieza", Namespace="http://tempuri.org/", Order=0)]
@@ -2426,6 +2719,128 @@ namespace Proyecto.ServiceReference1 {
         
         public ValidarMovimientoResponseBody(bool ValidarMovimientoResult) {
             this.ValidarMovimientoResult = ValidarMovimientoResult;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class FinallizarTurnoRequest {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="FinallizarTurno", Namespace="http://tempuri.org/", Order=0)]
+        public Proyecto.ServiceReference1.FinallizarTurnoRequestBody Body;
+        
+        public FinallizarTurnoRequest() {
+        }
+        
+        public FinallizarTurnoRequest(Proyecto.ServiceReference1.FinallizarTurnoRequestBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://tempuri.org/")]
+    public partial class FinallizarTurnoRequestBody {
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
+        public string usuario;
+        
+        public FinallizarTurnoRequestBody() {
+        }
+        
+        public FinallizarTurnoRequestBody(string usuario) {
+            this.usuario = usuario;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class FinallizarTurnoResponse {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="FinallizarTurnoResponse", Namespace="http://tempuri.org/", Order=0)]
+        public Proyecto.ServiceReference1.FinallizarTurnoResponseBody Body;
+        
+        public FinallizarTurnoResponse() {
+        }
+        
+        public FinallizarTurnoResponse(Proyecto.ServiceReference1.FinallizarTurnoResponseBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute()]
+    public partial class FinallizarTurnoResponseBody {
+        
+        public FinallizarTurnoResponseBody() {
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class FinalizarPartidaRequest {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="FinalizarPartida", Namespace="http://tempuri.org/", Order=0)]
+        public Proyecto.ServiceReference1.FinalizarPartidaRequestBody Body;
+        
+        public FinalizarPartidaRequest() {
+        }
+        
+        public FinalizarPartidaRequest(Proyecto.ServiceReference1.FinalizarPartidaRequestBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://tempuri.org/")]
+    public partial class FinalizarPartidaRequestBody {
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
+        public string nombre;
+        
+        public FinalizarPartidaRequestBody() {
+        }
+        
+        public FinalizarPartidaRequestBody(string nombre) {
+            this.nombre = nombre;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class FinalizarPartidaResponse {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="FinalizarPartidaResponse", Namespace="http://tempuri.org/", Order=0)]
+        public Proyecto.ServiceReference1.FinalizarPartidaResponseBody Body;
+        
+        public FinalizarPartidaResponse() {
+        }
+        
+        public FinalizarPartidaResponse(Proyecto.ServiceReference1.FinalizarPartidaResponseBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute()]
+    public partial class FinalizarPartidaResponseBody {
+        
+        public FinalizarPartidaResponseBody() {
         }
     }
     
@@ -2655,6 +3070,30 @@ namespace Proyecto.ServiceReference1 {
             inValue.Body = new Proyecto.ServiceReference1.HelloWorldRequestBody();
             Proyecto.ServiceReference1.HelloWorldResponse retVal = ((Proyecto.ServiceReference1.WebServiceProyectoSoap)(this)).HelloWorld(inValue);
             return retVal.Body.HelloWorldResult;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        Proyecto.ServiceReference1.SetConsolaResponse Proyecto.ServiceReference1.WebServiceProyectoSoap.SetConsola(Proyecto.ServiceReference1.SetConsolaRequest request) {
+            return base.Channel.SetConsola(request);
+        }
+        
+        public void SetConsola(string auxconsola) {
+            Proyecto.ServiceReference1.SetConsolaRequest inValue = new Proyecto.ServiceReference1.SetConsolaRequest();
+            inValue.Body = new Proyecto.ServiceReference1.SetConsolaRequestBody();
+            inValue.Body.auxconsola = auxconsola;
+            Proyecto.ServiceReference1.SetConsolaResponse retVal = ((Proyecto.ServiceReference1.WebServiceProyectoSoap)(this)).SetConsola(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        Proyecto.ServiceReference1.GetConsolaResponse Proyecto.ServiceReference1.WebServiceProyectoSoap.GetConsola(Proyecto.ServiceReference1.GetConsolaRequest request) {
+            return base.Channel.GetConsola(request);
+        }
+        
+        public string GetConsola() {
+            Proyecto.ServiceReference1.GetConsolaRequest inValue = new Proyecto.ServiceReference1.GetConsolaRequest();
+            inValue.Body = new Proyecto.ServiceReference1.GetConsolaRequestBody();
+            Proyecto.ServiceReference1.GetConsolaResponse retVal = ((Proyecto.ServiceReference1.WebServiceProyectoSoap)(this)).GetConsola(inValue);
+            return retVal.Body.GetConsolaResult;
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
@@ -2952,6 +3391,19 @@ namespace Proyecto.ServiceReference1 {
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        Proyecto.ServiceReference1.ObtenerGanadorResponse Proyecto.ServiceReference1.WebServiceProyectoSoap.ObtenerGanador(Proyecto.ServiceReference1.ObtenerGanadorRequest request) {
+            return base.Channel.ObtenerGanador(request);
+        }
+        
+        public string ObtenerGanador(string usuario) {
+            Proyecto.ServiceReference1.ObtenerGanadorRequest inValue = new Proyecto.ServiceReference1.ObtenerGanadorRequest();
+            inValue.Body = new Proyecto.ServiceReference1.ObtenerGanadorRequestBody();
+            inValue.Body.usuario = usuario;
+            Proyecto.ServiceReference1.ObtenerGanadorResponse retVal = ((Proyecto.ServiceReference1.WebServiceProyectoSoap)(this)).ObtenerGanador(inValue);
+            return retVal.Body.ObtenerGanadorResult;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
         Proyecto.ServiceReference1.ModificarUsuariosResponse Proyecto.ServiceReference1.WebServiceProyectoSoap.ModificarUsuarios(Proyecto.ServiceReference1.ModificarUsuariosRequest request) {
             return base.Channel.ModificarUsuarios(request);
         }
@@ -3093,6 +3545,21 @@ namespace Proyecto.ServiceReference1 {
             base.Channel.InicializarMatrizInicial();
         }
         
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        Proyecto.ServiceReference1.DevolverNombreatacadoResponse Proyecto.ServiceReference1.WebServiceProyectoSoap.DevolverNombreatacado(Proyecto.ServiceReference1.DevolverNombreatacadoRequest request) {
+            return base.Channel.DevolverNombreatacado(request);
+        }
+        
+        public string DevolverNombreatacado(int nivel, int fila, char columna) {
+            Proyecto.ServiceReference1.DevolverNombreatacadoRequest inValue = new Proyecto.ServiceReference1.DevolverNombreatacadoRequest();
+            inValue.Body = new Proyecto.ServiceReference1.DevolverNombreatacadoRequestBody();
+            inValue.Body.nivel = nivel;
+            inValue.Body.fila = fila;
+            inValue.Body.columna = columna;
+            Proyecto.ServiceReference1.DevolverNombreatacadoResponse retVal = ((Proyecto.ServiceReference1.WebServiceProyectoSoap)(this)).DevolverNombreatacado(inValue);
+            return retVal.Body.DevolverNombreatacadoResult;
+        }
+        
         public bool ExisteNodo(int nivel, char columna, int fila) {
             return base.Channel.ExisteNodo(nivel, columna, fila);
         }
@@ -3136,6 +3603,30 @@ namespace Proyecto.ServiceReference1 {
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        Proyecto.ServiceReference1.FinallizarTurnoResponse Proyecto.ServiceReference1.WebServiceProyectoSoap.FinallizarTurno(Proyecto.ServiceReference1.FinallizarTurnoRequest request) {
+            return base.Channel.FinallizarTurno(request);
+        }
+        
+        public void FinallizarTurno(string usuario) {
+            Proyecto.ServiceReference1.FinallizarTurnoRequest inValue = new Proyecto.ServiceReference1.FinallizarTurnoRequest();
+            inValue.Body = new Proyecto.ServiceReference1.FinallizarTurnoRequestBody();
+            inValue.Body.usuario = usuario;
+            Proyecto.ServiceReference1.FinallizarTurnoResponse retVal = ((Proyecto.ServiceReference1.WebServiceProyectoSoap)(this)).FinallizarTurno(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        Proyecto.ServiceReference1.FinalizarPartidaResponse Proyecto.ServiceReference1.WebServiceProyectoSoap.FinalizarPartida(Proyecto.ServiceReference1.FinalizarPartidaRequest request) {
+            return base.Channel.FinalizarPartida(request);
+        }
+        
+        public void FinalizarPartida(string nombre) {
+            Proyecto.ServiceReference1.FinalizarPartidaRequest inValue = new Proyecto.ServiceReference1.FinalizarPartidaRequest();
+            inValue.Body = new Proyecto.ServiceReference1.FinalizarPartidaRequestBody();
+            inValue.Body.nombre = nombre;
+            Proyecto.ServiceReference1.FinalizarPartidaResponse retVal = ((Proyecto.ServiceReference1.WebServiceProyectoSoap)(this)).FinalizarPartida(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
         Proyecto.ServiceReference1.ValidarAtaqueResponse Proyecto.ServiceReference1.WebServiceProyectoSoap.ValidarAtaque(Proyecto.ServiceReference1.ValidarAtaqueRequest request) {
             return base.Channel.ValidarAtaque(request);
         }
@@ -3152,6 +3643,10 @@ namespace Proyecto.ServiceReference1 {
             inValue.Body.columnafinal = columnafinal;
             Proyecto.ServiceReference1.ValidarAtaqueResponse retVal = ((Proyecto.ServiceReference1.WebServiceProyectoSoap)(this)).ValidarAtaque(inValue);
             return retVal.Body.ValidarAtaqueResult;
+        }
+        
+        public bool Atacardondenohaynada(int nivel, int fila, char col, int nivelfinal, int filafinal, char columnafinal) {
+            return base.Channel.Atacardondenohaynada(nivel, fila, col, nivelfinal, filafinal, columnafinal);
         }
         
         public bool Atacar(int nivel, int fila, char col, int nivelfinal, int filafinal, char columnafinal) {

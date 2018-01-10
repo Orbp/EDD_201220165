@@ -83,6 +83,9 @@
                     <asp:ListItem>Dispersion de usuarios</asp:ListItem>
                     <asp:ListItem>Historial de partida actual</asp:ListItem>
                     <asp:ListItem>Top 10 Jugadores con mas contactos</asp:ListItem>
+                    <asp:ListItem>Top 10 Jugadores con mas unidades destruidas</asp:ListItem>
+                    <asp:ListItem>Juego con mas ataques realizados</asp:ListItem>
+                    <asp:ListItem>Juego con menos ataques realizados</asp:ListItem>
                 </asp:DropDownList>
             </center>
             <br />

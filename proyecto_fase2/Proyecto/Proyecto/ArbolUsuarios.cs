@@ -628,5 +628,23 @@ namespace Proyecto
                 }
             }
         }
+
+        public void PonerNumeroUnidadesDest(NodoArbol nodo, Eliminados lista)
+        {
+            if (nodo != null)
+            {
+                lista.Insertar(nodo.GetNickname(), nodo.GetListaJuegos().DevolverNumerodeunidadesdest(nodo));
+
+                if (nodo.GetHijoIzquierdo() != null)
+                {
+                    PonerNumeroUnidadesDest(nodo.GetHijoIzquierdo(), lista);
+                }
+
+                if (nodo.GetHijoDerecho() != null)
+                {
+                    PonerNumeroUnidadesDest(nodo.GetHijoDerecho(), lista);
+                }
+            }
+        }
     }
 }

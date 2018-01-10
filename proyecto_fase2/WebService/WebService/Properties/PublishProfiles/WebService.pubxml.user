@@ -17,7 +17,7 @@ editando este archivo MSBuild. Para conocer más acerca de esto, visite http://g
       <publishTime>07/26/2012 19:41:24</publishTime>
     </File>
     <File Include="bin/Proyecto.dll">
-      <publishTime>01/08/2018 23:38:16</publishTime>
+      <publishTime>01/09/2018 22:59:42</publishTime>
     </File>
     <File Include="bin/Proyecto.Fakes.dll">
       <publishTime>01/03/2018 12:32:27</publishTime>
@@ -26,16 +26,16 @@ editando este archivo MSBuild. Para conocer más acerca de esto, visite http://g
       <publishTime>01/06/2018 01:43:45</publishTime>
     </File>
     <File Include="bin/Proyecto.pdb">
-      <publishTime>01/08/2018 23:38:16</publishTime>
+      <publishTime>01/09/2018 22:59:42</publishTime>
     </File>
     <File Include="bin/WebService.dll">
-      <publishTime>01/08/2018 23:48:27</publishTime>
+      <publishTime>01/09/2018 23:04:16</publishTime>
     </File>
     <File Include="bin/WebService.pdb">
-      <publishTime>01/08/2018 23:48:27</publishTime>
+      <publishTime>01/09/2018 23:04:16</publishTime>
     </File>
     <File Include="Web.config">
-      <publishTime>01/08/2018 23:48:27</publishTime>
+      <publishTime>01/09/2018 23:04:30</publishTime>
     </File>
     <File Include="WebServiceProyecto.asmx">
       <publishTime>01/02/2018 22:24:46</publishTime>

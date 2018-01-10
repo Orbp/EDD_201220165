@@ -6,30 +6,44 @@
 <head runat="server">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
     <title></title>
+    <style type="text/css">
+        #TextArea1 {
+            width: 551px;
+            height: 524px;
+        }
+    </style>
 </head>
 <body>
+
     <form id="form1" runat="server">
-    <center><h1>NAVAL WARS</h1></center>
+    <center><h1>
+        <asp:ScriptManager ID="ScriptManager1" runat="server">
+        </asp:ScriptManager>
+        NAVAL WARS</h1></center>
         <div style="float:left">
+
             <asp:Panel ID="Panel1" runat="server" Width="590px" style="margin-top: 0px" Height="590px">
             &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
             <asp:Label ID="Label1" runat ="server">Tablero</asp:Label>
-            &nbsp;<asp:Button ID="Button5" runat="server" OnClick="Button5_Click" Text="Actualizar imagen" />
-            <br />
-                &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
-            <br />
-                <asp:Image ID="TableroNivel0" runat="server" Height="534px" style="margin-left: 8px" Width="571px" />
-                &nbsp;
+            &nbsp;<br />
+                &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;<br /><asp:Image ID="TableroNivel0" runat="server" Height="534px" style="margin-left: 8px" Width="571px" />
+&nbsp;
                 <br />
-                &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+                &nbsp; &nbsp; &nbsp; &nbsp;
+                <asp:Timer ID="Timer1" runat="server" Interval="30000" OnTick="Timer1_Tick">
+                </asp:Timer>
+                <asp:Timer ID="Timer2" runat="server" Interval="30000" OnTick="Timer2_Tick">
+                </asp:Timer>
+                &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
                 <br />
                 &nbsp; &nbsp;
                         
         </asp:Panel>
+            
             </div>
         
     
-        <div style="float:left;">
+        <div style="float:left; width: 580px;">
             <asp:Panel ID="panel2" runat="server" Height="590px" Width="590px">
                 <br />
                 <center>
@@ -102,8 +116,8 @@
             <asp:Panel ID ="panel3" runat ="server" Height="590px" Width="590px">
                 <asp:Label ID="Label2" runat="server">Consola:</asp:Label>
             <br />
-            <br />
-            <asp:TextBox ID="TextBox1" runat="server" Height="489px" ReadOnly="True" Rows="50" Width="543px"></asp:TextBox>
+                &nbsp;&nbsp;&nbsp;
+                <textarea id="TextArea1" cols="20" name="S1" rows="1" runat ="server" contenteditable="false" readonly="readonly"></textarea><br />
         
             </asp:Panel>
             

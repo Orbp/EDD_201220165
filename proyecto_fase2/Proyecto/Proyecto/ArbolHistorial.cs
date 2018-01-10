@@ -11,6 +11,7 @@ namespace Proyecto
         public NodoHistorial[] listaramas;
         private NodoHistorial nodoentrada;
         private int index;
+        public int numerodetirosfinal;
 
         public NodoHistorial GetNodoEntrada()
         {
@@ -23,6 +24,7 @@ namespace Proyecto
             listaramas = new NodoHistorial[indice + 2];
             nodoentrada = null;
             index = indice;
+            numerodetirosfinal = 0;
         }
 
         public bool InsertarHistorialCoordenadaX(DatosNodoHistoria datos)
@@ -50,6 +52,7 @@ namespace Proyecto
             }
             nodo = padre;
             InsertarHistorial(datos, nodo, null, null, "coordenadax");
+            numerodetirosfinal++;
             return true;
         }
 
@@ -78,6 +81,7 @@ namespace Proyecto
             }
             nodo = padre;
             InsertarHistorial(datos, nodo, null, null, "coordenaday");
+            numerodetirosfinal++;
             return true;
         }
 
@@ -106,6 +110,7 @@ namespace Proyecto
             }
             nodo = padre;
             InsertarHistorial(datos, nodo, null, null, "unidadatacante");
+            numerodetirosfinal++;
             return true;
         }
 
@@ -134,6 +139,7 @@ namespace Proyecto
             }
             nodo = padre;
             InsertarHistorial(datos, nodo, null, null, "resultado");
+            numerodetirosfinal++;
             return true;
         }
 
@@ -162,6 +168,7 @@ namespace Proyecto
             }
             nodo = padre;
             InsertarHistorial(datos, nodo, null, null, "tipodeunidad");
+            numerodetirosfinal++;
             return true;
         }
 
@@ -190,6 +197,7 @@ namespace Proyecto
             }
             nodo = padre;
             InsertarHistorial(datos, nodo, null, null, "emisor");
+            numerodetirosfinal++;
             return true;
         }
 
@@ -218,6 +226,7 @@ namespace Proyecto
             }
             nodo = padre;
             InsertarHistorial(datos, nodo, null, null, "receptor");
+            numerodetirosfinal++;
             return true;
         }
 
@@ -246,6 +255,7 @@ namespace Proyecto
             }
             nodo = padre;
             InsertarHistorial(datos, nodo, null, null, "fecha");
+            numerodetirosfinal++;
             return true;
         }
 
@@ -274,6 +284,7 @@ namespace Proyecto
             }
             nodo = padre;
             InsertarHistorial(datos, nodo, null, null, "tiempo");
+            numerodetirosfinal++;
             return true;
         }
 
@@ -294,6 +305,7 @@ namespace Proyecto
             }
             nodo = padre;
             InsertarHistorial(datos, nodo, null, null, "numerodetiro");
+            numerodetirosfinal++;
         }
 
         private void InsertarHistorial(DatosNodoHistoria datos, NodoHistorial nodo, NodoHistorial hijo1, NodoHistorial hijo2, string forma)

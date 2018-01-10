@@ -191,6 +191,7 @@ namespace WebService
             sw.WriteLine("digraph{");
             sw.WriteLine("node[shape = record]");
             sw.WriteLine("subgraph clustertop{");
+            sw.WriteLine("label = \"Top de Usuarios con mas contactos\"");
             NodoTopContactos aux = lista.inicio;
             int cont = 0;
             while (aux != null && cont < 10)
@@ -209,6 +210,40 @@ namespace WebService
             var comando = "";
 
             comando = string.Format("dot -Tjpg {0} -o {1}", ruta + "\\topc.dot", ruta + "\\topc.jpg");
+
+
+            var informacion = new System.Diagnostics.ProcessStartInfo("cmd", "/C" + comando);
+            var proceso = new System.Diagnostics.Process();
+            proceso.StartInfo = informacion;
+            proceso.Start();
+            proceso.WaitForExit();
+        }
+
+        public void GraficarTopUnidadesDest(Eliminados lista)
+        {
+            sw = new StreamWriter(ruta + "\\topud.dot");
+            sw.WriteLine("digraph{");
+            sw.WriteLine("node[shape = record]");
+            sw.WriteLine("subgraph clustertop{");
+            sw.WriteLine("label = \"Top de Usuarios con mas contactos\"");
+            NodoEliminados aux = lista.primero;
+            int cont = 0;
+            while (aux != null && cont < 10)
+            {
+                sw.WriteLine("t" + cont + "[label = \"Nombre: " + aux.usuario + "\\nNumero de unidades destruidas: " + aux.unidades + "\"];");
+                aux = aux.siguiente;
+                cont++;
+            }
+            for (int i = 0; i < cont - 1; i++)
+            {
+                sw.WriteLine("t" + i + "->t" + (i + 1).ToString());
+            }
+            sw.WriteLine("}");
+            sw.WriteLine("}");
+            sw.Close();
+            var comando = "";
+
+            comando = string.Format("dot -Tjpg {0} -o {1}", ruta + "\\topud.dot", ruta + "\\topud.jpg");
 
 
             var informacion = new System.Diagnostics.ProcessStartInfo("cmd", "/C" + comando);
@@ -1080,6 +1115,7 @@ namespace WebService
             sw.Close();
             var comando = string.Format("dot -Tjpg {0} -o {1}", ruta + "\\tableroinicial" + usuario + ".dot", ruta + "\\tableroinicial" + usuario + ".jpg");
             var informacion = new System.Diagnostics.ProcessStartInfo("cmd", "/C" + comando);
+            informacion.CreateNoWindow = false;
             var proceso = new System.Diagnostics.Process();
             proceso.StartInfo = informacion;
             proceso.Start();

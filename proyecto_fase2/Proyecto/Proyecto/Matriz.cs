@@ -172,6 +172,99 @@ namespace Proyecto
             return aux;
         }
 
+        public int Numerodeunidadesvivas(string usuario)
+        {
+            int aux = 0;
+            for(int i = 0; i < 4; i++)
+            {
+                NodoEncabezado auxfila = null;
+                if (i == 0)
+                {
+                    auxfila = this.enfnivel0.GetPrimero();
+                }
+                else if (i == 1)
+                {
+                    auxfila = this.enfnivel1.GetPrimero();
+                }
+                else if (i == 2)
+                {
+                    auxfila = this.enfnivel2.GetPrimero();
+                }
+                else
+                {
+                    auxfila = this.enfnivel3.GetPrimero();
+                }
+                while (auxfila != null)
+                {
+                    NodoMatriz auxiliarcontenido = auxfila.cont;
+                    while (auxiliarcontenido != null)
+                    {
+                        if (auxiliarcontenido.idjugador == usuario && auxiliarcontenido.vidad > 0)
+                        {
+                            aux += 1;
+                        }
+                        auxiliarcontenido = auxiliarcontenido.siguiente;
+                    }
+                    auxfila = auxfila.siguiente;
+                }
+            }
+            return aux;
+        }
+
+        public bool verificarbaseenemiga(string usuario)
+        {
+            NodoEncabezado auxiliar = this.enfnivel1.GetPrimero();
+            while (auxiliar != null)
+            {
+                NodoMatriz auxiliarcontenido = auxiliar.cont;
+                while (auxiliarcontenido != null)
+                {
+                    if (auxiliarcontenido.idjugador == usuario && auxiliarcontenido.idunidad.Contains("Base") && auxiliarcontenido.vidad != 0)
+                    {
+                        return true;
+                    }
+                    auxiliarcontenido = auxiliarcontenido.siguiente;
+                }
+                auxiliar = auxiliar.siguiente;
+            }
+            return false;
+        }
+
+        public void Cambiarestadomov(string usuario, int nivel)
+        {
+            NodoEncabezado aux = null;
+            if (nivel == 0)
+            {
+                aux = this.enfnivel0.GetPrimero();
+            }
+            else if (nivel == 1)
+            {
+                aux = this.enfnivel1.GetPrimero();
+            }
+            else if (nivel == 2)
+            {
+                aux = this.enfnivel2.GetPrimero();
+            }
+            else
+            {
+                aux = this.enfnivel3.GetPrimero();
+            }
+            while (aux != null)
+            {
+                NodoMatriz auxiliarcontenido = aux.cont;
+                while (auxiliarcontenido != null)
+                {
+                    if (auxiliarcontenido.idjugador == usuario)
+                    {
+                        auxiliarcontenido.mover = false;
+                        auxiliarcontenido.atacar = false;
+                    }
+                    auxiliarcontenido = auxiliarcontenido.siguiente;
+                }
+                aux = aux.siguiente;
+            }
+        }
+
         public void Insertar(EncabezadoFila enf, EncabezadosColumna enc, int fila, char columna, int movimiento, int alcance, int ataque, int vida, string idunidad, string idjugador)
         {
             NodoMatriz nuevo = new NodoMatriz(movimiento, alcance, ataque, vida, idunidad, idjugador, fila, columna);

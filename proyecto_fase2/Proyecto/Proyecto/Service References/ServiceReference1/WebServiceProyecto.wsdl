@@ -19,6 +19,26 @@
           </s:sequence>
         </s:complexType>
       </s:element>
+      <s:element name="SetConsola">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="auxconsola" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SetConsolaResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetConsola">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetConsolaResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetConsolaResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
       <s:element name="SetTurnoActual">
         <s:complexType>
           <s:sequence>
@@ -360,6 +380,20 @@
           </s:sequence>
         </s:complexType>
       </s:element>
+      <s:element name="ObtenerGanador">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="usuario" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ObtenerGanadorResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ObtenerGanadorResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
       <s:element name="ModificarUsuarios">
         <s:complexType>
           <s:sequence>
@@ -503,6 +537,22 @@
       <s:element name="InicializarMatrizInicialResponse">
         <s:complexType />
       </s:element>
+      <s:element name="DevolverNombreatacado">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="nivel" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="fila" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="columna" type="s1:char" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DevolverNombreatacadoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="DevolverNombreatacadoResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
       <s:element name="ExisteNodo">
         <s:complexType>
           <s:sequence>
@@ -571,6 +621,26 @@
           </s:sequence>
         </s:complexType>
       </s:element>
+      <s:element name="FinallizarTurno">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="usuario" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="FinallizarTurnoResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="FinalizarPartida">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="nombre" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="FinalizarPartidaResponse">
+        <s:complexType />
+      </s:element>
       <s:element name="ValidarAtaque">
         <s:complexType>
           <s:sequence>
@@ -588,6 +658,25 @@
         <s:complexType>
           <s:sequence>
             <s:element minOccurs="1" maxOccurs="1" name="ValidarAtaqueResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Atacardondenohaynada">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="nivel" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="fila" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="col" type="s1:char" />
+            <s:element minOccurs="1" maxOccurs="1" name="nivelfinal" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="filafinal" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="columnafinal" type="s1:char" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AtacardondenohaynadaResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="AtacardondenohaynadaResult" type="s:boolean" />
           </s:sequence>
         </s:complexType>
       </s:element>
@@ -664,6 +753,18 @@
   </wsdl:message>
   <wsdl:message name="HelloWorldSoapOut">
     <wsdl:part name="parameters" element="tns:HelloWorldResponse" />
+  </wsdl:message>
+  <wsdl:message name="SetConsolaSoapIn">
+    <wsdl:part name="parameters" element="tns:SetConsola" />
+  </wsdl:message>
+  <wsdl:message name="SetConsolaSoapOut">
+    <wsdl:part name="parameters" element="tns:SetConsolaResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetConsolaSoapIn">
+    <wsdl:part name="parameters" element="tns:GetConsola" />
+  </wsdl:message>
+  <wsdl:message name="GetConsolaSoapOut">
+    <wsdl:part name="parameters" element="tns:GetConsolaResponse" />
   </wsdl:message>
   <wsdl:message name="SetTurnoActualSoapIn">
     <wsdl:part name="parameters" element="tns:SetTurnoActual" />
@@ -845,6 +946,12 @@
   <wsdl:message name="DevolverusuarioSoapOut">
     <wsdl:part name="parameters" element="tns:DevolverusuarioResponse" />
   </wsdl:message>
+  <wsdl:message name="ObtenerGanadorSoapIn">
+    <wsdl:part name="parameters" element="tns:ObtenerGanador" />
+  </wsdl:message>
+  <wsdl:message name="ObtenerGanadorSoapOut">
+    <wsdl:part name="parameters" element="tns:ObtenerGanadorResponse" />
+  </wsdl:message>
   <wsdl:message name="ModificarUsuariosSoapIn">
     <wsdl:part name="parameters" element="tns:ModificarUsuarios" />
   </wsdl:message>
@@ -905,6 +1012,12 @@
   <wsdl:message name="InicializarMatrizInicialSoapOut">
     <wsdl:part name="parameters" element="tns:InicializarMatrizInicialResponse" />
   </wsdl:message>
+  <wsdl:message name="DevolverNombreatacadoSoapIn">
+    <wsdl:part name="parameters" element="tns:DevolverNombreatacado" />
+  </wsdl:message>
+  <wsdl:message name="DevolverNombreatacadoSoapOut">
+    <wsdl:part name="parameters" element="tns:DevolverNombreatacadoResponse" />
+  </wsdl:message>
   <wsdl:message name="ExisteNodoSoapIn">
     <wsdl:part name="parameters" element="tns:ExisteNodo" />
   </wsdl:message>
@@ -929,11 +1042,29 @@
   <wsdl:message name="ValidarMovimientoSoapOut">
     <wsdl:part name="parameters" element="tns:ValidarMovimientoResponse" />
   </wsdl:message>
+  <wsdl:message name="FinallizarTurnoSoapIn">
+    <wsdl:part name="parameters" element="tns:FinallizarTurno" />
+  </wsdl:message>
+  <wsdl:message name="FinallizarTurnoSoapOut">
+    <wsdl:part name="parameters" element="tns:FinallizarTurnoResponse" />
+  </wsdl:message>
+  <wsdl:message name="FinalizarPartidaSoapIn">
+    <wsdl:part name="parameters" element="tns:FinalizarPartida" />
+  </wsdl:message>
+  <wsdl:message name="FinalizarPartidaSoapOut">
+    <wsdl:part name="parameters" element="tns:FinalizarPartidaResponse" />
+  </wsdl:message>
   <wsdl:message name="ValidarAtaqueSoapIn">
     <wsdl:part name="parameters" element="tns:ValidarAtaque" />
   </wsdl:message>
   <wsdl:message name="ValidarAtaqueSoapOut">
     <wsdl:part name="parameters" element="tns:ValidarAtaqueResponse" />
+  </wsdl:message>
+  <wsdl:message name="AtacardondenohaynadaSoapIn">
+    <wsdl:part name="parameters" element="tns:Atacardondenohaynada" />
+  </wsdl:message>
+  <wsdl:message name="AtacardondenohaynadaSoapOut">
+    <wsdl:part name="parameters" element="tns:AtacardondenohaynadaResponse" />
   </wsdl:message>
   <wsdl:message name="AtacarSoapIn">
     <wsdl:part name="parameters" element="tns:Atacar" />
@@ -961,6 +1092,14 @@
     <wsdl:operation name="HelloWorld">
       <wsdl:input message="tns:HelloWorldSoapIn" />
       <wsdl:output message="tns:HelloWorldSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SetConsola">
+      <wsdl:input message="tns:SetConsolaSoapIn" />
+      <wsdl:output message="tns:SetConsolaSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetConsola">
+      <wsdl:input message="tns:GetConsolaSoapIn" />
+      <wsdl:output message="tns:GetConsolaSoapOut" />
     </wsdl:operation>
     <wsdl:operation name="SetTurnoActual">
       <wsdl:input message="tns:SetTurnoActualSoapIn" />
@@ -1082,6 +1221,10 @@
       <wsdl:input message="tns:DevolverusuarioSoapIn" />
       <wsdl:output message="tns:DevolverusuarioSoapOut" />
     </wsdl:operation>
+    <wsdl:operation name="ObtenerGanador">
+      <wsdl:input message="tns:ObtenerGanadorSoapIn" />
+      <wsdl:output message="tns:ObtenerGanadorSoapOut" />
+    </wsdl:operation>
     <wsdl:operation name="ModificarUsuarios">
       <wsdl:input message="tns:ModificarUsuariosSoapIn" />
       <wsdl:output message="tns:ModificarUsuariosSoapOut" />
@@ -1122,6 +1265,10 @@
       <wsdl:input message="tns:InicializarMatrizInicialSoapIn" />
       <wsdl:output message="tns:InicializarMatrizInicialSoapOut" />
     </wsdl:operation>
+    <wsdl:operation name="DevolverNombreatacado">
+      <wsdl:input message="tns:DevolverNombreatacadoSoapIn" />
+      <wsdl:output message="tns:DevolverNombreatacadoSoapOut" />
+    </wsdl:operation>
     <wsdl:operation name="ExisteNodo">
       <wsdl:input message="tns:ExisteNodoSoapIn" />
       <wsdl:output message="tns:ExisteNodoSoapOut" />
@@ -1138,9 +1285,21 @@
       <wsdl:input message="tns:ValidarMovimientoSoapIn" />
       <wsdl:output message="tns:ValidarMovimientoSoapOut" />
     </wsdl:operation>
+    <wsdl:operation name="FinallizarTurno">
+      <wsdl:input message="tns:FinallizarTurnoSoapIn" />
+      <wsdl:output message="tns:FinallizarTurnoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="FinalizarPartida">
+      <wsdl:input message="tns:FinalizarPartidaSoapIn" />
+      <wsdl:output message="tns:FinalizarPartidaSoapOut" />
+    </wsdl:operation>
     <wsdl:operation name="ValidarAtaque">
       <wsdl:input message="tns:ValidarAtaqueSoapIn" />
       <wsdl:output message="tns:ValidarAtaqueSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Atacardondenohaynada">
+      <wsdl:input message="tns:AtacardondenohaynadaSoapIn" />
+      <wsdl:output message="tns:AtacardondenohaynadaSoapOut" />
     </wsdl:operation>
     <wsdl:operation name="Atacar">
       <wsdl:input message="tns:AtacarSoapIn" />
@@ -1168,6 +1327,24 @@
     </wsdl:operation>
     <wsdl:operation name="HelloWorld">
       <soap:operation soapAction="http://tempuri.org/HelloWorld" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SetConsola">
+      <soap:operation soapAction="http://tempuri.org/SetConsola" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetConsola">
+      <soap:operation soapAction="http://tempuri.org/GetConsola" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -1445,6 +1622,15 @@
         <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
+    <wsdl:operation name="ObtenerGanador">
+      <soap:operation soapAction="http://tempuri.org/ObtenerGanador" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
     <wsdl:operation name="ModificarUsuarios">
       <soap:operation soapAction="http://tempuri.org/ModificarUsuarios" style="document" />
       <wsdl:input>
@@ -1535,6 +1721,15 @@
         <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
+    <wsdl:operation name="DevolverNombreatacado">
+      <soap:operation soapAction="http://tempuri.org/DevolverNombreatacado" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
     <wsdl:operation name="ExisteNodo">
       <soap:operation soapAction="http://tempuri.org/ExisteNodo" style="document" />
       <wsdl:input>
@@ -1571,8 +1766,35 @@
         <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
+    <wsdl:operation name="FinallizarTurno">
+      <soap:operation soapAction="http://tempuri.org/FinallizarTurno" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="FinalizarPartida">
+      <soap:operation soapAction="http://tempuri.org/FinalizarPartida" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
     <wsdl:operation name="ValidarAtaque">
       <soap:operation soapAction="http://tempuri.org/ValidarAtaque" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Atacardondenohaynada">
+      <soap:operation soapAction="http://tempuri.org/Atacardondenohaynada" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -1621,6 +1843,24 @@
     </wsdl:operation>
     <wsdl:operation name="HelloWorld">
       <soap12:operation soapAction="http://tempuri.org/HelloWorld" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SetConsola">
+      <soap12:operation soapAction="http://tempuri.org/SetConsola" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetConsola">
+      <soap12:operation soapAction="http://tempuri.org/GetConsola" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>
@@ -1898,6 +2138,15 @@
         <soap12:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
+    <wsdl:operation name="ObtenerGanador">
+      <soap12:operation soapAction="http://tempuri.org/ObtenerGanador" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
     <wsdl:operation name="ModificarUsuarios">
       <soap12:operation soapAction="http://tempuri.org/ModificarUsuarios" style="document" />
       <wsdl:input>
@@ -1988,6 +2237,15 @@
         <soap12:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
+    <wsdl:operation name="DevolverNombreatacado">
+      <soap12:operation soapAction="http://tempuri.org/DevolverNombreatacado" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
     <wsdl:operation name="ExisteNodo">
       <soap12:operation soapAction="http://tempuri.org/ExisteNodo" style="document" />
       <wsdl:input>
@@ -2024,8 +2282,35 @@
         <soap12:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
+    <wsdl:operation name="FinallizarTurno">
+      <soap12:operation soapAction="http://tempuri.org/FinallizarTurno" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="FinalizarPartida">
+      <soap12:operation soapAction="http://tempuri.org/FinalizarPartida" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
     <wsdl:operation name="ValidarAtaque">
       <soap12:operation soapAction="http://tempuri.org/ValidarAtaque" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Atacardondenohaynada">
+      <soap12:operation soapAction="http://tempuri.org/Atacardondenohaynada" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>

@@ -63,6 +63,10 @@ namespace Proyecto
                     tiempo = referencia.GetTiempo();
                     ubase = true;
                     pasoau = true;
+                    if(referencia.GetTipoJuego() == 3)
+                    {
+                        Session["J1Base"] = 1;
+                    }
                 }
                 if(Session["Nombre"].ToString().CompareTo(referencia.GetUsuario2()) == 0 && !pasoau2)
                 {
@@ -81,6 +85,10 @@ namespace Proyecto
                     tiempo = referencia.GetTiempo();
                     ubase = false;
                     pasoau2 = true;
+                    if (referencia.GetTipoJuego() == 3)
+                    {
+                        Session["J2Base"] = 1;
+                    }
                 }
 
                 if(Session["Nombre"].ToString().CompareTo(referencia.GetUsuario1()) != 0 && Session["Nombre"].ToString().CompareTo(referencia.GetUsuario2()) != 0 && !pasoau)
@@ -88,7 +96,9 @@ namespace Proyecto
                     ScriptManager.RegisterStartupScript(this, this.GetType(), "alertIns", "alert('El juego actual no esta configurado para este nickname');", true);
                 }
 
-                ScriptManager.RegisterStartupScript(this, this.GetType(), "alertIns", "alert('J1" + Session["J1numnivel2"] + "J2" + Session["J2numnivel2"] + "');", true);
+                
+
+                //ScriptManager.RegisterStartupScript(this, this.GetType(), "alertIns", "alert('J1" + Session["J1numnivel2"] + "J2" + Session["J2numnivel2"] + "');", true);
                 PanelAdmin.Visible = false;
                 PanelCliente.Visible = true;
                 Label22.Text = Session["Nombre"].ToString();
@@ -499,6 +509,60 @@ namespace Proyecto
                     }
                 }
             }
+            else if (DropDownList1.SelectedValue.ToString().CompareTo("Top 10 Jugadores con mas unidades destruidas") == 0)
+            {
+                ServiceReference1.WebServiceProyectoSoapClient sr = new ServiceReference1.WebServiceProyectoSoapClient();
+                if (sr.Llamadaagraficar("topud", "C:\\Reportes"))
+                {
+                    string imagen = ObtenerImagen("C:\\Reportes\\topud.jpg");
+                    if (imagen != "")
+                    {
+                        Image1.ImageUrl = imagen;
+                        Image1.Visible = true;
+                        string pathdestino = Server.MapPath("/images/");
+                        string pathob = @"C:\\Reportes";
+                        string archivofuente = System.IO.Path.Combine(pathob, "topud.jpg");
+                        string archivodestino = System.IO.Path.Combine(pathdestino, "topud.jpg");
+                        System.IO.File.Copy(archivofuente, archivodestino, true);
+                    }
+                }
+            }
+            else if (DropDownList1.SelectedValue.ToString().CompareTo("Juego con mas ataques realizados") == 0)
+            {
+                ServiceReference1.WebServiceProyectoSoapClient sr = new ServiceReference1.WebServiceProyectoSoapClient();
+                if (sr.Llamadaagraficar("hmas", "C:\\Reportes"))
+                {
+                    string imagen = ObtenerImagen("C:\\Reportes\\historial.jpg");
+                    if (imagen != "")
+                    {
+                        Image1.ImageUrl = imagen;
+                        Image1.Visible = true;
+                        string pathdestino = Server.MapPath("/images/");
+                        string pathob = @"C:\\Reportes";
+                        string archivofuente = System.IO.Path.Combine(pathob, "historial.jpg");
+                        string archivodestino = System.IO.Path.Combine(pathdestino, "historial.jpg");
+                        System.IO.File.Copy(archivofuente, archivodestino, true);
+                    }
+                }
+            }
+            else if (DropDownList1.SelectedValue.ToString().CompareTo("Juego con menos ataques realizados") == 0)
+            {
+                ServiceReference1.WebServiceProyectoSoapClient sr = new ServiceReference1.WebServiceProyectoSoapClient();
+                if (sr.Llamadaagraficar("hmenos", "C:\\Reportes"))
+                {
+                    string imagen = ObtenerImagen("C:\\Reportes\\historial.jpg");
+                    if (imagen != "")
+                    {
+                        Image1.ImageUrl = imagen;
+                        Image1.Visible = true;
+                        string pathdestino = Server.MapPath("/images/");
+                        string pathob = @"C:\\Reportes";
+                        string archivofuente = System.IO.Path.Combine(pathob, "historial.jpg");
+                        string archivodestino = System.IO.Path.Combine(pathdestino, "historial.jpg");
+                        System.IO.File.Copy(archivofuente, archivodestino, true);
+                    }
+                }
+            }
             else
             {
                 //localhost.WebServiceProyecto sr = new localhost.WebServiceProyecto();
@@ -869,7 +933,7 @@ namespace Proyecto
             Image2.Visible = false;
             Label18.Visible = DropDownList4.Visible = Label19.Visible = DropDownList5.Visible = Label20.Visible = DropDownList6.Visible = Label21.Visible = TextBox6.Visible = Button26.Visible = true;
             ServiceReference1.WebServiceProyectoSoapClient sr = new ServiceReference1.WebServiceProyectoSoapClient();
-            ScriptManager.RegisterStartupScript(this, this.GetType(), "alertIns", "alert('J1" + Session["J1numnivel2"] + "J2" + Session["J2numnivel2"] + "');", true);
+           // ScriptManager.RegisterStartupScript(this, this.GetType(), "alertIns", "alert('J1" + Session["J1numnivel2"] + "J2" + Session["J2numnivel2"] + "');", true);
             if ((Session["Nombre"].ToString() == sr.GetUsuario1() && (Session["J1numnivel1"].ToString() != "0" || Session["J1numnivel2"].ToString() != "0" || Session["J1numnivel3"].ToString() != "0" || Session["J1numnivel4"].ToString() != "0")) || (Session["Nombre"].ToString() == sr.GetUsuario2() && (Session["J2numnivel1"].ToString() != "0" || Session["J2numnivel2"].ToString() != "0" || Session["J2numnivel3"].ToString() != "0" || Session["J2numnivel4"].ToString() != "0")))
             {
                 for (int i = 65; i < 65 + tamax; i++)
@@ -891,7 +955,13 @@ namespace Proyecto
                         DropDownList5.Items.Add(i.ToString());
                     }
                 }
-
+                if (sr.GetTipoJuego() == 3)
+                {
+                    if ((Session["Nombre"].ToString() == sr.GetUsuario1() && Session["J1Base"].ToString() != "0") || (Session["Nombre"].ToString() == sr.GetUsuario2() && Session["J2Base"].ToString() != "0"))
+                    {
+                        DropDownList6.Items.Add("Base");
+                    }
+                }
                 if ((Session["Nombre"].ToString() == sr.GetUsuario1() && Session["J1numnivel1"].ToString() != "0") || (Session["Nombre"].ToString() == sr.GetUsuario2() && Session["J2numnivel1"].ToString() != "0"))
                 {
                     DropDownList6.Items.Add("Submarino");
@@ -924,7 +994,7 @@ namespace Proyecto
             }
             else
             {
-                ScriptManager.RegisterStartupScript(this, this.GetType(), "alertIns", "aler('Ya no se pueden ingresar mas unidades');", true);
+                ScriptManager.RegisterStartupScript(this, this.GetType(), "alertIns", "alert('Ya no se pueden ingresar mas unidades');", true);
             }
         }
 
@@ -989,6 +1059,14 @@ namespace Proyecto
                     vida = 15;
                 }
             }
+            else if (idnave == "Base")
+            {
+                nivel = 1;
+                mov = 0;
+                alcance = 0;
+                ataque = 0;
+                vida = 1;
+            }
             else
             {
                 nivel = 3;
@@ -1019,7 +1097,7 @@ namespace Proyecto
                         Session["J2numnivel1"] = numnivel1;
                     }
                     
-                    ScriptManager.RegisterStartupScript(this, this.GetType(), "alertIns", "alert('J1" + Session["J1numnivel1"] + "J2" + Session["J2numnivel1"] + "');", true);
+                    //ScriptManager.RegisterStartupScript(this, this.GetType(), "alertIns", "alert('J1" + Session["J1numnivel1"] + "J2" + Session["J2numnivel1"] + "');", true);
                 }
                 else if (idnave.Contains("Crucero") || idnave.Contains("Fragata"))
                 {
@@ -1036,7 +1114,7 @@ namespace Proyecto
                         Session["J2numnivel2"] = numnivel1;
                     }
 
-                    ScriptManager.RegisterStartupScript(this, this.GetType(), "alertIns", "alert('J1" + Session["J1numnivel2"] + "J2" + Session["J2numnivel2"] + "');", true);
+                    //ScriptManager.RegisterStartupScript(this, this.GetType(), "alertIns", "alert('J1" + Session["J1numnivel2"] + "J2" + Session["J2numnivel2"] + "');", true);
                 }
                 else if (idnave.Contains("Bombardero") || idnave.Contains("Caza") || idnave.Contains("Helicoptero"))
                 {
@@ -1053,7 +1131,7 @@ namespace Proyecto
                         Session["J2numnivel3"] = numnivel1;
                     }
 
-                    ScriptManager.RegisterStartupScript(this, this.GetType(), "alertIns", "alert('J1" + Session["J1numnivel3"] + "J2" + Session["J2numnivel3"] + "');", true);
+                    //ScriptManager.RegisterStartupScript(this, this.GetType(), "alertIns", "alert('J1" + Session["J1numnivel3"] + "J2" + Session["J2numnivel3"] + "');", true);
                 }
                 else if (idnave.Contains("Neosatelite"))
                 {
@@ -1070,22 +1148,52 @@ namespace Proyecto
                         Session["J2numnivel4"] = numnivel1;
                     }
 
-                    ScriptManager.RegisterStartupScript(this, this.GetType(), "alertIns", "alert('J1" + Session["J1numnivel4"] + "J2" + Session["J2numnivel4"] + "');", true);
+                    //ScriptManager.RegisterStartupScript(this, this.GetType(), "alertIns", "alert('J1" + Session["J1numnivel4"] + "J2" + Session["J2numnivel4"] + "');", true);
+                }
+                else
+                {
+                    if (sr.GetTipoJuego() == 3)
+                    {
+                        if (Session["Nombre"].ToString() == sr.GetUsuario1() && Session["J1Base"].ToString() != "0")
+                        {
+                            Session["J1Base"] = 0;
+                        }
+                        if (Session["Nombre"].ToString() == sr.GetUsuario2() && Session["J2Base"].ToString() != "0")
+                        {
+                            Session["J2Base"] = 0;
+                        }
+                    }
                 }
                 if(Session["Nombre"].ToString() == sr.GetUsuario1())
                 {
                     if (Session["J1numnivel1"].ToString() == "0" && Session["J1numnivel2"].ToString() == "0" && Session["J1numnivel3"].ToString() == "0" && Session["J1numnivel4"].ToString() == "0")
                     {
-                        Button25.Enabled = false;
-                        Button33.Enabled = true;
+                        if (sr.GetTipoJuego() == 3 && Session["J1Base"].ToString() == "0")
+                        {
+                            Button25.Enabled = false;
+                            Button33.Enabled = true;
+                        }
+                        else if (sr.GetTipoJuego() != 3)
+                        {
+                            Button25.Enabled = false;
+                            Button33.Enabled = true;
+                        }
                     }
                 }
                 else if (Session["Nombre"].ToString() == sr.GetUsuario2())
                 {
                     if (Session["J2numnivel1"].ToString() == "0" && Session["J2numnivel2"].ToString() == "0" && Session["J2numnivel3"].ToString() == "0" && Session["J2numnivel4"].ToString() == "0")
                     {
-                        Button25.Enabled = false;
-                        Button33.Enabled = true;
+                        if (sr.GetTipoJuego() == 3 && Session["J2Base"].ToString() == "0")
+                        {
+                            Button25.Enabled = false;
+                            Button33.Enabled = true;
+                        }
+                        else if (sr.GetTipoJuego() != 3)
+                        {
+                            Button25.Enabled = false;
+                            Button33.Enabled = true;
+                        }
                     }
                 }
                 
@@ -1132,7 +1240,7 @@ namespace Proyecto
                     try
                     {
                         string pathguardar = Server.MapPath("~/temp/");
-                        ScriptManager.RegisterStartupScript(this, this.GetType(), "alertIns", "alert('" + pathguardar + "');", true);
+                        //ScriptManager.RegisterStartupScript(this, this.GetType(), "alertIns", "alert('" + pathguardar + "');", true);
                         FileUpload5.PostedFile.SaveAs(pathguardar + nombrearchivo);
                         if (!referencia.CargarContactos(pathguardar + nombrearchivo))
                         {
@@ -1244,6 +1352,11 @@ namespace Proyecto
                 System.IO.File.Copy(archivofuente, archivodestino, true);
                 sr.SetPrimerTurno();
                 sr.InicializarArbol();
+                if (sr.GetConsola().Length == 0)
+                {
+                    sr.SetConsola("Turno actual: " + sr.GetUsuario1() + "\n");
+                }
+                
                 Response.Redirect("Juego.aspx");
             }
             else

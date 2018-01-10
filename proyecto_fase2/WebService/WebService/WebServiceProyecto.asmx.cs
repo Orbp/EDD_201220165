@@ -42,6 +42,8 @@ namespace WebService
         static bool jugador2listo = false;
         static string turnoactual = "";
         static int numerodetiro;
+        static string consola = "";
+        static ListaHistorial listahistorial = new ListaHistorial();
 
         [WebMethod]
         public void IniciarArbol()
@@ -53,6 +55,18 @@ namespace WebService
         public string HelloWorld()
         {
             return "Hola a todos";
+        }
+
+        [WebMethod]
+        public void SetConsola(string auxconsola)
+        {
+            consola += auxconsola;
+        }
+
+        [WebMethod]
+        public string GetConsola()
+        {
+            return consola;
         }
 
         [WebMethod]
@@ -601,7 +615,8 @@ namespace WebService
                         }
                     }
                 }
-                historialcargado.Mostrar(historialcargado.GetNodoEntrada());
+                //historialcargado.Mostrar(historialcargado.GetNodoEntrada());
+                listahistorial.Insertar(historialcargado, "Historial cargado: " + usuario1 + "vs." + usuario2);
                 linea = sr.ReadLine();
             }
             sr.Close();
@@ -743,6 +758,26 @@ namespace WebService
                 g.GraficarTopContactos(lista);
                 return true;
             }
+            else if (tipo == "topud" && !arbol.ArbolVacio())
+            {
+                Graficar g = new Graficar(ruta);
+                Eliminados lista = new Eliminados();
+                arbol.PonerNumeroUnidadesDest(arbol.GetRaiz(), lista);
+                g.GraficarTopUnidadesDest(lista);
+                return true;
+            }
+            else if (tipo == "hmas" && listahistorial.primero != null)
+            {
+                Graficar g = new Graficar(ruta);
+                g.GraficarHistorial(listahistorial.primero.contenido);
+                return true;
+            }
+            else if (tipo == "hmenos" && listahistorial.primero != null)
+            {
+                Graficar g = new Graficar(ruta);
+                g.GraficarHistorial(listahistorial.ultimo.contenido);
+                return true;
+            }
             return false;
         }
 
@@ -760,7 +795,57 @@ namespace WebService
             return aux;
         }
 
-
+        [WebMethod]
+        public string ObtenerGanador(string usuario)
+        {
+            string aux = "";
+            int j1 = 0;
+            int j2 = 0;
+            if (TableroJuegoActual != null)
+            {
+                if (tipo == 1)
+                {
+                    if (usuario == usuario1)
+                    {
+                        j1 = TableroJuegoActual.Numerodeunidadesvivas(usuario2);
+                    }
+                    else if (usuario2 == usuario)
+                    {
+                        j2 = TableroJuegoActual.Numerodeunidadesvivas(usuario1);
+                    }
+                }
+                else if (tipo == 3)
+                {
+                    if (usuario == usuario1)
+                    {
+                        if (TableroJuegoActual.verificarbaseenemiga(usuario2))
+                        {
+                            j1 = TableroJuegoActual.Numerodeunidadesvivas(usuario2);
+                        }
+                        else
+                        {
+                            j1 = 0;
+                        }
+                    }
+                    else if (usuario2 == usuario)
+                    {
+                        if (TableroJuegoActual.verificarbaseenemiga(usuario1))
+                        {
+                            j2 = TableroJuegoActual.Numerodeunidadesvivas(usuario1);
+                        }
+                        else
+                        {
+                            j2 = 0;
+                        }
+                    }
+                }
+                if (j1 == 0 && j2 == 0)
+                {
+                    aux = usuario;
+                }
+            }
+            return aux;
+        }
 
         [WebMethod]
         public void ModificarUsuarios(string pnickname, string password, string correo)
@@ -871,6 +956,34 @@ namespace WebService
                  TableroInicial = new Matriz();
                  TableroJuegoActual = new Matriz();
              }
+        }
+
+        [WebMethod]
+        public string DevolverNombreatacado(int nivel, int fila, char columna)
+        {
+            string aux = "";
+            NodoMatriz auxiliarnombre = null;
+            if (nivel == 0)
+            {
+                auxiliarnombre = TableroJuegoActual.ExisteNodo(TableroJuegoActual.enfnivel0, TableroJuegoActual.encnivel0, fila, columna);
+            }
+            else if (nivel == 1)
+            {
+                auxiliarnombre = TableroJuegoActual.ExisteNodo(TableroJuegoActual.enfnivel1, TableroJuegoActual.encnivel1, fila, columna);
+            }
+            else if (nivel == 2)
+            {
+                auxiliarnombre = TableroJuegoActual.ExisteNodo(TableroJuegoActual.enfnivel2, TableroJuegoActual.encnivel2, fila, columna);
+            }
+            else
+            {
+                auxiliarnombre = TableroJuegoActual.ExisteNodo(TableroJuegoActual.enfnivel3, TableroJuegoActual.encnivel3, fila, columna);
+            }
+            if (auxiliarnombre != null)
+            {
+                aux = auxiliarnombre.idunidad;
+            }
+            return aux;
         }
 
         [WebMethod]
@@ -1019,6 +1132,33 @@ namespace WebService
         }
 
         [WebMethod]
+        public void FinallizarTurno(string usuario)
+        {
+            if (TableroJuegoActual != null)
+            {
+                for (int i = 0; i < 4; i++)
+                {
+                    TableroJuegoActual.Cambiarestadomov(usuario, i);
+                }
+            }
+        }
+
+        [WebMethod]
+        public void FinalizarPartida(string nombre)
+        {
+            listahistorial.Insertar(historialactual, nombre);
+            historialactual = new ArbolHistorial(index);
+            usuario1 = "";
+            usuario2 = "";
+            tamx = 0;
+            tamy = 0;
+            numerodenavesnivel1 = 0;
+            numerodenavesnivel2 = 0;
+            numerodenavesnivel3 = 0;
+            numerodenavesnivel4 = 0;
+        }
+
+        [WebMethod]
         public bool ValidarAtaque(string idnave, int nivel, int fila, char columna, int nivelfinal, int filafinal, char columnafinal)
         {
             if (nivelfinal >= 0 && nivelfinal <= 3 && filafinal > 0 && filafinal < tamy && columnafinal > 64 && columnafinal < tamx + 65)
@@ -1090,6 +1230,43 @@ namespace WebService
                 }
             }
             return false;
+        }
+
+        [WebMethod]
+        public bool Atacardondenohaynada(int nivel, int fila, char col, int nivelfinal, int filafinal, char columnafinal)
+        {
+            EncabezadoFila auxenf = null;
+            EncabezadosColumna auxenc = null;
+            if (nivelfinal == 0)
+            {
+                auxenc = TableroJuegoActual.encnivel0;
+                auxenf = TableroJuegoActual.enfnivel0;
+            }
+            else if (nivelfinal == 1)
+            {
+                auxenc = TableroJuegoActual.encnivel1;
+                auxenf = TableroJuegoActual.enfnivel1;
+            }
+            else if (nivelfinal == 2)
+            {
+                auxenc = TableroJuegoActual.encnivel2;
+                auxenf = TableroJuegoActual.enfnivel2;
+            }
+            else if (nivelfinal == 3)
+            {
+                auxenc = TableroJuegoActual.encnivel3;
+                auxenf = TableroJuegoActual.enfnivel3;
+            }
+            NodoMatriz auxatacado = TableroJuegoActual.ExisteNodo(auxenf, auxenc, filafinal, columnafinal);
+            NodoMatriz auxatacante = TableroJuegoActual.ExisteNodo(auxenf, auxenc, fila, col);
+            if (auxatacado == null)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
         }
 
         [WebMethod]

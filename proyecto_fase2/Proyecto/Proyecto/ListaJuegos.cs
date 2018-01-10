@@ -158,5 +158,20 @@ namespace Proyecto
             }
             return ((n1*100)/n);
         }
+
+        public int DevolverNumerodeunidadesdest(NodoArbol aux)
+        {
+            NodoListaJuegos auxiliar = aux.GetListaJuegos().GetPrimero();
+            int n = 0;
+            while (auxiliar != null)
+            {
+                if (auxiliar.GetGano())
+                {
+                    n += auxiliar.GetUnidadesDestruidas();
+                }
+                auxiliar = auxiliar.GetSiguiente();
+            }
+            return n;
+        }
     }
 }
